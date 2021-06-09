@@ -1,8 +1,8 @@
 import java.util.ArrayList;
-public class Menu{
+public class MenuData{
     public ArrayList<String> Single_Meal = new ArrayList<String>();
     public ArrayList<String> Set_Meal = new ArrayList<String>();
-    public Menu(ArrayList<singleType> menu1, ArrayList<setType> menu2) {
+    public MenuData(ArrayList<singleType> menu1, ArrayList<setType> menu2) {
         Single_Meal.addAll(new ReadCSV("Single_meal.csv").csvArrayList);
         Set_Meal.addAll(new ReadCSV("Set_meal.csv").csvArrayList);
 
@@ -20,7 +20,7 @@ public class Menu{
         }
     }
 
-    public Menu(ArrayList<singleType> single_menu_ref) {
+    public MenuData(ArrayList<singleType> single_menu_ref) {
         this(single_menu_ref, null);
     }
 }

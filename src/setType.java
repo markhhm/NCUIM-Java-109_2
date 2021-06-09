@@ -19,7 +19,7 @@ public class setType {
     public singleType dish_trans(int dish){
         if (dish != -1) {
             ArrayList<singleType> Single_Menu_Ref = new ArrayList<singleType>();
-            new Menu(Single_Menu_Ref);
+            new MenuData(Single_Menu_Ref);
             return Single_Menu_Ref.get(dish);
         } else {
             return new singleType(null, null, null, null, null);
