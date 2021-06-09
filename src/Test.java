@@ -1,22 +1,22 @@
 import java.util.Scanner;
 
-public class User{
+public class Test{
 
 	public static void main(String[] args){
 
-		//å“é …
-		String a = "è–¯æ¢(å°)";
-		String b = "éº¥é¦™é›  ";
-		String c = "å¯æ¨‚(å°)";
-		String d = "é›ªç¢§(å°)";
-		String e = "è–¯æ¢(ä¸­)";
-		String f = "è–¯é¤…    ";
-		String g = "æ»¿ç¦å ¡  ";
-		String h = "è–¯æ¢(å¤§)";
-		String i = "å¤§éº¥å…‹  ";
-		String j = "ç‰ç±³æ¿ƒæ¹¯";
+		//«~¶µ
+		String a = "Á¦±ø(¤p)";
+		String b = "³Á­»Âû  ";
+		String c = "¥i¼Ö(¤p)";
+		String d = "³·ºÑ(¤p)";
+		String e = "Á¦±ø(¤¤)";
+		String f = "Á¦»æ    ";
+		String g = "º¡ºÖ³ù  ";
+		String h = "Á¦±ø(¤j)";
+		String i = "¤j³Á§J  ";
+		String j = "¥É¦Ì¿@´ö";
 
-		//åƒ¹æ ¼
+		//»ù®æ
 		int ap = 33;
 		int bp = 44;
 		int cp = 28;
@@ -28,9 +28,9 @@ public class User{
 		int ip = 72;
 		int jp = 40;
 
-		String name[] = {a,b,c,d,e,f,g,h,i,j};//å“é …é™£åˆ—
+		String name[] = {a,b,c,d,e,f,g,h,i,j};//«~¶µ°}¦C
 
-		int price[] = {ap,bp,cp,dp,ep,fp,gp,hp,ip,jp};//åƒ¹æ ¼é™£åˆ—
+		int price[] = {ap,bp,cp,dp,ep,fp,gp,hp,ip,jp};//»ù®æ°}¦C
 
 		String priceS[] = new String[10];
 
@@ -42,106 +42,255 @@ public class User{
 
 		Scanner s = new Scanner(System.in);
 
-		System.out.printf("%s%10s%13s\n\n","ç·¨è™Ÿ","å“é …","åƒ¹æ ¼");
+		System.out.printf("%s%10s%13s\n\n","½s¸¹","«~¶µ","»ù®æ");
 		for(int counter = 0; counter < name.length; counter++){
 
 			System.out.printf("%-12d%s%10d\n",counter+1,name[counter],price[counter]);
 
 		}
 
-		int quit = 1;//åˆ¤æ–·æ˜¯å¦ç¹¼çºŒè³¼è²·
-		int buy = 1;//é¤é»ç·¨è™Ÿ
-		int type = 0;//å–®é»orå¥—é¤
-		int typeNumber = 0;//å¥—é¤ç¨®é¡
-		String buylist[] = new String [100];//è³¼è²·æ¸…å–®
-		int buyNumber = 0;//è³¼è²·ç·¨è™Ÿ
-		int leveup = 0;//å‡ç´š
-		int drink = 0;//é£²æ–™é¡å‹
+		int quit = 1;//§PÂ_¬O§_Ä~ÄòÁÊ¶R
+		int buy = 1;//À\ÂI½s¸¹
+		int type = 0;//³æÂIor®MÀ\
+		int typeNumber = 0;//®MÀ\ºØÃş
+		String buylist[] = new String [100];//ÁÊ¶R²M³æ
+		int buyNumber = 0;//ÁÊ¶R½s¸¹
+		int leveup = 0;//¤É¯Å
+		int drink = 0;//¶¼®ÆÃş«¬
+		int total = 0;//Á`ª÷ÃB
 
 		while(quit != 2){
 
-			System.out.print("\né¸æ“‡æ¬²è³¼è²·å“é …:");
+			System.out.print("\n¿ï¾Ü±ıÁÊ¶R«~¶µ:");
 
 			buy = s.nextInt();
 
+			System.out.print("\n");
+
 			if(buy == 2||buy == 7||buy == 9){
 
-				System.out.println("1å–®é» 2å¥—é¤:");
+				System.out.print("1³æÂI 2®MÀ\:");
 
 				type = s.nextInt();
 
+				System.out.print("\n");
+
 				if(type == 2){
 
-					int priceA = price[(buy - 1)] + 60;
-
-					String spriceA = String.valueOf(priceA);
-
-					System.out.print("1 æ™®é€šå¥—é¤ 2 è–¯é¤…å¥—é¤ 3 åƒå¾ˆå ¡å¥—é¤\n");
+					System.out.print("1 ´¶³q®MÀ\ 2 Á¦»æ®MÀ\ 3 ¦Y«Ü³ù®MÀ\ : ");
 
 					typeNumber = s.nextInt();
 
+					System.out.print("\n");
+
 					if(typeNumber == 1){
 
-						System.out.println("æ˜¯å¦å‡ç´šè–¯æ¢(å¤§) 1æ˜¯ 2å¦ :");
+						System.out.print("¬O§_¤É¯ÅÁ¦±ø(¤j) 1¬O 2§_ :");
 
 						leveup = s.nextInt();
 
+						System.out.print("\n");
+
 						if(leveup == 1){
 
-							System.out.println("è«‹é¸æ“‡é£²æ–™ 1å¯æ¨‚ 2é›ªç¢§ :");
+							int priceA = price[(buy - 1)] + 71;
+
+							String spriceA = String.valueOf(priceA);
+
+							System.out.print("½Ğ¿ï¾Ü¶¼®Æ 1¥i¼Ö 2³·ºÑ :");
 
 							drink = s.nextInt();
 
-							if(drink == 1){
+							System.out.print("\n");
 
-								buylist[buyNumber] = name[(buy - 1)] + "Aé¤    " + spriceA + "å…ƒ\n    è–¯æ¢(å¤§)\n    å¯æ¨‚";
+							if(drink == 1){
+								buylist[buyNumber] = name[(buy - 1)] + "AÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤j)\n         ¥i¼Ö";
 								buyNumber++;
+								total += priceA;
 
 							}else if(drink == 2){
 
-								buylist[buyNumber] = name[(buy - 1)] + "Aé¤    " + priceS[(buy - 1)] + "å…ƒ\n    è–¯æ¢(å¤§)\n    é›ªç¢§";
+								buylist[buyNumber] = name[(buy - 1)] + "AÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤j)\n         ³·ºÑ";
 								buyNumber++;
+								total += priceA;
 
 							}
 
 						}else if(leveup == 2){
 
-							System.out.println("è«‹é¸æ“‡é£²æ–™ 1å¯æ¨‚ 2é›ªç¢§ :");
+							int priceA = price[(buy - 1)] + 60;
+
+							String spriceA = String.valueOf(priceA);
+
+							System.out.print("½Ğ¿ï¾Ü¶¼®Æ 1¥i¼Ö 2³·ºÑ :");
 
 							drink = s.nextInt();
 
+							System.out.print("\n");
 
 							if(drink == 1){
  
-								buylist[buyNumber] = name[(buy - 1)]+"Aé¤\n"+"    è–¯æ¢(ä¸­)\n    å¯æ¨‚";
+								buylist[buyNumber] = name[(buy - 1)] + "AÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤¤)\n         ¥i¼Ö";
 								buyNumber++;
+								total += priceA;
 
 							}else if(drink == 2){
 
-								buylist[buyNumber] = name[(buy - 1)]+"Aé¤\n"+"    è–¯æ¢(ä¸­)\n    é›ªç¢§";
+								buylist[buyNumber] = name[(buy - 1)] + "AÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤¤)\n         ³·ºÑ";
 								buyNumber++;
+								total += priceA;
 
 							}
+						}
+					}else if(typeNumber == 2){
+
+						System.out.print("¬O§_¤É¯ÅÁ¦±ø 1¤É¯ÅÁ¦±ø(¤¤) 2¤É¯ÅÁ¦±ø(¤j) 3§_ : ");
+
+						leveup = s.nextInt();
+
+						System.out.print("\n");
+
+						if(leveup == 1){
+
+							int priceA = price[(buy - 1)] + 81;
+
+							String spriceA = String.valueOf(priceA);
+
+							System.out.print("½Ğ¿ï¾Ü¶¼®Æ 1¥i¼Ö 2³·ºÑ :");
+
+							drink = s.nextInt();
+
+							System.out.print("\n");
+
+							if(drink == 1){
+
+								buylist[buyNumber] = name[(buy - 1)] + "BÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤¤)\n         Á¦»æ\n         ¥i¼Ö";
+								buyNumber++;
+								total += priceA;
+
+							}else if(drink == 2){
+
+								buylist[buyNumber] = name[(buy - 1)] + "BÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤¤)\n         Á¦»æ\n         ³·ºÑ";
+								buyNumber++;
+								total += priceA;
+
+							}
+
+						}else if(leveup == 2){
+
+							int priceA = price[(buy - 1)] + 92;
+
+							String spriceA = String.valueOf(priceA);
+
+							System.out.print("½Ğ¿ï¾Ü¶¼®Æ 1¥i¼Ö 2³·ºÑ :");
+
+							drink = s.nextInt();
+
+							System.out.print("\n");
+
+							if(drink == 1){
+
+								buylist[buyNumber] = name[(buy - 1)] + "BÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤j)\n         Á¦»æ\n         ¥i¼Ö";
+								buyNumber++;
+								total += priceA;
+
+							}else if(drink == 2){
+
+								buylist[buyNumber] = name[(buy - 1)] + "BÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤j)\n         Á¦»æ\n         ³·ºÑ";
+								buyNumber++;
+								total += priceA;
+
+							}
+
+						}else if(leveup == 3){
+
+							int priceA = price[(buy - 1)] + 70;
+
+							String spriceA = String.valueOf(priceA);
+
+							System.out.print("½Ğ¿ï¾Ü¶¼®Æ 1¥i¼Ö 2³·ºÑ :");
+
+							drink = s.nextInt();
+
+							System.out.print("\n");
+
+							if(drink == 1){
+
+								buylist[buyNumber] = name[(buy - 1)] + "BÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤p)\n         Á¦»æ\n         ¥i¼Ö";
+								buyNumber++;
+								total += priceA;
+
+							}else if(drink == 2){
+
+								buylist[buyNumber] = name[(buy - 1)] + "BÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤p)\n         Á¦»æ\n         ³·ºÑ";
+								buyNumber++;
+								total += priceA;
+
+							}
+
+						}
+					}else if(typeNumber == 3){
+
+
+						int priceA = price[(buy - 1)] + 70;
+
+						String spriceA = String.valueOf(priceA);
+
+						System.out.print("½Ğ¿ï¾Ü¶¼®Æ 1¥i¼Ö 2³·ºÑ :");
+
+						drink = s.nextInt();
+
+						System.out.print("\n");
+
+						if(drink == 1){
+
+							buylist[buyNumber] = name[(buy - 1)] + "CÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤j)\n         ¥i¼Ö";
+							buyNumber++;
+							total += priceA;
+
+						}else if(drink == 2){
+
+							buylist[buyNumber] = name[(buy - 1)] + "CÀ\      " + spriceA + "¤¸\n         Á¦±ø(¤j)\n         ³·ºÑ";
+							buyNumber++;
+							total += priceA;
+
 						}
 					}
 
 				}else{
 
-					buylist[buyNumber] = name[(buy - 1)];
+					buylist[buyNumber] = name[(buy - 1)] + "          " + priceS[(buy - 1)] + "¤¸";
 					buyNumber++;
+					total += price[(buy - 1)];
+
 				}
 
+			}else{
+
+				
+					buylist[buyNumber] = name[(buy - 1)] + "          " + priceS[(buy - 1)] + "¤¸";
+					buyNumber++;
+					total += price[(buy - 1)];
+
 			}
-			System.out.println("æ˜¯å¦ç¹¼çºŒè³¼è²·?1æ˜¯ 2å¦:");
+			System.out.print("¬O§_Ä~ÄòÁÊ¶R?1¬O 2§_ : ");
 
 			quit = s.nextInt();
 
+			System.out.print("\n");
+
 		}
+
+		System.out.println("À\ÂI©ú²Ó:");
+		System.out.printf("%s%5s%14s\n\n","½s¸¹","«~¶µ","»ù®æ");
 
 		for(int o = 0; o <buyNumber; o++){
 
-			System.out.printf("é¤é»æ˜ç´°:\n %s\n",buylist[o]);
+			System.out.printf("%d     %s\n\n",(o+1),buylist[o]);
 
 		}
+
+		System.out.printf("Á`ª÷ÃB:%19d¤¸",total);
+
 	}
 }
