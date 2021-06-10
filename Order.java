@@ -4,6 +4,8 @@ public class Order{
 
 	public static void main(String [] args){
 
+		new MenuData(Single_Menu, Set_Menu);
+
 		Scanner s = new Scanner(System.in);
 
 		SinglePoint single = new SinglePoint();
@@ -29,7 +31,7 @@ public class Order{
 		int Setcount[] = {0,0,0,0,0,0,0,0,0};//®MÀ\¦UÀ\ÂI¼Æ¶q
 
 		SinglePoint singlelist [] = {new SinglePoint(1),new SinglePoint(2),new SinglePoint(3),new SinglePoint(4),new SinglePoint(5),new SinglePoint(6),new SinglePoint(7),new SinglePoint(8),new SinglePoint(9),new SinglePoint(10),};
-		SetMeal setmeal [] = {}
+		SetMeal setmeal [] = {new SetMeal(2,1),new SetMeal(2,2),new SetMeal(2,3),new SetMeal(7,1),new SetMeal(7,2),new SetMeal(7,3),new SetMeal(9,1),new SetMeal(9,2),new SetMeal(9,3)};
 		while(quit != 2){
 
 			
@@ -56,7 +58,7 @@ public class Order{
 
 					}else if(type == 2){
 
-						System.out.print("1 ´¶³q®MÀ\ 2 Á¦»æ®MÀ\ 3 ¦Y«Ü³ù®MÀ\ : ");
+						System.out.print();
 						typeNumber = s.nextInt();
 
 						System.out.print("\n");

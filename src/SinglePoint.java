@@ -24,39 +24,39 @@ public class SinglePoint{
 				Price = 33;
 				break;
 			case 2:
-				Name = "іБ­»Вы  ";
+				Name = "йєҐй¦™й›ћ  ";
 				Price = 44;
 				break;
 			case 3:
-				Name = "ҐiјЦ(¤p)";
+				Name = "еЏЇжЁ‚(е°Џ)";
 				Price = 28;
 				break;
 			case 4:
-				Name = "і·єС(¤p)";
+				Name = "й›Єзў§(е°Џ)";
 				Price = 28;
 				break;
 			case 5:
-				Name = "Б¦±ш(¤¤)";
+				Name = "и–Їжўќ(дё­)";
 				Price = 44;
 				break;
 			case 6:
-				Name = "Б¦»ж    ";
+				Name = "и–Їй¤…    ";
 				Price = 30;
 				break;
 			case 7:
-				Name = "єЎєЦіщ  ";
+				Name = "ж»їз¦Џе Ў  ";
 				Price = 48;
 				break;
 			case 8:
-				Name = "Б¦±ш(¤j)";
+				Name = "и–Їжўќ(е¤§)";
 				Price = 55;
 				break;
 			case 9:
-				Name = "¤jіБ§J  ";
+				Name = "е¤§йєҐе…‹  ";
 				Price = 72;
 				break;
 			case 10:
-				Name = "ҐЙ¦Мї@ґц";
+				Name = "зЋ‰з±іжїѓж№Ї";
 				Price = 40;
 				break;
 		}
