@@ -11,7 +11,6 @@ public class Menu extends JFrame {
 
         // 設定圖示
      	frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
- 
 		contentPane.setBackground(Color.yellow); // 將JFrame例項背景設定為黃色 
 		frame.setSize(1400, 900); 
 		frame.setLocationRelativeTo(null);// --> 設定開啟的位置和某個物件相同，帶入null則會在畫面中間開啟
