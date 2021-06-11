@@ -1,0 +1,93 @@
+import javax.swing.*; 
+import java.awt.*;
+import java.util.*;
+
+public class Detail extends JFrame{   
+
+    public static void Detail(){
+        //建立Frame
+        JFrame frame = new JFrame("訂單明細"); 
+        Container contentPane = frame.getContentPane();
+        //設定Frame的大小
+        frame.setSize(800, 700);
+        //設定開啟的位置和某個物件相同，帶入null則會在畫面中間開啟
+        frame.setLocationRelativeTo(null);
+        //設定容器不使用佈局管理員
+        contentPane.setLayout(null);
+
+
+        //設定最上面的panel
+            //建立panel
+            JPanel TopPanel = new JPanel();
+
+            //設定容器不使用佈局管理員
+            TopPanel.setLayout(null); 
+
+            //建立文字Label
+            JLabel OrderNumberLab = new JLabel("訂單編號: " + "訂單編號數字轉成字串");
+
+            //設定位置大小
+            OrderNumberLab.setBounds(0,0,1080,50);
+
+            //改字的大小
+            OrderNumberLab.setFont(OrderNumberLab.getFont().deriveFont(26.0f));
+
+            //把元件加到TopPanel裡
+            TopPanel.add(OrderNumberLab);
+
+        //設定可滾動表格
+            String[][] data = {{"編號一","資料一", "4"},{"編號二","資料二", "4"},{"編號三","資料三", "4"}};
+            String[] dataTitle = {"餐點","數量", "價錢"};
+            JTable jtable = new JTable(data, dataTitle);
+            JScrollPane jscrollpane = new JScrollPane(jtable); 
+
+        //設定最下面的panel
+            //建立panel
+            JPanel BottomPanel = new JPanel();
+
+            //設定容器不使用佈局管理員
+            BottomPanel.setLayout(null); 
+
+            //建立文字Label
+            JLabel RemarksLab = new JLabel("備註: "+"String");
+            JLabel DiscountLab = new JLabel("優惠代碼: "+"String");
+            JLabel PayWayLab = new JLabel("付款方式: "+"String");
+            JLabel Thanks = new JLabel("謝謝光臨，祝您用餐愉快！");
+
+            //設定元件位置.大小
+            RemarksLab.setBounds(0,0,900,50);
+            DiscountLab.setBounds(0,50,900,50);
+            PayWayLab.setBounds(0,100,900,50);
+            Thanks.setBounds(0,150,900,100);
+
+            //改字的大小
+            RemarksLab.setFont(RemarksLab.getFont().deriveFont(20.0f));
+            DiscountLab.setFont(DiscountLab.getFont().deriveFont(20.0f));
+            PayWayLab.setFont(PayWayLab.getFont().deriveFont(20.0f));
+            Thanks.setFont(Thanks.getFont().deriveFont(40.0f));
+
+            //把元件加到BottomPanel裡
+            BottomPanel.add(RemarksLab);
+            BottomPanel.add(DiscountLab);
+            BottomPanel.add(PayWayLab);
+            BottomPanel.add(Thanks);
+
+        //設定三個panel的位置.大小
+        TopPanel.setBounds(40,20,700,80); 
+        jscrollpane.setBounds(40,100,700,250);
+        BottomPanel.setBounds(40,370,700,300);
+        
+        //加入panel
+        contentPane.add(TopPanel);
+        contentPane.add(jscrollpane);
+        contentPane.add(BottomPanel);
+
+        frame.setVisible(true); 
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public static void main(String [] args){
+        Detail d = new Detail();
+        d.Detail();
+    }
+
+}
