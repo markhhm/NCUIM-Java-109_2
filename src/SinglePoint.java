@@ -21,43 +21,43 @@ public class SinglePoint{
 
 			case 1:
 				Name = Single_Menu.get(0).getName();
-				Price = 33;
+				Price = Single_Menu.get(0).getPrice();
 				break;
 			case 2:
-				Name = "麥香雞  ";
-				Price = 44;
+				Name = Single_Menu.get(1).getName();
+				Price = Single_Menu.get(1).getPrice();
 				break;
 			case 3:
-				Name = "可樂(小)";
-				Price = 28;
+				Name = Single_Menu.get(2).getName();
+				Price = Single_Menu.get(2).getPrice();
 				break;
 			case 4:
-				Name = "雪碧(小)";
-				Price = 28;
+				Name = Single_Menu.get(3).getName();
+				Price = Single_Menu.get(3).getPrice();
 				break;
 			case 5:
-				Name = "薯條(中)";
-				Price = 44;
+				Name = Single_Menu.get(4).getName();
+				Price = Single_Menu.get(4).getPrice();
 				break;
 			case 6:
-				Name = "薯餅    ";
-				Price = 30;
+				Name = Single_Menu.get(5).getName();
+				Price = Single_Menu.get(5).getPrice();
 				break;
 			case 7:
-				Name = "滿福堡  ";
-				Price = 48;
+				Name = Single_Menu.get(6).getName();
+				Price = Single_Menu.get(6).getPrice();
 				break;
 			case 8:
-				Name = "薯條(大)";
-				Price = 55;
+				Name = Single_Menu.get(7).getName();
+				Price = Single_Menu.get(7).getPrice();
 				break;
 			case 9:
-				Name = "大麥克  ";
-				Price = 72;
+				Name = Single_Menu.get(8).getName();
+				Price = Single_Menu.get(8).getPrice();
 				break;
 			case 10:
-				Name = "玉米濃湯";
-				Price = 40;
+				Name = Single_Menu.get(9).getName();
+				Price = Single_Menu.get(9).getPrice();
 				break;
 		}
 	}

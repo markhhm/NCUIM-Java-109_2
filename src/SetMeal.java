@@ -1,4 +1,9 @@
+import java.util.ArrayList;
+
 public class SetMeal{
+
+	static ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
+    static ArrayList<setType> Set_Menu = new ArrayList<setType>();
 
 	private String Meal;
 	private String No;
@@ -7,28 +12,27 @@ public class SetMeal{
 
 	public SetMeal(int j,int i){
 
+		new MenuData(Single_Menu, Set_Menu);
+
 		switch(j){
 
 			case 2:
 				switch(i){
 
 					case 1:
-						Meal = "麥香雞(A)\n   薯條(中)\n   雪碧(小)";
+						Meal = Single_Menu.get(1).getName() + "\n" + Set_Menu.get(0).getDish1().getName() + "\n" + Set_Menu.get(0).getDrink().getName();
 						No = "A";
-						Type = "普通套餐";
-						Price = 104;
+						Price = Single_Menu.get(1).getPrice() + Set_Menu.get(0).getPrice();
 						break;
 					case 2:
-						Meal = "麥香雞(B)\n   薯條(小)\n   薯餅\n   可樂(小)";
+						Meal = Single_Menu.get(1).getName() + "\n" + Set_Menu.get(1).getDish1().getName() + "\n" + Set_Menu.get(1).getDish2().getName() + "\n" + Set_Menu.get(1).getDrink().getName();
 						No = "B";
-						Type = "薯餅套餐";
-						Price = 114;
+						Price = Single_Menu.get(1).getPrice() + Set_Menu.get(1).getPrice();
 						break;
 					case 3:
-						Meal = "麥香雞(C)\n   薯條(大)\n   雪碧(小)";
+						Meal = Single_Menu.get(1).getName() + "\n" + Set_Menu.get(2).getDish1().getName() + "\n" + Set_Menu.get(2).getDrink().getName();
 						No = "C";
-						Type = "吃很堡套餐";
-						Price = 114;
+						Price = Single_Menu.get(1).getPrice() + Set_Menu.get(2).getPrice();
 						break;
 				}
 				break;
@@ -37,22 +41,19 @@ public class SetMeal{
 				switch(i){
 
 					case 1:
-						Meal = "滿福堡(A)\n   薯條(中)\n   雪碧(小)";
+						Meal = Single_Menu.get(6).getName() + "\n" + Set_Menu.get(0).getDish1().getName() + "\n" + Set_Menu.get(0).getDrink().getName();
 						No = "A";
-						Type = "普通套餐";
-						Price = 108;
+						Price = Single_Menu.get(6).getPrice() + Set_Menu.get(0).getPrice();
 						break;
 					case 2:
-						Meal = "滿福堡(B)\n   薯條(小)\n   薯餅\n   可樂(小)";
+						Meal = Single_Menu.get(6).getName() + "\n" + Set_Menu.get(1).getDish1().getName() + "\n" + Set_Menu.get(1).getDish2().getName() + "\n" + Set_Menu.get(1).getDrink().getName();
 						No = "B";
-						Type = "薯餅套餐";
-						Price = 118;
+						Price = Single_Menu.get(6).getPrice() + Set_Menu.get(1).getPrice();
 						break;
 					case 3:
-						Meal = "滿福堡(C)\n   薯條(大)\n   雪碧(小)";
+						Meal = Single_Menu.get(6).getName() + "\n" + Set_Menu.get(2).getDish1().getName() + "\n" + Set_Menu.get(2).getDrink().getName();
 						No = "C";
-						Type = "吃很堡套餐";
-						Price = 118;
+						Price = Single_Menu.get(6).getPrice() + Set_Menu.get(2).getPrice();
 						break;
 				}
 				break;
@@ -61,22 +62,19 @@ public class SetMeal{
 				switch(i){
 
 					case 1:
-						Meal = "大麥克(A)\n   薯條(中)\n   雪碧(小)";
+						Meal = Single_Menu.get(8).getName() + "\n" + Set_Menu.get(0).getDish1().getName() + "\n" + Set_Menu.get(0).getDrink().getName();
 						No = "A";
-						Type = "普通套餐";
-						Price = 132;
+						Price = Single_Menu.get(8).getPrice() + Set_Menu.get(0).getPrice();
 						break;
 					case 2:
-						Meal = "大麥克(B)\n   薯條(小)\n   薯餅\n   可樂(小)";
+						Meal = Single_Menu.get(8).getName() + "\n" + Set_Menu.get(1).getDish1().getName() + "\n" + Set_Menu.get(1).getDish2().getName() + "\n" + Set_Menu.get(1).getDrink().getName();
 						No = "B";
-						Type = "薯餅套餐";
-						Price = 142;
+						Price = Single_Menu.get(8).getPrice() + Set_Menu.get(1).getPrice();
 						break;
 					case 3:
-						Meal = "大麥克(C)\n   薯條(大)\n   雪碧(小)";
+						Meal = Single_Menu.get(8).getName() + "\n" + Set_Menu.get(2).getDish1().getName() + "\n" + Set_Menu.get(2).getDrink().getName();
 						No = "C";
-						Type = "吃很堡套餐";
-						Price = 142;
+						Price = Single_Menu.get(8).getPrice() + Set_Menu.get(2).getPrice();
 						break;
 				}
 				break;

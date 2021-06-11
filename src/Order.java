@@ -8,7 +8,7 @@ public class Order{
 
 		SinglePoint single = new SinglePoint();
 
-		System.out.printf("%s%10s%13s\n\n","ç·¨è™Ÿ","å“é …","åƒ¹æ ¼");
+		System.out.printf("%s%10s%13s\n\n","½s¸¹","«~¶µ","»ù®æ");
 
 		for(int counter = 1; counter <= 10; counter++){
 
@@ -18,22 +18,22 @@ public class Order{
 
 		}
 
-		int quit = 1;//æ˜¯å¦ç¹¼çºŒè³¼è²·
-		int buy = 0;//è³¼è²·å•†å“å“é …
-		int type = 0;//å–®é»orå¥—é¤
-		int typeNumber = 0;//A,B,Cé¤
-		int setcount = 0;//å¥—é¤æ•¸é‡
-		int total = 0;//ç¸½é‡‘é¡
+		int quit = 1;//¬O§_Ä~ÄòÁÊ¶R
+		int buy = 0;//ÁÊ¶R°Ó«~«~¶µ
+		int type = 0;//³æÂIor®MÀ\
+		int typeNumber = 0;//A,B,CÀ\
+		int setcount = 0;//®MÀ\¼Æ¶q
+		int total = 0;//Á`ª÷ÃB
 
-		int Singlecount[] = {0,0,0,0,0,0,0,0,0,0};//å–®é»å„é¤é»æ•¸é‡
-		int Setcount[] = {0,0,0,0,0,0,0,0,0};//å¥—é¤å„é¤é»æ•¸é‡
+		int Singlecount[] = {0,0,0,0,0,0,0,0,0,0};//³æÂI¦UÀ\ÂI¼Æ¶q
+		int Setcount[] = {0,0,0,0,0,0,0,0,0};//®MÀ\¦UÀ\ÂI¼Æ¶q
 
-		SinglePoint singlelist [] = {new SinglePoint(1),new SinglePoint(2),new SinglePoint(3),new SinglePoint(4),new SinglePoint(5),new SinglePoint(6),new SinglePoint(7),new SinglePoint(8),new SinglePoint(9),new SinglePoint(10),};//å–®é»é …ç›®
-		SetMeal setlist [] = {new SetMeal(2,1),new SetMeal(2,2),new SetMeal(2,3),new SetMeal(7,1),new SetMeal(7,2),new SetMeal(7,3),new SetMeal(9,1),new SetMeal(9,2),new SetMeal(9,3)};//å¥—é¤é …ç›®
+		SinglePoint singlelist [] = {new SinglePoint(1),new SinglePoint(2),new SinglePoint(3),new SinglePoint(4),new SinglePoint(5),new SinglePoint(6),new SinglePoint(7),new SinglePoint(8),new SinglePoint(9),new SinglePoint(10),};//³æÂI¶µ¥Ø
+		SetMeal setlist [] = {new SetMeal(2,1),new SetMeal(2,2),new SetMeal(2,3),new SetMeal(7,1),new SetMeal(7,2),new SetMeal(7,3),new SetMeal(9,1),new SetMeal(9,2),new SetMeal(9,3)};//®MÀ\¶µ¥Ø
 		while(quit != 2){
 
 			
-			System.out.print("\né¸æ“‡æ¬²è³¼è²·å“é …:");
+			System.out.print("\n¿ï¾Ü±ıÁÊ¶R«~¶µ:");
 
 			buy = s.nextInt();
 
@@ -45,7 +45,7 @@ public class Order{
 					Singlecount[(buy-1)]++;
 					break;
 				case 2:
-					System.out.print("1å–®é» 2å¥—é¤:");
+					System.out.print("1³æÂI 2®MÀ\:");
 					type = s.nextInt();
 
 					System.out.print("\n");
@@ -56,7 +56,7 @@ public class Order{
 
 					}else if(type == 2){
 
-						System.out.print("1.æ™®é€šå¥—é¤ 2.è–¯é¤…å¥—é¤ 3.åƒå¾ˆå ¡å¥—é¤");
+						System.out.print("1.´¶³q®MÀ\ 2.Á¦»æ®MÀ\ 3.¦Y«Ü³ù®MÀ\");
 						typeNumber = s.nextInt();
 
 						System.out.print("\n");
@@ -83,7 +83,7 @@ public class Order{
 					Singlecount[(buy-1)]++;
 					break;
 				case 7:
-					System.out.print("1å–®é» 2å¥—é¤:");
+					System.out.print("1³æÂI 2®MÀ\:");
 					type = s.nextInt();
 
 					System.out.print("\n");
@@ -94,7 +94,7 @@ public class Order{
 
 					}else if(type == 2){
 
-						System.out.print("1 æ™®é€šå¥—é¤ 2 è–¯é¤…å¥—é¤ 3 åƒå¾ˆå ¡å¥—é¤ : ");
+						System.out.print("1 ´¶³q®MÀ\ 2 Á¦»æ®MÀ\ 3 ¦Y«Ü³ù®MÀ\ : ");
 						typeNumber = s.nextInt();
 
 						System.out.print("\n");
@@ -112,7 +112,7 @@ public class Order{
 					Singlecount[(buy-1)]++;
 					break;
 				case 9:
-					System.out.print("1å–®é» 2å¥—é¤:");
+					System.out.print("1³æÂI 2®MÀ\:");
 					type = s.nextInt();
 
 					System.out.print("\n");
@@ -123,7 +123,7 @@ public class Order{
 
 					}else if(type == 2){
 
-						System.out.print("1 æ™®é€šå¥—é¤ 2 è–¯é¤…å¥—é¤ 3 åƒå¾ˆå ¡å¥—é¤");
+						System.out.print("1 ´¶³q®MÀ\ 2 Á¦»æ®MÀ\ 3 ¦Y«Ü³ù®MÀ\");
 						typeNumber = s.nextInt();
 
 						System.out.print("\n");
@@ -143,19 +143,19 @@ public class Order{
 					break;
 			}
 
-			System.out.print("æ˜¯å¦ç¹¼çºŒè³¼è²·?1æ˜¯ 2å¦ : ");
+			System.out.print("¬O§_Ä~ÄòÁÊ¶R?1¬O 2§_ : ");
 
 			quit = s.nextInt();
 
 		}
 
-		System.out.printf("\n%s%12s%8s\n\n","å“é …","æ•¸é‡","åƒ¹æ ¼");
+		System.out.printf("\n%s%12s%8s\n\n","«~¶µ","¼Æ¶q","»ù®æ");
 
 		for(int i = 0; i < 9; i++){
 
 			if(Setcount[i] > 0){
 
-				System.out.println(setlist[i] + "    x" + Setcount[i] + "       " + setlist[i].getPrice() * Setcount[i] + "å…ƒ\n");
+				System.out.println(setlist[i] + "    x" + Setcount[i] + "       " + setlist[i].getPrice() * Setcount[i] + "¤¸\n");
 
 				total += setlist[i].getPrice() * Setcount[i];
 			}
@@ -165,13 +165,13 @@ public class Order{
 
 			if(Singlecount[i] > 0){
 
-				System.out.println(singlelist[i] + "  x" + Singlecount[i] + "        " + singlelist[i].getPrice() * Singlecount[i] + "å…ƒ\n");
+				System.out.println(singlelist[i] + "  x" + Singlecount[i] + "        " + singlelist[i].getPrice() * Singlecount[i] + "¤¸\n");
 
 				total += singlelist[i].getPrice() * Singlecount[i];
 			}
 		}
 
-		System.out.printf("\nç¸½é‡‘é¡:                 %då…ƒ",total);
+		System.out.printf("\nÁ`ª÷ÃB:                 %d¤¸",total);
 
 	}
 }
