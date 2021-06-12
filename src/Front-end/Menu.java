@@ -10,15 +10,18 @@ public class Menu extends JFrame {
 
 		// 設定圖示
 		frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
-
-		contentPane.setBackground(Color.yellow); // 將JFrame例項背景設定為黃色 
 		frame.setSize(1400, 900); 
-		frame.setLocationRelativeTo(null);// --> 設定開啟的位置和某個物件相同，帶入null則會在畫面中間開啟
+		//設定開啟的位置和某個物件相同，帶入null則會在畫面中間開啟
+		frame.setLocationRelativeTo(null);
 
-		JPanel panel = new JPanel(); // 建立一個JPanel的例項 
-		panel.setBackground(Color.red); // 將JPanel的例項背景設定為紅色 
+		// 建立一個JPanel的例項
+		JPanel panel = new JPanel();  
 
-		panel.setLayout(null); //設定容器不使用佈局管理員
+		// 將JPanel的例項背景設定為紅色
+		panel.setBackground(Color.red);  
+
+		//設定容器不使用佈局管理員
+		panel.setLayout(null); 
 
 		//建立圖片物件
 		ImageIcon shoppingCartButtonIcon = new ImageIcon("image/shoppingCart.jpg");
@@ -112,7 +115,8 @@ public class Menu extends JFrame {
 		panel.add(Coke);
 		panel.add(Sprite);
 
-		contentPane.add(panel); // 將JPanel例項新增到JFrame
+		// 將JPanel例項新增到JFrame
+		contentPane.add(panel); 
 		frame.setVisible(true); 
 	}
 }

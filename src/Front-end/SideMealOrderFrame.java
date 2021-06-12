@@ -1,9 +1,9 @@
-import javax.swing.*;  //¤Þ¥ÎSwing®M¥ó
+import javax.swing.*; 
 import java.awt.*;
 
 public class SideMealOrderFrame extends JFrame{
 
-    static ImageIcon SideMealIcon; //= new ImageIcon("image/smallFries.jpg");
+    static ImageIcon SideMealIcon; 
 
     public SideMealOrderFrame(ImageIcon image){
         setImage(image);

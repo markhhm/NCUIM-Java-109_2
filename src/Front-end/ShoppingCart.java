@@ -49,12 +49,11 @@ public class ShoppingCart extends JFrame{
         //設定可滾動表格
             String[][] data = {{"編號一","資料一", "4"},{"編號二","資料二", "4"},{"編號三","資料三", "4"}};
             String[] dataTitle = {"餐點","數量", "價錢"};
-            JTable jtable = new JTable(data, dataTitle);
-            JScrollPane jscrollpane = new JScrollPane(jtable); 
+        
+            MyTableModel model =new MyTableModel(data, dataTitle);
+            JTable table = new JTable(model);
 
-            //建立修改按鈕
-            JButton ChangeOrder1 = new JButton("修改1");
-            JButton ChangeOrder2 = new JButton("修改2");
+            JScrollPane jscrollpane = new JScrollPane(table); 
             
         //設定最下面的panel
             //建立panel
@@ -93,7 +92,7 @@ public class ShoppingCart extends JFrame{
             DiscountLab.setBounds(0,100,200,100);
             PayWayLab.setBounds(0,170,200,100);
             Remarks.setBounds(120,0,1200,100);
-            Discount.setBounds(120,120,1000,50);
+            Discount.setBounds(120,120,1080,50);
             Verification.setBounds(1220,120,100,50);
             Cash.setBounds(120,190,100,50);
             CreditCard.setBounds(340,190,100,50);

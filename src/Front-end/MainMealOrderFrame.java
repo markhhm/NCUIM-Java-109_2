@@ -25,11 +25,15 @@ public class MainMealOrderFrame extends JFrame{
         // 設定圖示
      	frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
         frame.setSize(800, 500); 
-        frame.setLocationRelativeTo(null);// --> 設定開啟的位置和某個物件相同，帶入null則會在畫面中間開啟
 
-        JPanel panel = new JPanel(); // 建立一個JPanel的例項 
+        //設定開啟的位置和某個物件相同，帶入null則會在畫面中間開啟
+        frame.setLocationRelativeTo(null);
+
+        // 建立一個JPanel的例項
+        JPanel panel = new JPanel();  
  
-        panel.setLayout(null); //設定容器不使用佈局管理員
+        //設定容器不使用佈局管理員
+        panel.setLayout(null); 
 
         //建立標籤
         JLabel MainMealLab = new JLabel();
@@ -41,8 +45,13 @@ public class MainMealOrderFrame extends JFrame{
 
         //建立圖片物件
         MainMealLab.setIcon(MainMealIcon);
+        ImageIcon smallReduceBtnIcon = new ImageIcon("image/smallReduceBtn.jpg");
         
         //建立按鈕
+        JButton singleReduceBtn = new JButton(smallReduceBtnIcon);
+        JButton setAReduceBtn = new JButton(smallReduceBtnIcon);
+        JButton setBReduceBtn = new JButton(smallReduceBtnIcon);
+        JButton setCReduceBtn = new JButton(smallReduceBtnIcon);
         JButton Cancel = new JButton("取消");
         JButton Confirm = new JButton("確認");
 
@@ -58,6 +67,13 @@ public class MainMealOrderFrame extends JFrame{
         setBBtn.setBounds(350,180,260,60);
         setCBtn.setBounds(350,260,260,60);
 
+        
+
+        singleReduceBtn.setBounds(710,30,40,40);
+        setAReduceBtn.setBounds(710,110,40,40);
+        setBReduceBtn.setBounds(710,190,40,40);
+        setCReduceBtn.setBounds(710,270,40,40);
+
         singleQuantity.setBounds(650,20,60,60);
         setAQuantity.setBounds(650,100,60,60);
         setBQuantity.setBounds(650,180,60,60);
@@ -68,6 +84,10 @@ public class MainMealOrderFrame extends JFrame{
 
 
         //將物件添加到panel
+        panel.add(singleReduceBtn);
+        panel.add(setAReduceBtn);
+        panel.add(setBReduceBtn);
+        panel.add(setCReduceBtn);
         panel.add(MainMealLab);
         panel.add(singleBtn);
         panel.add(setABtn);
@@ -82,7 +102,8 @@ public class MainMealOrderFrame extends JFrame{
         panel.add(Cancel);
         panel.add(Confirm);
 
-		contentPane.add(panel); // 將JPanel例項新增到JFrame
+        // 將JPanel例項新增到JFrame
+		contentPane.add(panel); 
 		frame.setVisible(true); 
     }
 }

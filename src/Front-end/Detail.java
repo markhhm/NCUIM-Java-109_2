@@ -38,8 +38,13 @@ public class Detail extends JFrame{
         //設定可滾動表格
             String[][] data = {{"編號一","資料一", "4"},{"編號二","資料二", "4"},{"編號三","資料三", "4"}};
             String[] dataTitle = {"餐點","數量", "價錢"};
-            JTable jtable = new JTable(data, dataTitle);
-            JScrollPane jscrollpane = new JScrollPane(jtable); 
+        
+            MyTableModel model =new MyTableModel(data, dataTitle);
+            JTable table = new JTable(model);
+
+            JScrollPane jscrollpane = new JScrollPane(table); 
+
+            
 
         //設定最下面的panel
             //建立panel
