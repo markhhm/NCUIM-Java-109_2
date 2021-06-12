@@ -6,3 +6,5 @@
 /SinglePoint.java
 /MenuBackup.java
 *.class
+/.vscode
+/src/*.class

@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class Menu extends JFrame {
 	public static void Menu() { 
-		JFrame frame = new JFrame("麥當勞點餐系統"); 
+		JFrame frame = new JFrame("McDonald's Order System"); 
 		Container contentPane = frame.getContentPane();
 
 		// 設定圖示
@@ -43,7 +43,7 @@ public class Menu extends JFrame {
 		ImageIcon SpriteButtonIcon = new ImageIcon("image/Sprite.jpg");
 
 		//宣告按鈕元件
-		JButton shoppingCart = new JButton("檢視購物車", shoppingCartButtonIcon); 
+		JButton shoppingCart = new JButton("Shopping Cart", shoppingCartButtonIcon); 
 
 		JButton McMuffin = new JButton(McMuffinButtonIcon);
 		JButton McChicken = new JButton(McChickenButtonIcon);

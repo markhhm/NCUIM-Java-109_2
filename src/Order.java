@@ -6,17 +6,17 @@ public class Order {
 
 		Scanner s = new Scanner(System.in);
 
-		SinglePoint single = new SinglePoint();
+		// SinglePoint single = new SinglePoint();
 
-		System.out.printf("%s%10s%13s\n\n", "編號", "品項", "價格");
+		// System.out.printf("%s%10s%13s\n\n", "編號", "品項", "價格");
 
-		for (int counter = 1; counter <= 10; counter++) {
+		// for (int counter = 1; counter <= 10; counter++) {
 
-			single = new SinglePoint(counter);
+		// 	single = new SinglePoint(counter);
 
-			System.out.printf("%-12d%s%10d\n", single.getNo(), single.getName(), single.getPrice());
+		// 	System.out.printf("%-12d%s%10d\n", single.getNo(), single.getName(), single.getPrice());
 
-		}
+		// }
 
 		int quit = 1;// 是否繼續購買
 		int buy = 0;// 購買商品品項
@@ -28,11 +28,8 @@ public class Order {
 		int Singlecount[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };// 單點各餐點數量
 		int Setcount[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };// 套餐各餐點數量
 
-		SinglePoint singlelist[] = { new SinglePoint(1), new SinglePoint(2), new SinglePoint(3), new SinglePoint(4),
-				new SinglePoint(5), new SinglePoint(6), new SinglePoint(7), new SinglePoint(8), new SinglePoint(9),
-				new SinglePoint(10), };// 單點項目
-		SetMeal setlist[] = { new SetMeal(2, 1), new SetMeal(2, 2), new SetMeal(2, 3), new SetMeal(7, 1),
-				new SetMeal(7, 2), new SetMeal(7, 3), new SetMeal(9, 1), new SetMeal(9, 2), new SetMeal(9, 3) };// 套餐項目
+		Only singlelist[] = { new Only(1), new Only(2), new Only(3), new Only(4), new Only(5), new Only(6), new Only(7), new Only(8), new Only(9), new Only(10)};// 單點項目
+		Combo setlist[] = { new Combo(2, 1), new Combo(2, 2), new Combo(2, 3), new Combo(7, 1), new Combo(7, 2), new Combo(7, 3), new Combo(9, 1), new Combo(9, 2), new Combo(9, 3) };// 套餐項目
 		while (quit != 2) {
 
 			System.out.print("\n選擇欲購買品項:");

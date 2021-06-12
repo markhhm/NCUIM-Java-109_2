@@ -12,36 +12,36 @@ public class SideMeal{
 
     public static void smallFriesFrame(){
         SideMealOrderFrame smallFriesOrderFrame = new SideMealOrderFrame(smallFriesIcon);
-        smallFriesOrderFrame.OrderFrame();
+        smallFriesOrderFrame.OrderFrame(0);
     }
 
     public static void mediumFriesFrame(){
         SideMealOrderFrame mediumFriesOrderFrame = new SideMealOrderFrame(mediumFriesIcon);
-        mediumFriesOrderFrame.OrderFrame();
+        mediumFriesOrderFrame.OrderFrame(4);
     }
 
     public static void largeFriesFrame(){
         SideMealOrderFrame largeFriesOrderFrame = new SideMealOrderFrame(largeFriesIcon);
-        largeFriesOrderFrame.OrderFrame();
+        largeFriesOrderFrame.OrderFrame(7);
     }
 
     public static void hashBrownFrame(){
         SideMealOrderFrame hashBrownOrderFrame = new SideMealOrderFrame(hashBrownIcon);
-        hashBrownOrderFrame.OrderFrame();
+        hashBrownOrderFrame.OrderFrame(5);
     }
 
     public static void cornSoupFrame(){
         SideMealOrderFrame cornSoupOrderFrame = new SideMealOrderFrame(cornSoupIcon);
-        cornSoupOrderFrame.OrderFrame();
+        cornSoupOrderFrame.OrderFrame(9);
     }
 
     public static void CokeFrame(){
         SideMealOrderFrame CokeOrderFrame = new SideMealOrderFrame(CokeIcon);
-        CokeOrderFrame.OrderFrame();
+        CokeOrderFrame.OrderFrame(2);
     }
 
     public static void SpriteFrame(){
         SideMealOrderFrame SpriteOrderFrame = new SideMealOrderFrame(SpriteIcon);
-        SpriteOrderFrame.OrderFrame();
+        SpriteOrderFrame.OrderFrame(3);
     }
 }

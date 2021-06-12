@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class SetMeal{
+public class Combo{
 
 	ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
     ArrayList<setType> Set_Menu = new ArrayList<setType>();
@@ -10,7 +10,7 @@ public class SetMeal{
 	private String Type;
 	private int Price;
 
-	public SetMeal(int j,int i){
+	public Combo(int j,int i){
 
 		new MenuData(Single_Menu, Set_Menu);
 

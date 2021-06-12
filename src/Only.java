@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class SinglePoint{
+public class Only{
 
     ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
 
@@ -8,9 +8,9 @@ public class SinglePoint{
 	private String Name;
 	private int Price;
 
-	public SinglePoint(){}
+	// public SinglePoint(){}
 
-	public SinglePoint(int i){
+	public Only(int i){
 
 		new MenuData(Single_Menu);
 

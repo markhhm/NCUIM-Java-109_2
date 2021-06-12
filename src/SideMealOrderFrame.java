@@ -1,8 +1,16 @@
 import javax.swing.*; 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SideMealOrderFrame extends JFrame{
-
+public class SideMealOrderFrame extends JFrame implements ActionListener{
+    static int elementId;
+    JButton addBtn;
+    JButton reduceBtn;
+    JButton Cancel;
+    JButton Confirm;
+    JFrame frame;
+    JLabel SideMealQuantity;
     static ImageIcon SideMealIcon; 
 
     public SideMealOrderFrame(ImageIcon image){
@@ -17,9 +25,10 @@ public class SideMealOrderFrame extends JFrame{
         return SideMealIcon;
     }
     
-    public static void OrderFrame(){
+    public void OrderFrame(int i){
 
-        JFrame frame = new JFrame("點餐"); 
+        elementId = i;
+        frame = new JFrame("Order");
 		Container contentPane = frame.getContentPane();
 
         // 設定圖示
@@ -36,7 +45,7 @@ public class SideMealOrderFrame extends JFrame{
 
         //建立標籤
         JLabel SideMealLab = new JLabel();
-        JLabel SideMealQuantity = new JLabel("數量");
+        SideMealQuantity = new JLabel("Quantity");
 
         //建立圖片物件
         ImageIcon reduceBtnIcon = new ImageIcon("image/reduceBtn.jpg");
@@ -45,10 +54,10 @@ public class SideMealOrderFrame extends JFrame{
         SideMealLab.setIcon(SideMealIcon);
 
         //建立按鈕
-        JButton reduceBtn = new JButton(reduceBtnIcon);
-        JButton addBtn = new JButton(addBtnIcon);
-        JButton Cancel = new JButton("取消");
-        JButton Confirm = new JButton("確認");
+        reduceBtn = new JButton(reduceBtnIcon);
+        addBtn = new JButton(addBtnIcon);
+        Cancel = new JButton("Cancel");
+        Confirm = new JButton("Confirm");
         
         //設定位置大小 
         SideMealLab.setBounds(280,20,260,230);
@@ -67,8 +76,26 @@ public class SideMealOrderFrame extends JFrame{
         panel.add(Cancel);
         panel.add(Confirm);
 
+        reduceBtn.addActionListener(this);
+        addBtn.addActionListener(this);
+        Cancel.addActionListener(this);
+        Confirm.addActionListener(this);
+
 		contentPane.add(panel); // 將JPanel例項新增到JFrame
 		frame.setVisible(true); 
 
+    }
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == addBtn) {
+            OrderData.Singlecount[elementId] ++;
+        } else if (e.getSource() == reduceBtn) {
+            if(OrderData.Singlecount[elementId] > 0) {
+                OrderData.Singlecount[elementId]--;
+            }
+        } else if(e.getSource() == Confirm || e.getSource() == Cancel) {
+            frame.dispose();
+        }
+        SideMealQuantity.setText(OrderData.Singlecount[elementId]+"");
+        System.out.println(OrderData.Singlecount[elementId]);
     }
 }
