@@ -13,21 +13,21 @@ public class SetMeal{
 				switch(i){
 
 					case 1:
-						Meal = "іБ­»Вы(A)\n   Б¦±ш(¤¤)\n   і·єС(¤p)";
+						Meal = "йєҐй¦™й›ћ(A)\n   и–Їжўќ(дё­)\n   й›Єзў§(е°Џ)";
 						No = "A";
-						Type = "ґ¶іq®MА\";
+						Type = "ж™®йЂљеҐ—й¤ђ";
 						Price = 104;
 						break;
 					case 2:
-						Meal = "іБ­»Вы(B)\n   Б¦±ш(¤p)\n   Б¦»ж\n   ҐiјЦ(¤p)";
+						Meal = "йєҐй¦™й›ћ(B)\n   и–Їжўќ(е°Џ)\n   и–Їй¤…\n   еЏЇжЁ‚(е°Џ)";
 						No = "B";
-						Type = "Б¦»ж®MА\";
+						Type = "и–Їй¤…еҐ—й¤ђ";
 						Price = 114;
 						break;
 					case 3:
-						Meal = "іБ­»Вы(C)\n   Б¦±ш(¤j)\n   і·єС(¤p)";
+						Meal = "йєҐй¦™й›ћ(C)\n   и–Їжўќ(е¤§)\n   й›Єзў§(е°Џ)";
 						No = "C";
-						Type = "¦Y«Ьіщ®MА\";
+						Type = "еђѓеѕ€е ЎеҐ—й¤ђ";
 						Price = 114;
 						break;
 				}
@@ -37,21 +37,21 @@ public class SetMeal{
 				switch(i){
 
 					case 1:
-						Meal = "єЎєЦіщ(A)\n   Б¦±ш(¤¤)\n   і·єС(¤p)";
+						Meal = "ж»їз¦Џе Ў(A)\n   и–Їжўќ(дё­)\n   й›Єзў§(е°Џ)";
 						No = "A";
-						Type = "ґ¶іq®MА\";
+						Type = "ж™®йЂљеҐ—й¤ђ";
 						Price = 108;
 						break;
 					case 2:
-						Meal = "єЎєЦіщ(B)\n   Б¦±ш(¤p)\n   Б¦»ж\n   ҐiјЦ(¤p)";
+						Meal = "ж»їз¦Џе Ў(B)\n   и–Їжўќ(е°Џ)\n   и–Їй¤…\n   еЏЇжЁ‚(е°Џ)";
 						No = "B";
-						Type = "Б¦»ж®MА\";
+						Type = "и–Їй¤…еҐ—й¤ђ";
 						Price = 118;
 						break;
 					case 3:
-						Meal = "єЎєЦіщ(C)\n   Б¦±ш(¤j)\n   і·єС(¤p)";
+						Meal = "ж»їз¦Џе Ў(C)\n   и–Їжўќ(е¤§)\n   й›Єзў§(е°Џ)";
 						No = "C";
-						Type = "¦Y«Ьіщ®MА\";
+						Type = "еђѓеѕ€е ЎеҐ—й¤ђ";
 						Price = 118;
 						break;
 				}
@@ -61,21 +61,21 @@ public class SetMeal{
 				switch(i){
 
 					case 1:
-						Meal = "¤jіБ§J(A)\n   Б¦±ш(¤¤)\n   і·єС(¤p)";
+						Meal = "е¤§йєҐе…‹(A)\n   и–Їжўќ(дё­)\n   й›Єзў§(е°Џ)";
 						No = "A";
-						Type = "ґ¶іq®MА\";
+						Type = "ж™®йЂљеҐ—й¤ђ";
 						Price = 132;
 						break;
 					case 2:
-						Meal = "¤jіБ§J(B)\n   Б¦±ш(¤p)\n   Б¦»ж\n   ҐiјЦ(¤p)";
+						Meal = "е¤§йєҐе…‹(B)\n   и–Їжўќ(е°Џ)\n   и–Їй¤…\n   еЏЇжЁ‚(е°Џ)";
 						No = "B";
-						Type = "Б¦»ж®MА\";
+						Type = "и–Їй¤…еҐ—й¤ђ";
 						Price = 142;
 						break;
 					case 3:
-						Meal = "¤jіБ§J(C)\n   Б¦±ш(¤j)\n   і·єС(¤p)";
+						Meal = "е¤§йєҐе…‹(C)\n   и–Їжўќ(е¤§)\n   й›Єзў§(е°Џ)";
 						No = "C";
-						Type = "¦Y«Ьіщ®MА\";
+						Type = "еђѓеѕ€е ЎеҐ—й¤ђ";
 						Price = 142;
 						break;
 				}

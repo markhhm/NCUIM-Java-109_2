@@ -19,48 +19,48 @@ public class MainMealOrderFrame extends JFrame{
     }
     
     public static void OrderFrame(){
-        JFrame frame = new JFrame("ÂIÀ\"); 
+        JFrame frame = new JFrame("é»é¤"); 
 		Container contentPane = frame.getContentPane();
 
-        // ³]©w¹Ï¥Ü
+        // è¨­å®šåœ–ç¤º
      	frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
         frame.setSize(800, 500); 
 
-        //³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
+        //è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
         frame.setLocationRelativeTo(null);
 
-        // «Ø¥ß¤@­ÓJPanelªº¨Ò¶µ
+        // å»ºç«‹ä¸€å€‹JPanelçš„ä¾‹é …
         JPanel panel = new JPanel();  
  
-        //³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+        //è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         panel.setLayout(null); 
 
-        //«Ø¥ß¼ĞÅÒ
+        //å»ºç«‹æ¨™ç±¤
         JLabel MainMealLab = new JLabel();
 
-        JLabel singleQuantity = new JLabel("¼Æ¶q");
-        JLabel setAQuantity = new JLabel("¼Æ¶q");
-        JLabel setBQuantity = new JLabel("¼Æ¶q");
-        JLabel setCQuantity = new JLabel("¼Æ¶q");
+        JLabel singleQuantity = new JLabel("æ•¸é‡");
+        JLabel setAQuantity = new JLabel("æ•¸é‡");
+        JLabel setBQuantity = new JLabel("æ•¸é‡");
+        JLabel setCQuantity = new JLabel("æ•¸é‡");
 
-        //«Ø¥ß¹Ï¤ùª«¥ó
+        //å»ºç«‹åœ–ç‰‡ç‰©ä»¶
         MainMealLab.setIcon(MainMealIcon);
         ImageIcon smallReduceBtnIcon = new ImageIcon("image/smallReduceBtn.jpg");
         
-        //«Ø¥ß«ö¶s
+        //å»ºç«‹æŒ‰éˆ•
         JButton singleReduceBtn = new JButton(smallReduceBtnIcon);
         JButton setAReduceBtn = new JButton(smallReduceBtnIcon);
         JButton setBReduceBtn = new JButton(smallReduceBtnIcon);
         JButton setCReduceBtn = new JButton(smallReduceBtnIcon);
-        JButton Cancel = new JButton("¨ú®ø");
-        JButton Confirm = new JButton("½T»{");
+        JButton Cancel = new JButton("å–æ¶ˆ");
+        JButton Confirm = new JButton("ç¢ºèª");
 
-        JButton singleBtn = new JButton("³æÂI");
-        JButton setABtn = new JButton("A´¶³q®MÀ\");
-        JButton setBBtn = new JButton("BÁ¦»æ®MÀ\");
-        JButton setCBtn = new JButton("C¦Y«Ü¹¡®MÀ\");
+        JButton singleBtn = new JButton("å–®é»");
+        JButton setABtn = new JButton("Aæ™®é€šå¥—é¤");
+        JButton setBBtn = new JButton("Bè–¯é¤…å¥—é¤");
+        JButton setCBtn = new JButton("Cåƒå¾ˆé£½å¥—é¤");
 
-        //³]©w¦ì¸m¤j¤p 
+        //è¨­å®šä½ç½®å¤§å° 
         MainMealLab.setBounds(50,50,260,230);
         singleBtn.setBounds(350,20,260,60);
         setABtn.setBounds(350,100,260,60);
@@ -83,7 +83,7 @@ public class MainMealOrderFrame extends JFrame{
         Confirm.setBounds(650,360,100,60);
 
 
-        //±Nª«¥ó²K¥[¨ìpanel
+        //å°‡ç‰©ä»¶æ·»åŠ åˆ°panel
         panel.add(singleReduceBtn);
         panel.add(setAReduceBtn);
         panel.add(setBReduceBtn);
@@ -102,7 +102,7 @@ public class MainMealOrderFrame extends JFrame{
         panel.add(Cancel);
         panel.add(Confirm);
 
-        // ±NJPanel¨Ò¶µ·s¼W¨ìJFrame
+        // å°‡JPanelä¾‹é …æ–°å¢åˆ°JFrame
 		contentPane.add(panel); 
 		frame.setVisible(true); 
     }

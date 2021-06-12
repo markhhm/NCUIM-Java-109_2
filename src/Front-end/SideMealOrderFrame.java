@@ -19,38 +19,38 @@ public class SideMealOrderFrame extends JFrame{
     
     public static void OrderFrame(){
 
-        JFrame frame = new JFrame("ÂIÀ\"); 
+        JFrame frame = new JFrame("é»é¤"); 
 		Container contentPane = frame.getContentPane();
 
-        // ³]©w¹Ï¥Ü
+        // è¨­å®šåœ–ç¤º
      	frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
         frame.setSize(800, 500); 
-        //³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
+        //è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
         frame.setLocationRelativeTo(null);
 
-        // «Ø¥ß¤@­ÓJPanelªº¨Ò¶µ
+        // å»ºç«‹ä¸€å€‹JPanelçš„ä¾‹é …
         JPanel panel = new JPanel(); 
  
-        //³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+        //è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         panel.setLayout(null); 
 
-        //«Ø¥ß¼ĞÅÒ
+        //å»ºç«‹æ¨™ç±¤
         JLabel SideMealLab = new JLabel();
-        JLabel SideMealQuantity = new JLabel("¼Æ¶q");
+        JLabel SideMealQuantity = new JLabel("æ•¸é‡");
 
-        //«Ø¥ß¹Ï¤ùª«¥ó
+        //å»ºç«‹åœ–ç‰‡ç‰©ä»¶
         ImageIcon reduceBtnIcon = new ImageIcon("image/reduceBtn.jpg");
 		ImageIcon addBtnIcon = new ImageIcon("image/addBtn.jpg");
 
         SideMealLab.setIcon(SideMealIcon);
 
-        //«Ø¥ß«ö¶s
+        //å»ºç«‹æŒ‰éˆ•
         JButton reduceBtn = new JButton(reduceBtnIcon);
         JButton addBtn = new JButton(addBtnIcon);
-        JButton Cancel = new JButton("¨ú®ø");
-        JButton Confirm = new JButton("½T»{");
+        JButton Cancel = new JButton("å–æ¶ˆ");
+        JButton Confirm = new JButton("ç¢ºèª");
         
-        //³]©w¦ì¸m¤j¤p 
+        //è¨­å®šä½ç½®å¤§å° 
         SideMealLab.setBounds(280,20,260,230);
         SideMealQuantity.setBounds(365,250,70,70);
         reduceBtn.setBounds(230,250,70,70);
@@ -59,7 +59,7 @@ public class SideMealOrderFrame extends JFrame{
         Confirm.setBounds(650, 360,100,60);
 
 
-        //±Nª«¥ó²K¥[¨ìpanel
+        //å°‡ç‰©ä»¶æ·»åŠ åˆ°panel
         panel.add(SideMealLab);
         panel.add(SideMealQuantity);
         panel.add(reduceBtn);
@@ -67,7 +67,7 @@ public class SideMealOrderFrame extends JFrame{
         panel.add(Cancel);
         panel.add(Confirm);
 
-		contentPane.add(panel); // ±NJPanel¨Ò¶µ·s¼W¨ìJFrame
+		contentPane.add(panel); // å°‡JPanelä¾‹é …æ–°å¢åˆ°JFrame
 		frame.setVisible(true); 
 
     }

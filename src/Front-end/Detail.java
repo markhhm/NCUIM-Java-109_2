@@ -5,39 +5,39 @@ import java.util.*;
 public class Detail extends JFrame{   
 
     public static void Detail(){
-        //«Ø¥ßFrame
-        JFrame frame = new JFrame("­q³æ©ú²Ó"); 
+        //å»ºç«‹Frame
+        JFrame frame = new JFrame("è¨‚å–®æ˜ç´°"); 
         Container contentPane = frame.getContentPane();
-        //³]©wFrameªº¤j¤p
+        //è¨­å®šFrameçš„å¤§å°
         frame.setSize(800, 700);
-        //³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
+        //è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
         frame.setLocationRelativeTo(null);
-        //³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+        //è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         contentPane.setLayout(null);
 
 
-        //³]©w³Ì¤W­±ªºpanel
-            //«Ø¥ßpanel
+        //è¨­å®šæœ€ä¸Šé¢çš„panel
+            //å»ºç«‹panel
             JPanel TopPanel = new JPanel();
 
-            //³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+            //è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
             TopPanel.setLayout(null); 
 
-            //«Ø¥ß¤å¦rLabel
-            JLabel OrderNumberLab = new JLabel("­q³æ½s¸¹: " + "­q³æ½s¸¹¼Æ¦rÂà¦¨¦r¦ê");
+            //å»ºç«‹æ–‡å­—Label
+            JLabel OrderNumberLab = new JLabel("è¨‚å–®ç·¨è™Ÿ: " + "è¨‚å–®ç·¨è™Ÿæ•¸å­—è½‰æˆå­—ä¸²");
 
-            //³]©w¦ì¸m¤j¤p
+            //è¨­å®šä½ç½®å¤§å°
             OrderNumberLab.setBounds(0,0,1080,50);
 
-            //§ï¦rªº¤j¤p
+            //æ”¹å­—çš„å¤§å°
             OrderNumberLab.setFont(OrderNumberLab.getFont().deriveFont(26.0f));
 
-            //§â¤¸¥ó¥[¨ìTopPanel¸Ì
+            //æŠŠå…ƒä»¶åŠ åˆ°TopPanelè£¡
             TopPanel.add(OrderNumberLab);
 
-        //³]©w¥iºu°Êªí®æ
-            String[][] data = {{"½s¸¹¤@","¸ê®Æ¤@", "4"},{"½s¸¹¤G","¸ê®Æ¤G", "4"},{"½s¸¹¤T","¸ê®Æ¤T", "4"}};
-            String[] dataTitle = {"À\ÂI","¼Æ¶q", "»ù¿ú"};
+        //è¨­å®šå¯æ»¾å‹•è¡¨æ ¼
+            String[][] data = {{"ç·¨è™Ÿä¸€","è³‡æ–™ä¸€", "4"},{"ç·¨è™ŸäºŒ","è³‡æ–™äºŒ", "4"},{"ç·¨è™Ÿä¸‰","è³‡æ–™ä¸‰", "4"}};
+            String[] dataTitle = {"é¤é»","æ•¸é‡", "åƒ¹éŒ¢"};
         
             MyTableModel model =new MyTableModel(data, dataTitle);
             JTable table = new JTable(model);
@@ -46,43 +46,43 @@ public class Detail extends JFrame{
 
             
 
-        //³]©w³Ì¤U­±ªºpanel
-            //«Ø¥ßpanel
+        //è¨­å®šæœ€ä¸‹é¢çš„panel
+            //å»ºç«‹panel
             JPanel BottomPanel = new JPanel();
 
-            //³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+            //è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
             BottomPanel.setLayout(null); 
 
-            //«Ø¥ß¤å¦rLabel
-            JLabel RemarksLab = new JLabel("³Æµù: "+"String");
-            JLabel DiscountLab = new JLabel("Àu´f¥N½X: "+"String");
-            JLabel PayWayLab = new JLabel("¥I´Ú¤è¦¡: "+"String");
-            JLabel Thanks = new JLabel("ÁÂÁÂ¥úÁ{¡A¯¬±z¥ÎÀ\´r§Ö¡I");
+            //å»ºç«‹æ–‡å­—Label
+            JLabel RemarksLab = new JLabel("å‚™è¨»: "+"String");
+            JLabel DiscountLab = new JLabel("å„ªæƒ ä»£ç¢¼: "+"String");
+            JLabel PayWayLab = new JLabel("ä»˜æ¬¾æ–¹å¼: "+"String");
+            JLabel Thanks = new JLabel("è¬è¬å…‰è‡¨ï¼Œç¥æ‚¨ç”¨é¤æ„‰å¿«ï¼");
 
-            //³]©w¤¸¥ó¦ì¸m.¤j¤p
+            //è¨­å®šå…ƒä»¶ä½ç½®.å¤§å°
             RemarksLab.setBounds(0,0,900,50);
             DiscountLab.setBounds(0,50,900,50);
             PayWayLab.setBounds(0,100,900,50);
             Thanks.setBounds(0,150,900,100);
 
-            //§ï¦rªº¤j¤p
+            //æ”¹å­—çš„å¤§å°
             RemarksLab.setFont(RemarksLab.getFont().deriveFont(20.0f));
             DiscountLab.setFont(DiscountLab.getFont().deriveFont(20.0f));
             PayWayLab.setFont(PayWayLab.getFont().deriveFont(20.0f));
             Thanks.setFont(Thanks.getFont().deriveFont(40.0f));
 
-            //§â¤¸¥ó¥[¨ìBottomPanel¸Ì
+            //æŠŠå…ƒä»¶åŠ åˆ°BottomPanelè£¡
             BottomPanel.add(RemarksLab);
             BottomPanel.add(DiscountLab);
             BottomPanel.add(PayWayLab);
             BottomPanel.add(Thanks);
 
-        //³]©w¤T­Ópanelªº¦ì¸m.¤j¤p
+        //è¨­å®šä¸‰å€‹panelçš„ä½ç½®.å¤§å°
         TopPanel.setBounds(40,20,700,80); 
         jscrollpane.setBounds(40,100,700,250);
         BottomPanel.setBounds(40,370,700,300);
         
-        //¥[¤Jpanel
+        //åŠ å…¥panel
         contentPane.add(TopPanel);
         contentPane.add(jscrollpane);
         contentPane.add(BottomPanel);
