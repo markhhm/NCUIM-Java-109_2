@@ -2,8 +2,7 @@ import java.util.ArrayList;
 
 public class SinglePoint{
 
-    static ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
-	static ArrayList<setType> Set_Menu = new ArrayList<setType>();
+    ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
 
 	private int No;
 	private String Name;
@@ -13,7 +12,7 @@ public class SinglePoint{
 
 	public SinglePoint(int i){
 
-		new MenuData(Single_Menu, Set_Menu);
+		new MenuData(Single_Menu);
 
 		No = i;
 

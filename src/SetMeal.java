@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class SetMeal{
 
-	static ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
-    static ArrayList<setType> Set_Menu = new ArrayList<setType>();
+	ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
+    ArrayList<setType> Set_Menu = new ArrayList<setType>();
 
 	private String Meal;
 	private String No;

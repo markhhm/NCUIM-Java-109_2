@@ -6,10 +6,12 @@ public class MenuData{
         Single_Meal.addAll(new ReadCSV("Single_meal.csv").csvArrayList);
         Set_Meal.addAll(new ReadCSV("Set_meal.csv").csvArrayList);
 
-        for (int i = 1; i < (Single_Meal.size() / 5); i++) {
-            int k = i * 5;
-            singleType temp1 = new singleType(Single_Meal.get(k), Single_Meal.get(k + 1), Single_Meal.get(k + 2), Single_Meal.get(k + 3), Single_Meal.get(k + 4));
-            menu1.add(temp1);
+        if (menu1 != null) {
+            for (int i = 1; i < (Single_Meal.size() / 5); i++) {
+                int k = i * 5;
+                singleType temp1 = new singleType(Single_Meal.get(k), Single_Meal.get(k + 1), Single_Meal.get(k + 2), Single_Meal.get(k + 3), Single_Meal.get(k + 4));
+                menu1.add(temp1);
+            }
         }
         if (menu2 != null) {
             for (int i = 1; i < (Set_Meal.size() / 6); i++) {
