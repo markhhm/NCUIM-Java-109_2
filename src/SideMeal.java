@@ -1,5 +1,4 @@
 import javax.swing.*;  //引用Swing套件
-import java.awt.*;
 
 public class SideMeal{
     static ImageIcon smallFriesIcon = new ImageIcon("image/smallFries.jpg");
