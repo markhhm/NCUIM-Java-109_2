@@ -150,28 +150,19 @@ public class Order {
 		System.out.printf("\n%s%12s%8s\n\n", "品項", "數量", "價格");
 
 		for (int i = 0; i < 9; i++) {
-
 			if (Setcount[i] > 0) {
-
-				System.out.println(
-						setlist[i] + "    x" + Setcount[i] + "       " + setlist[i].getPrice() * Setcount[i] + "元\n");
-
+				System.out.println(setlist[i] + "    x" + Setcount[i] + "       " + setlist[i].getPrice() * Setcount[i] + "元\n");
 				total += setlist[i].getPrice() * Setcount[i];
 			}
 		}
 
 		for (int i = 0; i < 10; i++) {
-
 			if (Singlecount[i] > 0) {
-
 				System.out.println(singlelist[i] + "  x" + Singlecount[i] + "        "
 						+ singlelist[i].getPrice() * Singlecount[i] + "元\n");
-
 				total += singlelist[i].getPrice() * Singlecount[i];
 			}
 		}
-
 		System.out.printf("\n總金額:                 %d元", total);
-
 	}
 }

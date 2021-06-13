@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SideMealOrderFrame extends JFrame implements ActionListener{
-    static int elementId;
+    static int singleCountIndex;
     JButton addBtn;
     JButton reduceBtn;
     JButton Cancel;
@@ -27,7 +27,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
     
     public void OrderFrame(int i){
 
-        elementId = i;
+        singleCountIndex = i;
         frame = new JFrame("Order");
 		Container contentPane = frame.getContentPane();
 
@@ -45,7 +45,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
 
         //建立標籤
         JLabel SideMealLab = new JLabel();
-        SideMealQuantity = new JLabel("Quantity");
+        SideMealQuantity = new JLabel(OrderData.Singlecount[singleCountIndex]+"");
 
         //建立圖片物件
         ImageIcon reduceBtnIcon = new ImageIcon("image/reduceBtn.jpg");
@@ -86,16 +86,37 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
 
     }
     public void actionPerformed(ActionEvent e) {
+        int total = 0;
         if (e.getSource() == addBtn) {
-            OrderData.Singlecount[elementId] ++;
+            OrderData.Singlecount[singleCountIndex] ++;
         } else if (e.getSource() == reduceBtn) {
-            if(OrderData.Singlecount[elementId] > 0) {
-                OrderData.Singlecount[elementId]--;
+            if(OrderData.Singlecount[singleCountIndex] > 0) {
+                OrderData.Singlecount[singleCountIndex]--;
             }
         } else if(e.getSource() == Confirm || e.getSource() == Cancel) {
             frame.dispose();
+
+            System.out.printf("\n%s%12s%8s\n\n", "品項", "數量", "價格");
+
+            for (int i = 0; i < 9; i++) {
+
+                if (OrderData.Setcount[i] > 0) {
+                    System.out.println(OrderData.setlist[i] + "    x" + OrderData.Setcount[i] + "       "
+                            + OrderData.setlist[i].getPrice() * OrderData.Setcount[i] + "元\n");
+                    total += OrderData.setlist[i].getPrice() * OrderData.Setcount[i];
+                }
+            }
+
+            for (int i = 0; i < 10; i++) {
+                if (OrderData.Singlecount[i] > 0) {
+                    System.out.println(OrderData.singlelist[i] + "  x" + OrderData.Singlecount[i] + "        "
+                            + OrderData.singlelist[i].getPrice() * OrderData.Singlecount[i] + "元\n");
+                    total += OrderData.singlelist[i].getPrice() * OrderData.Singlecount[i];
+                }
+            }
+            System.out.printf("\n總金額:                 %d元", total);
+
         }
-        SideMealQuantity.setText(OrderData.Singlecount[elementId]+"");
-        System.out.println(OrderData.Singlecount[elementId]);
+        SideMealQuantity.setText(OrderData.Singlecount[singleCountIndex]+"");
     }
 }

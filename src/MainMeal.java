@@ -8,17 +8,17 @@ public class MainMeal{
 
     public static void McMuffinFrame(){
         MainMealOrderFrame McMuffinOrderFrame = new MainMealOrderFrame(McMuffinIcon);
-        McMuffinOrderFrame.OrderFrame();
+        McMuffinOrderFrame.OrderFrame(1);
     }
 
     public static void McChickenFrame(){
         MainMealOrderFrame McChickenOrderFrame = new MainMealOrderFrame(McChickenIcon);
-        McChickenOrderFrame.OrderFrame();
+        McChickenOrderFrame.OrderFrame(6);
     }
 
     public static void BigMacFrame(){
         MainMealOrderFrame BigMacOrderFrame = new MainMealOrderFrame(BigMacIcon);
-        BigMacOrderFrame.OrderFrame();
+        BigMacOrderFrame.OrderFrame(8);
     }
 
 }
