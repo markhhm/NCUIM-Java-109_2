@@ -14,6 +14,8 @@ public class ShoppingCart extends JFrame {
     // 建立按鈕組
     static JRadioButton Cash;
     static JRadioButton CreditCard;
+    static DefaultTableModel model1;
+    static DefaultTableModel model2;
 
     public static void ShoppingCartFrame() {
         new MenuData(Single_Menu, Set_Menu);
@@ -53,7 +55,7 @@ public class ShoppingCart extends JFrame {
         TopPanel.add(ViewMenu);
 
         // 設定可滾動表格
-        DefaultTableModel model1 = new DefaultTableModel();
+        model1 = new DefaultTableModel();
         model1.addColumn("餐點");
         model1.addColumn("數量");
         model1.addColumn("價錢");
@@ -64,7 +66,7 @@ public class ShoppingCart extends JFrame {
         JScrollPane jscrollpane = new JScrollPane(table);
 
         // 加入第二個表格
-        DefaultTableModel model2 = new DefaultTableModel();
+        model2 = new DefaultTableModel();
         model2.addColumn("主餐");
         model2.addColumn("副餐1");
         model2.addColumn("副餐2");
@@ -203,5 +205,12 @@ public class ShoppingCart extends JFrame {
                 model.addRow(temp);
             }
         }
+    }
+    public static void CouponSingle(String[] CouponMeal){
+        //String[] CouponMeal = {(ShoppingCart.Single_Menu.get(7).getName()),"1","Free"};
+        model1.addRow(CouponMeal);
+    }
+    public static void CouponSet(String[] CouponMeal) {
+        model2.addRow(CouponMeal);
     }
 }
