@@ -21,11 +21,11 @@ public class singleType {
     }
     public int property_trans(String property){
         int temp = 0;
-        if(property == "•D¿\") {
+        if(property == "‰∏ªÈ§ê") {
             temp = 1;
-        } else if(property == "∞∆¿\") {
+        } else if(property == "ÂâØÈ§ê") {
             temp = 2;
-        } else if(property == "∂ºÆ∆") {
+        } else if(property == "È£≤Êñô") {
             temp = 3;
         }
         return temp;
