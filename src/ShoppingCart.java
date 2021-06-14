@@ -11,6 +11,7 @@ public class ShoppingCart extends JFrame {
     static JButton ViewMenu;
     static JFrame frame;
     static JTextField Discount;
+    static JTextArea Remarks;
     // 建立按鈕組
     static JRadioButton Cash;
     static JRadioButton CreditCard;
@@ -90,7 +91,7 @@ public class ShoppingCart extends JFrame {
         JLabel PayWayLab = new JLabel("付款方式");
 
         // 建立輸入框
-        JTextArea Remarks = new JTextArea();
+        Remarks = new JTextArea();
         LineBorder tt = new LineBorder(Color.GRAY);
         Remarks.setBorder(tt);
         Discount = new JTextField();

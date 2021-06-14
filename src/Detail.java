@@ -37,21 +37,21 @@ public class Detail extends JFrame {
         TopPanel.add(OrderNumberLab);
 
         // 設定可滾動表格
-        String[][] data = { { "編號一", "資料一", "4" }, { "編號二", "資料二", "4" }, { "編號三", "資料三", "4" } };
-        String[] dataTitle = { "餐點", "數量", "價錢" };
-
-        MyTableModel model = new MyTableModel(data, dataTitle);
-        JTable table = new JTable(model);
+//        String[][] data = { { "編號一", "資料一", "4" }, { "編號二", "資料二", "4" }, { "編號三", "資料三", "4" } };
+//        String[] dataTitle = { "餐點", "數量", "價錢" };
+//
+//        MyTableModel model = new MyTableModel(data, dataTitle);
+        JTable table = new JTable(ShoppingCart.model1);
 
         JScrollPane jscrollpane = new JScrollPane(table);
 
         // 加入第二個表格
-        String[][] data2 = { { "編號一", "資料一", "資料一", "4", "資料一", "4" }, { "編號二", "資料二", "資料一", "4", "資料二", "4" },
-                { "編號三", "資料三", "資料一", "4", "資料三", "4" } };
-        String[] dataTitle2 = { "主餐", "附餐1", "附餐2", "飲料", "數量", "價錢" };
-
-        MyTableModel model2 = new MyTableModel(data2, dataTitle2);
-        JTable table2 = new JTable(model2);
+//        String[][] data2 = { { "編號一", "資料一", "資料一", "4", "資料一", "4" }, { "編號二", "資料二", "資料一", "4", "資料二", "4" },
+//                { "編號三", "資料三", "資料一", "4", "資料三", "4" } };
+//        String[] dataTitle2 = { "主餐", "附餐1", "附餐2", "飲料", "數量", "價錢" };
+//
+//        MyTableModel model2 = new MyTableModel(data2, dataTitle2);
+        JTable table2 = new JTable(ShoppingCart.model2);
 
         JScrollPane jscrollpane2 = new JScrollPane(table2);
 
@@ -72,8 +72,8 @@ public class Detail extends JFrame {
         }
 
         // 建立文字Label
-        JLabel RemarksLab = new JLabel("備註: " + "String");
-        JLabel DiscountLab = new JLabel("優惠代碼: " + "String");
+        JLabel RemarksLab = new JLabel("備註: " + ShoppingCart.Remarks.getText());
+        JLabel DiscountLab = new JLabel("優惠代碼: " + OrderData.CouponCode);
         JLabel PayWayLab = new JLabel("付款方式: " + PayWay);
         JLabel Thanks = new JLabel("謝謝光臨，祝您用餐愉快！");
 

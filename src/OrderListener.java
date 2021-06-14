@@ -95,10 +95,12 @@ class VerificationListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		int check = CouponCheck();
 		if(check != 0 && check <= 3){
+			OrderData.CouponCode = ShoppingCart.Discount.getText();
 			ShoppingCart.frame.dispose();
 			ShoppingCart.ShoppingCartFrame();
 			ShoppingCart.CouponSingle(CouponList(check));
 		} else if (check > 3) {
+			OrderData.CouponCode = ShoppingCart.Discount.getText();
 			ShoppingCart.frame.dispose();
 			ShoppingCart.ShoppingCartFrame();
 			ShoppingCart.CouponSet(CouponList(check));
@@ -143,4 +145,5 @@ class VerificationListener implements ActionListener {
 		}
 		return temp;
 	}
+	//TODO:改成用迴圈但我好累
 }
