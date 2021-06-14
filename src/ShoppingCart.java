@@ -2,18 +2,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 import javax.swing.border.LineBorder;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.table.DefaultTableModel;
 
 public class ShoppingCart extends JFrame {
+    static ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
+    static ArrayList<setType> Set_Menu = new ArrayList<setType>();
 
     static JButton ViewMenu;
     static JFrame frame;
+    static JTextField Discount;
     // 建立按鈕組
     static JRadioButton Cash;
     static JRadioButton CreditCard;
 
     public static void ShoppingCartFrame() {
+        new MenuData(Single_Menu, Set_Menu);
         // 建立Frame
         frame = new JFrame("購物車");
         Container contentPane = frame.getContentPane();
@@ -50,20 +53,25 @@ public class ShoppingCart extends JFrame {
         TopPanel.add(ViewMenu);
 
         // 設定可滾動表格
-        String[][] data = { { "編號一", "資料一", "4" }, { "編號二", "資料二", "4" }, { "編號三", "資料三", "4" } };
-        String[] dataTitle = { "餐點", "數量", "價錢" };
+        DefaultTableModel model1 = new DefaultTableModel();
+        model1.addColumn("餐點");
+        model1.addColumn("數量");
+        model1.addColumn("價錢");
+        AssignSingleOrderData(model1);
+        JTable table = new JTable(model1);
 
-        MyTableModel model = new MyTableModel(data, dataTitle);
-        JTable table = new JTable(model);
 
         JScrollPane jscrollpane = new JScrollPane(table);
 
         // 加入第二個表格
-        String[][] data2 = { { "編號一", "資料一", "資料一", "4", "資料一", "4" }, { "編號二", "資料二", "資料一", "4", "資料二", "4" },
-                { "編號三", "資料三", "資料一", "4", "資料三", "4" } };
-        String[] dataTitle2 = { "主餐", "附餐1", "附餐2", "飲料", "數量", "價錢" };
-
-        MyTableModel model2 = new MyTableModel(data2, dataTitle2);
+        DefaultTableModel model2 = new DefaultTableModel();
+        model2.addColumn("主餐");
+        model2.addColumn("副餐1");
+        model2.addColumn("副餐2");
+        model2.addColumn("飲料");
+        model2.addColumn("數量");
+        model2.addColumn("價錢");
+        AssignSetOrderData(model2);
         JTable table2 = new JTable(model2);
 
         JScrollPane jscrollpane2 = new JScrollPane(table2);
@@ -83,7 +91,7 @@ public class ShoppingCart extends JFrame {
         JTextArea Remarks = new JTextArea();
         LineBorder tt = new LineBorder(Color.GRAY);
         Remarks.setBorder(tt);
-        JTextField Discount = new JTextField();
+        Discount = new JTextField();
         JTextField CreditCardNumber = new JTextField();
 
         // 建立按鈕
@@ -141,6 +149,7 @@ public class ShoppingCart extends JFrame {
         // 加入觸發物件
         Checkout.addActionListener(new DetailListener());
         ViewMenu.addActionListener(new ViewMenuListener());
+        Verification.addActionListener(new VerificationListener());
 
         // 設定三個panel的位置.大小
         TopPanel.setBounds(40, 20, 1320, 100);
@@ -156,5 +165,43 @@ public class ShoppingCart extends JFrame {
 
         frame.setVisible(true);
         
+    }
+    public static void AssignSingleOrderData(DefaultTableModel model) {
+        for (int i = 0; i < 10 ; i++) {
+            if (OrderData.Singlecount[i] > 0) {
+                String[] temp = {(Single_Menu.get(i).getName()),(OrderData.Singlecount[i]+""),((Single_Menu.get(i).getPrice() * OrderData.Singlecount[i])+"")};
+                model.addRow(temp);
+            }
+        }
+    }
+    public static void AssignSetOrderData(DefaultTableModel model) {
+        String MainMealName = null;
+        int price = 0;
+        for (int i = 0; i < 9; i++) {
+            if (OrderData.Setcount[i] > 0) {
+                switch (i) {
+                    case 0:
+                    case 1:
+                    case 2:
+                        MainMealName = Single_Menu.get(1).getName();
+                        price = Single_Menu.get(1).getPrice();
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        MainMealName = Single_Menu.get(6).getName();
+                        price = Single_Menu.get(6).getPrice();
+                        break;
+                    case 6:
+                    case 7:
+                    case 8:
+                        MainMealName = Single_Menu.get(8).getName();
+                        price = Single_Menu.get(8).getPrice();
+                        break;
+                }
+                String[] temp = {MainMealName+" "+ Set_Menu.get(i).getName(), (Set_Menu.get(i).getDish1().getName()), (Set_Menu.get(i).getDish2().getName()), (Set_Menu.get(i).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i).getPrice() + price) * OrderData.Setcount[i]) + ""};
+                model.addRow(temp);
+            }
+        }
     }
 }

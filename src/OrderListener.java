@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -73,8 +74,8 @@ class SpriteOrderListener implements ActionListener {
 
 class ShoppingCartListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
+
 		ShoppingCart.ShoppingCartFrame();
-		//ShoppingCart.frame.dispose();
 	}
 }
 
@@ -83,8 +84,21 @@ class DetailListener implements ActionListener {
 		Detail.Detail();
 	}
 }
+
 class ViewMenuListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
         ShoppingCart.frame.dispose();
     }
+}
+
+class VerificationListener implements ActionListener {
+	public void actionPerformed(ActionEvent e) {
+		if(ShoppingCart.Discount.getText().equals("TestCoupon")){
+			ShoppingCart.frame.dispose();
+			ShoppingCart.ShoppingCartFrame();
+		} else {
+			JOptionPane.showMessageDialog(null,"Invalid Coupon","Fail",JOptionPane.INFORMATION_MESSAGE, new ImageIcon("image/joptionpaneICON.png"));
+		}
+
+	}
 }

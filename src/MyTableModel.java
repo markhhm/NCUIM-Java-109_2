@@ -14,6 +14,5 @@ class MyTableModel extends DefaultTableModel{
     public MyTableModel(Object[][] rowData, Object[] columnNames){
         super(rowData, columnNames);
     }
-    
 }
     

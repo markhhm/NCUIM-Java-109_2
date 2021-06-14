@@ -167,43 +167,23 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         } else if (e.getSource() == setABtn) {
             OrderData.Setcount[setCountIndex]++;
         } else if (e.getSource() == setAReduceBtn) {
-            if (Orderdata.Setcount[setCountIndex] > 0) {
+            if (OrderData.Setcount[setCountIndex] > 0) {
                 OrderData.Setcount[setCountIndex]--;
             }
         } else if (e.getSource() == setBBtn) {
             OrderData.Setcount[setCountIndex + 1]++;
         } else if (e.getSource() == setBReduceBtn) {
-            if (Orderdata.Setcount[setCountIndex + 1] > 0) {
+            if (OrderData.Setcount[setCountIndex + 1] > 0) {
                 OrderData.Setcount[setCountIndex + 1] --;
             }
         } else if (e.getSource() == setCBtn) {
             OrderData.Setcount[setCountIndex + 2]++;
         } else if (e.getSource() == setCReduceBtn) {
-            if (Orderdata.Setcount[setCountIndex + 2] > 0) {
-                OrderData.Setcount[setCountIndex + 2]++;
+            if (OrderData.Setcount[setCountIndex + 2] > 0) {
+                OrderData.Setcount[setCountIndex + 2]--;
             }
         } else if (e.getSource() == Confirm || e.getSource() == Cancel) {
             frame.dispose();
-
-            System.out.printf("\n%s%12s%8s\n\n", "品項", "數量", "價格");
-
-            for (int i = 0; i < 9; i++) {
-                if (OrderData.Setcount[i] > 0) {
-                    System.out.println(OrderData.setlist[i] + "    x" + OrderData.Setcount[i] + "       "
-                            + OrderData.setlist[i].getPrice() * OrderData.Setcount[i] + "元\n");
-                    total += OrderData.setlist[i].getPrice() * OrderData.Setcount[i];
-                }
-            }
-
-            for (int i = 0; i < 10; i++) {
-                if (OrderData.Singlecount[i] > 0) {
-                    System.out.println(OrderData.singlelist[i] + "  x" + OrderData.Singlecount[i] + "        "
-                            + OrderData.singlelist[i].getPrice() * OrderData.Singlecount[i] + "元\n");
-                    total += OrderData.singlelist[i].getPrice() * OrderData.Singlecount[i];
-                }
-            }
-            System.out.printf("\n總金額:                 %d元", total);
-
         }
         singleQuantity.setText(OrderData.Singlecount[singleCountIndex] + "");
         setAQuantity.setText(OrderData.Setcount[setCountIndex] + "");
