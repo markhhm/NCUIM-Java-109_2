@@ -30,6 +30,7 @@ public class Menu extends JFrame {
 		ImageIcon setCIcon = new ImageIcon("image/setC.jpg");
 
 		ImageIcon McMuffinButtonIcon = new ImageIcon("image/McMuffin.jpg");
+		ImageIcon BreakfastIcon = new ImageIcon("image/Breakfast.jpg");
 		ImageIcon McChickenButtonIcon = new ImageIcon("image/McChicken.jpg");
 		ImageIcon BigMacButtonIcon = new ImageIcon("image/BigMac.jpg");
 
@@ -62,6 +63,7 @@ public class Menu extends JFrame {
 		JLabel setA = new JLabel(setAIcon);
 		JLabel setB = new JLabel(setBIcon);
 		JLabel setC = new JLabel(setCIcon);
+		JLabel Breakfast = new JLabel(BreakfastIcon);
 
 		//設定元件位置大小
 		shoppingCart.setBounds(1070, 20,300,60); 
@@ -69,6 +71,7 @@ public class Menu extends JFrame {
 		setB.setBounds(850, 360,520,230); 
 		setC.setBounds(850, 610,520,230); 
 
+		Breakfast.setBounds(20, 110,260,230);
 		McMuffin.setBounds(20, 110,260,230); 
 		McChicken.setBounds(300, 110,260,230); 
 		BigMac.setBounds(580, 110,260,230); 
@@ -102,7 +105,13 @@ public class Menu extends JFrame {
 		panel.add(setB);
 		panel.add(setC);
 
-		panel.add(McMuffin);
+		CompareTime c = new CompareTime();
+		if(!c.CompareTime()){
+			panel.add(Breakfast);
+		}
+		else{
+			panel.add(McMuffin);
+		}
 		panel.add(McChicken);
 		panel.add(BigMac);
 
@@ -118,6 +127,7 @@ public class Menu extends JFrame {
 		// 將JPanel例項新增到JFrame
 		contentPane.add(panel); 
 		frame.setVisible(true); 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
 

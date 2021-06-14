@@ -47,6 +47,9 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         JLabel SideMealLab = new JLabel();
         SideMealQuantity = new JLabel(OrderData.Singlecount[singleCountIndex]+"");
 
+        //改數字大小
+        SideMealQuantity.setFont(SideMealQuantity.getFont().deriveFont(32.0f));
+
         //建立圖片物件
         ImageIcon reduceBtnIcon = new ImageIcon("image/reduceBtn.jpg");
 		ImageIcon addBtnIcon = new ImageIcon("image/addBtn.jpg");
@@ -61,7 +64,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         
         //設定位置大小 
         SideMealLab.setBounds(280,20,260,230);
-        SideMealQuantity.setBounds(365,250,70,70);
+        SideMealQuantity.setBounds(380,250,70,70);
         reduceBtn.setBounds(230,250,70,70);
         addBtn.setBounds(500,250,70,70);
         Cancel.setBounds(500, 360,100,60);
