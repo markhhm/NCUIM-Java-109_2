@@ -31,35 +31,35 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         frame = new JFrame("Order");
 		Container contentPane = frame.getContentPane();
 
-        // è¨­å®šåœ–ç¤º
+        // ³]©w¹Ï¥Ü
      	frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
         frame.setSize(800, 500); 
-        //è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
+        //³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
         frame.setLocationRelativeTo(null);
 
-        // å»ºç«‹ä¸€å€‹JPanelçš„ä¾‹é …
+        // «Ø¥ß¤@­ÓJPanelªº¨Ò¶µ
         JPanel panel = new JPanel(); 
  
-        //è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
+        //³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
         panel.setLayout(null); 
 
-        //å»ºç«‹æ¨™ç±¤
+        //«Ø¥ß¼ĞÅÒ
         JLabel SideMealLab = new JLabel();
         SideMealQuantity = new JLabel(OrderData.Singlecount[singleCountIndex]+"");
 
-        //å»ºç«‹åœ–ç‰‡ç‰©ä»¶
+        //«Ø¥ß¹Ï¤ùª«¥ó
         ImageIcon reduceBtnIcon = new ImageIcon("image/reduceBtn.jpg");
 		ImageIcon addBtnIcon = new ImageIcon("image/addBtn.jpg");
 
         SideMealLab.setIcon(SideMealIcon);
 
-        //å»ºç«‹æŒ‰éˆ•
+        //«Ø¥ß«ö¶s
         reduceBtn = new JButton(reduceBtnIcon);
         addBtn = new JButton(addBtnIcon);
         Cancel = new JButton("Cancel");
         Confirm = new JButton("Confirm");
         
-        //è¨­å®šä½ç½®å¤§å° 
+        //³]©w¦ì¸m¤j¤p 
         SideMealLab.setBounds(280,20,260,230);
         SideMealQuantity.setBounds(365,250,70,70);
         reduceBtn.setBounds(230,250,70,70);
@@ -68,7 +68,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         Confirm.setBounds(650, 360,100,60);
 
 
-        //å°‡ç‰©ä»¶æ·»åŠ åˆ°panel
+        //±Nª«¥ó²K¥[¨ìpanel
         panel.add(SideMealLab);
         panel.add(SideMealQuantity);
         panel.add(reduceBtn);
@@ -81,7 +81,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         Cancel.addActionListener(this);
         Confirm.addActionListener(this);
 
-		contentPane.add(panel); // å°‡JPanelä¾‹é …æ–°å¢åˆ°JFrame
+		contentPane.add(panel); // ±NJPanel¨Ò¶µ·s¼W¨ìJFrame
 		frame.setVisible(true); 
 
     }
@@ -96,13 +96,13 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         } else if(e.getSource() == Confirm || e.getSource() == Cancel) {
             frame.dispose();
 
-            System.out.printf("\n%s%12s%8s\n\n", "å“é …", "æ•¸é‡", "åƒ¹æ ¼");
+            System.out.printf("\n%s%12s%8s\n\n", "«~¶µ", "¼Æ¶q", "»ù®æ");
 
             for (int i = 0; i < 9; i++) {
 
                 if (OrderData.Setcount[i] > 0) {
                     System.out.println(OrderData.setlist[i] + "    x" + OrderData.Setcount[i] + "       "
-                            + OrderData.setlist[i].getPrice() * OrderData.Setcount[i] + "å…ƒ\n");
+                            + OrderData.setlist[i].getPrice() * OrderData.Setcount[i] + "¤¸\n");
                     total += OrderData.setlist[i].getPrice() * OrderData.Setcount[i];
                 }
             }
@@ -110,11 +110,11 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
             for (int i = 0; i < 10; i++) {
                 if (OrderData.Singlecount[i] > 0) {
                     System.out.println(OrderData.singlelist[i] + "  x" + OrderData.Singlecount[i] + "        "
-                            + OrderData.singlelist[i].getPrice() * OrderData.Singlecount[i] + "å…ƒ\n");
+                            + OrderData.singlelist[i].getPrice() * OrderData.Singlecount[i] + "¤¸\n");
                     total += OrderData.singlelist[i].getPrice() * OrderData.Singlecount[i];
                 }
             }
-            System.out.printf("\nç¸½é‡‘é¡:                 %då…ƒ", total);
+            System.out.printf("\nÁ`ª÷ÃB:                 %d¤¸", total);
 
         }
         SideMealQuantity.setText(OrderData.Singlecount[singleCountIndex]+"");

@@ -1,4 +1,4 @@
-import javax.swing.*;  //å¼•ç”¨Swingå¥—ä»¶
+import javax.swing.*;  //¤Ş¥ÎSwing®M¥ó
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,22 +8,22 @@ public class Menu extends JFrame {
 		JFrame frame = new JFrame("McDonald's Order System"); 
 		Container contentPane = frame.getContentPane();
 
-		// è¨­å®šåœ–ç¤º
+		// ³]©w¹Ï¥Ü
 		frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
 		frame.setSize(1400, 900); 
-		//è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
+		//³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
 		frame.setLocationRelativeTo(null);
 
-		// å»ºç«‹ä¸€å€‹JPanelçš„ä¾‹é …
+		// «Ø¥ß¤@­ÓJPanelªº¨Ò¶µ
 		JPanel panel = new JPanel();  
 
-		// å°‡JPanelçš„ä¾‹é …èƒŒæ™¯è¨­å®šç‚ºç´…è‰²
+		// ±NJPanelªº¨Ò¶µ­I´º³]©w¬°¬õ¦â
 		panel.setBackground(Color.red);  
 
-		//è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
+		//³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
 		panel.setLayout(null); 
 
-		//å»ºç«‹åœ–ç‰‡ç‰©ä»¶
+		//«Ø¥ß¹Ï¤ùª«¥ó
 		ImageIcon shoppingCartButtonIcon = new ImageIcon("image/shoppingCart.jpg");
 		ImageIcon setAIcon = new ImageIcon("image/setA.jpg");
 		ImageIcon setBIcon = new ImageIcon("image/setB.jpg");
@@ -42,7 +42,7 @@ public class Menu extends JFrame {
 		ImageIcon CokeButtonIcon = new ImageIcon("image/Coke.jpg");
 		ImageIcon SpriteButtonIcon = new ImageIcon("image/Sprite.jpg");
 
-		//å®£å‘ŠæŒ‰éˆ•å…ƒä»¶
+		//«Å§i«ö¶s¤¸¥ó
 		JButton shoppingCart = new JButton("Shopping Cart", shoppingCartButtonIcon); 
 
 		JButton McMuffin = new JButton(McMuffinButtonIcon);
@@ -58,12 +58,12 @@ public class Menu extends JFrame {
 		JButton Coke = new JButton(CokeButtonIcon);
 		JButton Sprite = new JButton(SpriteButtonIcon);
 
-		//è¨­å®šæ¨™ç±¤
+		//³]©w¼ĞÅÒ
 		JLabel setA = new JLabel(setAIcon);
 		JLabel setB = new JLabel(setBIcon);
 		JLabel setC = new JLabel(setCIcon);
 
-		//è¨­å®šå…ƒä»¶ä½ç½®å¤§å°
+		//³]©w¤¸¥ó¦ì¸m¤j¤p
 		shoppingCart.setBounds(1070, 20,300,60); 
 		setA.setBounds(850, 110,520,230); 
 		setB.setBounds(850, 360,520,230); 
@@ -82,7 +82,7 @@ public class Menu extends JFrame {
 		Coke.setBounds(300, 610,260,230); 
 		Sprite.setBounds(580, 610,260,230); 
 
-		//åŠ å…¥è§¸ç™¼ç‰©ä»¶
+		//¥[¤JÄ²µoª«¥ó
 		McMuffin.addActionListener(new McMuffinOrderListener());
 		McChicken.addActionListener(new McChickenOrderListener());
 		BigMac.addActionListener(new BigMacOrderListener());
@@ -96,7 +96,7 @@ public class Menu extends JFrame {
 		Sprite.addActionListener(new SpriteOrderListener());
 		shoppingCart.addActionListener(new ShoppingCartListener());
 
-		//å°‡å…ƒä»¶åŠ å…¥å®¹å™¨
+		//±N¤¸¥ó¥[¤J®e¾¹
 		panel.add(shoppingCart); 
 		panel.add(setA);
 		panel.add(setB);
@@ -115,7 +115,7 @@ public class Menu extends JFrame {
 		panel.add(Coke);
 		panel.add(Sprite);
 
-		// å°‡JPanelä¾‹é …æ–°å¢åˆ°JFrame
+		// ±NJPanel¨Ò¶µ·s¼W¨ìJFrame
 		contentPane.add(panel); 
 		frame.setVisible(true); 
 	}
