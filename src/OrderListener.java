@@ -74,6 +74,7 @@ class SpriteOrderListener implements ActionListener {
 class ShoppingCartListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		ShoppingCart.ShoppingCartFrame();
+		//ShoppingCart.frame.dispose();
 	}
 }
 
@@ -81,4 +82,9 @@ class DetailListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Detail.Detail();
 	}
+}
+class ViewMenuListener implements ActionListener {
+	public void actionPerformed(ActionEvent e) {
+        ShoppingCart.frame.dispose();
+    }
 }

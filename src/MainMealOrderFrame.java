@@ -45,20 +45,20 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         frame = new JFrame("Order");
         Container contentPane = frame.getContentPane();
 
-        // ³]©w¹Ï¥Ü
+        // è¨­å®šåœ–ç¤º
         frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
         frame.setSize(800, 500);
 
-        // ³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
+        // è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
         frame.setLocationRelativeTo(null);
 
-        // «Ø¥ß¤@­ÓJPanelªº¨Ò¶µ
+        // å»ºç«‹ä¸€å€‹JPanelçš„ä¾‹é …
         JPanel panel = new JPanel();
 
-        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         panel.setLayout(null);
 
-        // «Ø¥ß¼ĞÅÒ
+        // å»ºç«‹æ¨™ç±¤
         JLabel MainMealLab = new JLabel();
 
         singleQuantity = new JLabel(OrderData.Singlecount[singleCountIndex] + "");
@@ -66,11 +66,11 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setBQuantity = new JLabel(OrderData.Setcount[setCountIndex + 1] + "");
         setCQuantity = new JLabel(OrderData.Setcount[setCountIndex + 2] + "");
 
-        // «Ø¥ß¹Ï¤ùª«¥ó
+        // å»ºç«‹åœ–ç‰‡ç‰©ä»¶
         MainMealLab.setIcon(MainMealIcon);
         ImageIcon smallReduceBtnIcon = new ImageIcon("image/smallReduceBtn.jpg");
 
-        // «Ø¥ß«ö¶s
+        // å»ºç«‹æŒ‰éˆ•
         singleReduceBtn = new JButton(smallReduceBtnIcon);
         setAReduceBtn = new JButton(smallReduceBtnIcon);
         setBReduceBtn = new JButton(smallReduceBtnIcon);
@@ -83,7 +83,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setBBtn = new JButton("With Set B");
         setCBtn = new JButton("With Set C");
 
-        // ³]©w¦ì¸m¤j¤p
+        // è¨­å®šä½ç½®å¤§å°
         MainMealLab.setBounds(50, 50, 260, 230);
         singleBtn.setBounds(350, 20, 260, 60);
         setABtn.setBounds(350, 100, 260, 60);
@@ -103,7 +103,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         Cancel.setBounds(500, 360, 100, 60);
         Confirm.setBounds(650, 360, 100, 60);
 
-        // ±Nª«¥ó²K¥[¨ìpanel
+        // å°‡ç‰©ä»¶æ·»åŠ åˆ°panel
         panel.add(singleReduceBtn);
         panel.add(setAReduceBtn);
         panel.add(setBReduceBtn);
@@ -133,7 +133,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setBBtn.addActionListener(this);
         setCBtn.addActionListener(this);
 
-        // ±NJPanel¨Ò¶µ·s¼W¨ìJFrame
+        // å°‡JPanelä¾‹é …æ–°å¢åˆ°JFrame
         contentPane.add(panel);
         frame.setVisible(true);
     }
@@ -173,12 +173,12 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         } else if (e.getSource() == Confirm || e.getSource() == Cancel) {
             frame.dispose();
 
-            System.out.printf("\n%s%12s%8s\n\n", "«~¶µ", "¼Æ¶q", "»ù®æ");
+            System.out.printf("\n%s%12s%8s\n\n", "å“é …", "æ•¸é‡", "åƒ¹æ ¼");
 
             for (int i = 0; i < 9; i++) {
                 if (OrderData.Setcount[i] > 0) {
                     System.out.println(OrderData.setlist[i] + "    x" + OrderData.Setcount[i] + "       "
-                            + OrderData.setlist[i].getPrice() * OrderData.Setcount[i] + "¤¸\n");
+                            + OrderData.setlist[i].getPrice() * OrderData.Setcount[i] + "å…ƒ\n");
                     total += OrderData.setlist[i].getPrice() * OrderData.Setcount[i];
                 }
             }
@@ -186,11 +186,11 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
             for (int i = 0; i < 10; i++) {
                 if (OrderData.Singlecount[i] > 0) {
                     System.out.println(OrderData.singlelist[i] + "  x" + OrderData.Singlecount[i] + "        "
-                            + OrderData.singlelist[i].getPrice() * OrderData.Singlecount[i] + "¤¸\n");
+                            + OrderData.singlelist[i].getPrice() * OrderData.Singlecount[i] + "å…ƒ\n");
                     total += OrderData.singlelist[i].getPrice() * OrderData.Singlecount[i];
                 }
             }
-            System.out.printf("\nÁ`ª÷ÃB:                 %d¤¸", total);
+            System.out.printf("\nç¸½é‡‘é¡:                 %då…ƒ", total);
 
         }
         singleQuantity.setText(OrderData.Singlecount[singleCountIndex] + "");
