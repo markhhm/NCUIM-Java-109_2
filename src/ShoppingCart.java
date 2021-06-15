@@ -12,7 +12,7 @@ public class ShoppingCart extends JFrame {
     static JFrame frame;
     static JTextField Discount;
     static JTextArea Remarks;
-    // «Ø¥ß«ö¶s²Õ
+    // å»ºç«‹æŒ‰éˆ•çµ„
     static JRadioButton Cash;
     static JRadioButton CreditCard;
     static JRadioButton forHere;
@@ -22,106 +22,106 @@ public class ShoppingCart extends JFrame {
 
     public static void ShoppingCartFrame() {
         new MenuData(Single_Menu, Set_Menu);
-        // «Ø¥ßFrame
-        frame = new JFrame("ÁÊª«¨®");
+        // å»ºç«‹Frame
+        frame = new JFrame("è³¼ç‰©è»Š");
         Container contentPane = frame.getContentPane();
-        // ³]©wFrameªº¤j¤p
+        // è¨­å®šFrameçš„å¤§å°
         frame.setSize(1400, 900);
-        // ³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
+        // è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
         frame.setLocationRelativeTo(null);
-        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         contentPane.setLayout(null);
 
-        // ³]©w³Ì¤W­±ªºpanel
-        // «Ø¥ßpanel
+        // è¨­å®šæœ€ä¸Šé¢çš„panel
+        // å»ºç«‹panel
         JPanel TopPanel = new JPanel();
 
-        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         TopPanel.setLayout(null);
 
-        // «Ø¥ß«ö¶s
-        ViewMenu = new JButton("ªğ¦^µæ³æ");
-        forHere = new JRadioButton("¤º¥Î",false);
-        toGo = new JRadioButton("¥~±a",true);
+        // å»ºç«‹æŒ‰éˆ•
+        ViewMenu = new JButton("è¿”å›èœå–®");
+        forHere = new JRadioButton("å…§ç”¨",false);
+        toGo = new JRadioButton("å¤–å¸¶",true);
 
-        // «Ø¥ß¤@­ÓButtonGroupª«¥ó
+        // å»ºç«‹ä¸€å€‹ButtonGroupç‰©ä»¶
         ButtonGroup eating = new ButtonGroup();
         eating.add(forHere);
         eating.add(toGo);
 
-        // ³]©w¦ì¸m¤j¤p
+        // è¨­å®šä½ç½®å¤§å°
         forHere.setBounds(0, 10, 100, 50);
         toGo.setBounds(120, 10, 100, 50);
         ViewMenu.setBounds(1120, 0, 200, 50);
 
-        // §ï¦rªº¤j¤p
+        // æ”¹å­—çš„å¤§å°
         forHere.setFont(forHere.getFont().deriveFont(26.0f));
         toGo.setFont(toGo.getFont().deriveFont(26.0f));
         ViewMenu.setFont(ViewMenu.getFont().deriveFont(20.0f));
 
-        // §â¤¸¥ó¥[¨ìTopPanel¸Ì
+        // æŠŠå…ƒä»¶åŠ åˆ°TopPanelè£¡
         TopPanel.add(forHere);
         TopPanel.add(toGo);
         TopPanel.add(ViewMenu);
 
-        // ³]©w¥iºu°Êªí®æ
-        model1 = new DefaultTableModel();
-        model1.addColumn("À\ÂI");
-        model1.addColumn("¼Æ¶q");
-        model1.addColumn("»ù¿ú");
+        // è¨­å®šå¯æ»¾å‹•è¡¨æ ¼
+        model1 = new MyTableModel();
+        model1.addColumn("é¤é»");
+        model1.addColumn("æ•¸é‡");
+        model1.addColumn("åƒ¹éŒ¢");
         AssignSingleOrderData(model1);
         JTable table = new JTable(model1);
 
 
         JScrollPane jscrollpane = new JScrollPane(table);
 
-        // ¥[¤J²Ä¤G­Óªí®æ
-        model2 = new DefaultTableModel();
-        model2.addColumn("¥DÀ\");
-        model2.addColumn("°ÆÀ\1");
-        model2.addColumn("°ÆÀ\2");
-        model2.addColumn("¶¼®Æ");
-        model2.addColumn("¼Æ¶q");
-        model2.addColumn("»ù¿ú");
+        // åŠ å…¥ç¬¬äºŒå€‹è¡¨æ ¼
+        model2 = new MyTableModel();
+        model2.addColumn("ä¸»é¤");
+        model2.addColumn("å‰¯é¤1");
+        model2.addColumn("å‰¯é¤2");
+        model2.addColumn("é£²æ–™");
+        model2.addColumn("æ•¸é‡");
+        model2.addColumn("åƒ¹éŒ¢");
         AssignSetOrderData(model2);
         JTable table2 = new JTable(model2);
 
         JScrollPane jscrollpane2 = new JScrollPane(table2);
 
-        // ³]©w³Ì¤U­±ªºpanel
-        // «Ø¥ßpanel
+        // è¨­å®šæœ€ä¸‹é¢çš„panel
+        // å»ºç«‹panel
         JPanel BottomPanel = new JPanel();
-        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         BottomPanel.setLayout(null);
 
-        // «Ø¥ß¤å¦rLabel
-        JLabel RemarksLab = new JLabel("³Æµù");
-        JLabel DiscountLab = new JLabel("Àu´f¥N½X");
-        JLabel PayWayLab = new JLabel("¥I´Ú¤è¦¡");
-        JLabel total = new JLabel("Á`ª÷ÃB"+"String");
+        // å»ºç«‹æ–‡å­—Label
+        JLabel RemarksLab = new JLabel("å‚™è¨»");
+        JLabel DiscountLab = new JLabel("å„ªæƒ ä»£ç¢¼");
+        JLabel PayWayLab = new JLabel("ä»˜æ¬¾æ–¹å¼");
+        JLabel total = new JLabel("ç¸½é‡‘é¡"+"String");
 
-        // «Ø¥ß¿é¤J®Ø
+        // å»ºç«‹è¼¸å…¥æ¡†
         Remarks = new JTextArea();
         LineBorder tt = new LineBorder(Color.GRAY);
         Remarks.setBorder(tt);
         Discount = new JTextField();
         JTextField CreditCardNumber = new JTextField();
 
-        // «Ø¥ß«ö¶s
-        JButton Verification = new JButton("ÅçÃÒ");
-        JButton CancelOrder = new JButton("¨ú®ø­q³æ");
-        JButton Checkout = new JButton("½T»{µ²±b");
+        // å»ºç«‹æŒ‰éˆ•
+        JButton Verification = new JButton("é©—è­‰");
+        JButton CancelOrder = new JButton("å–æ¶ˆè¨‚å–®");
+        JButton Checkout = new JButton("ç¢ºèªçµå¸³");
 
-        Cash = new JRadioButton("²{ª÷",true);
-        CreditCard = new JRadioButton("«H¥Î¥d",false);
+        Cash = new JRadioButton("ç¾é‡‘",true);
+        CreditCard = new JRadioButton("ä¿¡ç”¨å¡",false);
     
-        // «Ø¥ß¤@­ÓButtonGroupª«¥ó
+        // å»ºç«‹ä¸€å€‹ButtonGroupç‰©ä»¶
         ButtonGroup bg = new ButtonGroup();
         bg.add(Cash);
         bg.add(CreditCard);
 
         
-        // ³]©w¤¸¥ó¦ì¸m.¤j¤p
+        // è¨­å®šå…ƒä»¶ä½ç½®.å¤§å°
         total.setBounds(1100, 20, 200, 70);
         RemarksLab.setBounds(0, 100, 200, 100);
         DiscountLab.setBounds(0, 200, 200, 100);
@@ -135,7 +135,7 @@ public class ShoppingCart extends JFrame {
         CancelOrder.setBounds(1000, 370, 150, 80);
         Checkout.setBounds(1170, 370, 150, 80);
 
-        // §ï¦rªº¤j¤p
+        // æ”¹å­—çš„å¤§å°
         total.setFont(total.getFont().deriveFont(26.0f));
         RemarksLab.setFont(RemarksLab.getFont().deriveFont(16.0f));
         DiscountLab.setFont(DiscountLab.getFont().deriveFont(16.0f));
@@ -146,7 +146,7 @@ public class ShoppingCart extends JFrame {
         CancelOrder.setFont(CancelOrder.getFont().deriveFont(20.0f));
         Checkout.setFont(Checkout.getFont().deriveFont(20.0f));
 
-        // §â¤¸¥ó¥[¨ìBottomPanel¸Ì
+        // æŠŠå…ƒä»¶åŠ åˆ°BottomPanelè£¡
         BottomPanel.add(RemarksLab);
         BottomPanel.add(DiscountLab);
         BottomPanel.add(total);
@@ -160,19 +160,19 @@ public class ShoppingCart extends JFrame {
         BottomPanel.add(CancelOrder);
         BottomPanel.add(Checkout);
 
-        // ¥[¤JÄ²µoª«¥ó
+        // åŠ å…¥è§¸ç™¼ç‰©ä»¶
         CancelOrder.addActionListener(new CancelListener());
         Checkout.addActionListener(new DetailListener());
         ViewMenu.addActionListener(new ViewMenuListener());
         Verification.addActionListener(new VerificationListener());
 
-        // ³]©w¤T­Ópanelªº¦ì¸m.¤j¤p
+        // è¨­å®šä¸‰å€‹panelçš„ä½ç½®.å¤§å°
         TopPanel.setBounds(40, 20, 1320, 100);
         jscrollpane.setBounds(40, 120, 1320, 120);
         jscrollpane2.setBounds(40, 250, 1320, 120);
         BottomPanel.setBounds(40, 360, 1320, 550);
 
-        // ¥[¤Jpanel
+        // åŠ å…¥panel
         contentPane.add(TopPanel);
         contentPane.add(jscrollpane);
         contentPane.add(jscrollpane2);

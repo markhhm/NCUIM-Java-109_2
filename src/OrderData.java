@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 public class OrderData {
 
-    static int[] Singlecount = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };// ³æÂI¦UÀ\ÂI¼Æ¶q
-    static int[] Setcount = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };// ®MÀ\¦UÀ\ÂI¼Æ¶q
+    static int[] Singlecount = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };// å–®é»å„é¤é»æ•¸é‡
+    static int[] Setcount = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };// å¥—é¤å„é¤é»æ•¸é‡
     static String CouponCode;
 }
 

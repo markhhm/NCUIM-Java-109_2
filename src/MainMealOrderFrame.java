@@ -43,24 +43,25 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
 
         new MenuData(Single_Menu);
         singleCountIndex = i;
+        Indextrans(singleCountIndex);
         mealName = Single_Menu.get(i).getName();
         frame = new JFrame("Order");
         Container contentPane = frame.getContentPane();
 
-        // ³]©w¹Ï¥Ü
+        // è¨­å®šåœ–ç¤º
         frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
         frame.setSize(800, 500);
 
-        // ³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
+        // è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
         frame.setLocationRelativeTo(null);
 
-        // «Ø¥ß¤@­ÓJPanelªº¨Ò¶µ
+        // å»ºç«‹ä¸€å€‹JPanelçš„ä¾‹é …
         JPanel panel = new JPanel();
 
-        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         panel.setLayout(null);
 
-        // «Ø¥ß¼ĞÅÒ
+        // å»ºç«‹æ¨™ç±¤
         JLabel MainMealLab = new JLabel();
 
         singleQuantity = new JLabel(OrderData.Singlecount[singleCountIndex] + "");
@@ -68,17 +69,17 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setBQuantity = new JLabel(OrderData.Setcount[setCountIndex + 1] + "");
         setCQuantity = new JLabel(OrderData.Setcount[setCountIndex + 2] + "");
 
-        //§ï¼Æ¦r¤j¤p
+        //æ”¹æ•¸å­—å¤§å°
         singleQuantity.setFont(singleQuantity.getFont().deriveFont(24.0f));
         setAQuantity.setFont(setAQuantity.getFont().deriveFont(24.0f));
         setBQuantity.setFont(setBQuantity.getFont().deriveFont(24.0f));
         setCQuantity.setFont(setCQuantity.getFont().deriveFont(24.0f));
 
-        // «Ø¥ß¹Ï¤ùª«¥ó
+        // å»ºç«‹åœ–ç‰‡ç‰©ä»¶
         MainMealLab.setIcon(MainMealIcon);
         ImageIcon smallReduceBtnIcon = new ImageIcon("image/smallReduceBtn.jpg");
 
-        // «Ø¥ß«ö¶s
+        // å»ºç«‹æŒ‰éˆ•
         singleReduceBtn = new JButton(smallReduceBtnIcon);
         setAReduceBtn = new JButton(smallReduceBtnIcon);
         setBReduceBtn = new JButton(smallReduceBtnIcon);
@@ -91,7 +92,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setBBtn = new JButton("With Set B");
         setCBtn = new JButton("With Set C");
 
-        // ³]©w¦ì¸m¤j¤p
+        // è¨­å®šä½ç½®å¤§å°
         MainMealLab.setBounds(50, 50, 260, 230);
         singleBtn.setBounds(350, 20, 260, 60);
         setABtn.setBounds(350, 100, 260, 60);
@@ -111,7 +112,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         Cancel.setBounds(500, 360, 100, 60);
         Confirm.setBounds(650, 360, 100, 60);
 
-        // ±Nª«¥ó²K¥[¨ìpanel
+        // å°‡ç‰©ä»¶æ·»åŠ åˆ°panel
         panel.add(singleReduceBtn);
         panel.add(setAReduceBtn);
         panel.add(setBReduceBtn);
@@ -141,7 +142,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setBBtn.addActionListener(this);
         setCBtn.addActionListener(this);
 
-        // ±NJPanel¨Ò¶µ·s¼W¨ìJFrame
+        // å°‡JPanelä¾‹é …æ–°å¢åˆ°JFrame
         contentPane.add(panel);
         frame.setVisible(true);
     }
