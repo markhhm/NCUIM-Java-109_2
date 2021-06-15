@@ -42,7 +42,7 @@ public class ShoppingCart extends JFrame {
         // 建立按鈕
         ViewMenu = new JButton("返回菜單");
         forHere = new JRadioButton("內用",false);
-        toGo = new JRadioButton("外帶",false);
+        toGo = new JRadioButton("外帶",true);
 
         // 建立一個ButtonGroup物件
         ButtonGroup eating = new ButtonGroup();
@@ -112,7 +112,7 @@ public class ShoppingCart extends JFrame {
         JButton CancelOrder = new JButton("取消訂單");
         JButton Checkout = new JButton("確認結帳");
 
-        Cash = new JRadioButton("現金",false);
+        Cash = new JRadioButton("現金",true);
         CreditCard = new JRadioButton("信用卡",false);
     
         // 建立一個ButtonGroup物件
