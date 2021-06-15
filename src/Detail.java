@@ -7,101 +7,102 @@ public class Detail extends JFrame {
     static JFrame frame;
 
     public static void Detail() {
-        // å»ºç«‹Frame
-        frame = new JFrame("è¨‚å–®æ˜ç´°");
+        // «Ø¥ßFrame
+        frame = new JFrame("­q³æ©ú²Ó");
         Container contentPane = frame.getContentPane();
-        // è¨­å®šFrameçš„å¤§å°
+        // ³]©wFrameªº¤j¤p
         frame.setSize(800, 700);
-        // è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
+        // ³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
         frame.setLocationRelativeTo(null);
-        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
+        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
         contentPane.setLayout(null);
 
-        // è¨­å®šæœ€ä¸Šé¢çš„panel
-        // å»ºç«‹panel
+        // ³]©w³Ì¤W­±ªºpanel
+        // «Ø¥ßpanel
         JPanel TopPanel = new JPanel();
 
-        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
+        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
         TopPanel.setLayout(null);
 
-        // å»ºç«‹æ–‡å­—Label
-        JLabel OrderNumberLab = new JLabel("è¨‚å–®ç·¨è™Ÿ: " + "è¨‚å–®ç·¨è™Ÿæ•¸å­—è½‰æˆå­—ä¸²");
-
-        // è¨­å®šä½ç½®å¤§å°
-        OrderNumberLab.setBounds(0, 0, 1080, 50);
-
-        // æ”¹å­—çš„å¤§å°
-        OrderNumberLab.setFont(OrderNumberLab.getFont().deriveFont(26.0f));
-
-        // æŠŠå…ƒä»¶åŠ åˆ°TopPanelè£¡
-        TopPanel.add(OrderNumberLab);
-
-        // è¨­å®šå¯æ»¾å‹•è¡¨æ ¼
-//        String[][] data = { { "ç·¨è™Ÿä¸€", "è³‡æ–™ä¸€", "4" }, { "ç·¨è™ŸäºŒ", "è³‡æ–™äºŒ", "4" }, { "ç·¨è™Ÿä¸‰", "è³‡æ–™ä¸‰", "4" } };
-//        String[] dataTitle = { "é¤é»", "æ•¸é‡", "åƒ¹éŒ¢" };
-//
-//        MyTableModel model = new MyTableModel(data, dataTitle);
-        JTable table = new JTable(ShoppingCart.model1);
-
-        JScrollPane jscrollpane = new JScrollPane(table);
-
-        // åŠ å…¥ç¬¬äºŒå€‹è¡¨æ ¼
-//        String[][] data2 = { { "ç·¨è™Ÿä¸€", "è³‡æ–™ä¸€", "è³‡æ–™ä¸€", "4", "è³‡æ–™ä¸€", "4" }, { "ç·¨è™ŸäºŒ", "è³‡æ–™äºŒ", "è³‡æ–™ä¸€", "4", "è³‡æ–™äºŒ", "4" },
-//                { "ç·¨è™Ÿä¸‰", "è³‡æ–™ä¸‰", "è³‡æ–™ä¸€", "4", "è³‡æ–™ä¸‰", "4" } };
-//        String[] dataTitle2 = { "ä¸»é¤", "é™„é¤1", "é™„é¤2", "é£²æ–™", "æ•¸é‡", "åƒ¹éŒ¢" };
-//
-//        MyTableModel model2 = new MyTableModel(data2, dataTitle2);
-        JTable table2 = new JTable(ShoppingCart.model2);
-
-        JScrollPane jscrollpane2 = new JScrollPane(table2);
-
-        // è¨­å®šæœ€ä¸‹é¢çš„panel
-        // å»ºç«‹panel
-        JPanel BottomPanel = new JPanel();
-
-        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
-        BottomPanel.setLayout(null);
-
-        //åˆ¤æ–·ä»˜æ¬¾æ–¹å¼
-        String PayWay;
-        if(ShoppingCart.CreditCard.isSelected()){
-            PayWay = "ä¿¡ç”¨å¡";
+        //§PÂ_¥ÎÀ\¤è¦¡
+        String eating;
+        if(ShoppingCart.forHere.isSelected()){
+            eating = "¤º¥Î";
         }
         else{
-            PayWay = "ç¾é‡‘";
+            eating = "¥~±a";
+        }
+        // «Ø¥ß¤å¦rLabel
+        JLabel OrderNumberLab = new JLabel("­q³æ½s¸¹: " + "­q³æ½s¸¹¼Æ¦rÂà¦¨¦r¦ê"+ "(" + eating + ")");
+
+        // ³]©w¦ì¸m¤j¤p
+        OrderNumberLab.setBounds(0, 0, 1080, 50);
+
+        // §ï¦rªº¤j¤p
+        OrderNumberLab.setFont(OrderNumberLab.getFont().deriveFont(26.0f));
+
+        // §â¤¸¥ó¥[¨ìTopPanel¸Ì
+        TopPanel.add(OrderNumberLab);
+
+        // ³]©w¥iºu°Êªí®æ
+        JTable table = new JTable(ShoppingCart.model1);
+        JScrollPane jscrollpane = new JScrollPane(table);
+
+        // ¥[¤J²Ä¤G­Óªí®æ
+        JTable table2 = new JTable(ShoppingCart.model2);
+        JScrollPane jscrollpane2 = new JScrollPane(table2);
+
+        // ³]©w³Ì¤U­±ªºpanel
+        // «Ø¥ßpanel
+        JPanel BottomPanel = new JPanel();
+
+        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+        BottomPanel.setLayout(null);
+
+        //§PÂ_¥I´Ú¤è¦¡
+        String PayWay;
+        if(ShoppingCart.CreditCard.isSelected()){
+            PayWay = "«H¥Î¥d";
+        }
+        else{
+            PayWay = "²{ª÷";
         }
 
-        // å»ºç«‹æ–‡å­—Label
-        JLabel RemarksLab = new JLabel("å‚™è¨»: " + ShoppingCart.Remarks.getText());
-        JLabel DiscountLab = new JLabel("å„ªæƒ ä»£ç¢¼: " + OrderData.CouponCode);
-        JLabel PayWayLab = new JLabel("ä»˜æ¬¾æ–¹å¼: " + PayWay);
-        JLabel Thanks = new JLabel("è¬è¬å…‰è‡¨ï¼Œç¥æ‚¨ç”¨é¤æ„‰å¿«ï¼");
+        // «Ø¥ß¤å¦rLabel
+        JLabel total = new JLabel("Á`ª÷ÃB"+"String");
+        JLabel RemarksLab = new JLabel("³Æµù: " + ShoppingCart.Remarks.getText());
+        JLabel DiscountLab = new JLabel("Àu´f¥N½X: " + OrderData.CouponCode);
+        JLabel PayWayLab = new JLabel("¥I´Ú¤è¦¡: " + PayWay);
+        JLabel Thanks = new JLabel("ÁÂÁÂ¥úÁ{¡A¯¬±z¥ÎÀ\´r§Ö¡I");
 
-        // è¨­å®šå…ƒä»¶ä½ç½®.å¤§å°
-        RemarksLab.setBounds(0, 0, 900, 50);
-        DiscountLab.setBounds(0, 50, 900, 50);
-        PayWayLab.setBounds(0, 100, 900, 50);
-        Thanks.setBounds(0, 150, 900, 100);
+        // ³]©w¤¸¥ó¦ì¸m.¤j¤p
+        total.setBounds(0, 0, 200, 50);
+        RemarksLab.setBounds(0, 50, 900, 50);
+        DiscountLab.setBounds(0, 100, 900, 50);
+        PayWayLab.setBounds(0, 150, 900, 50);
+        Thanks.setBounds(0, 200, 950, 100);
 
-        // æ”¹å­—çš„å¤§å°
+        // §ï¦rªº¤j¤p
+        total.setFont(total.getFont().deriveFont(20.0f));
         RemarksLab.setFont(RemarksLab.getFont().deriveFont(20.0f));
         DiscountLab.setFont(DiscountLab.getFont().deriveFont(20.0f));
         PayWayLab.setFont(PayWayLab.getFont().deriveFont(20.0f));
         Thanks.setFont(Thanks.getFont().deriveFont(40.0f));
 
-        // æŠŠå…ƒä»¶åŠ åˆ°BottomPanelè£¡
+        // §â¤¸¥ó¥[¨ìBottomPanel¸Ì
+        BottomPanel.add(total);
         BottomPanel.add(RemarksLab);
         BottomPanel.add(DiscountLab);
         BottomPanel.add(PayWayLab);
         BottomPanel.add(Thanks);
 
-        // è¨­å®šä¸‰å€‹panelçš„ä½ç½®.å¤§å°
-        TopPanel.setBounds(40, 20, 700, 80);
-        jscrollpane.setBounds(40, 100, 700, 120);
-        jscrollpane2.setBounds(40, 230, 700, 120);
-        BottomPanel.setBounds(40, 370, 700, 300);
+        // ³]©w¤T­Ópanelªº¦ì¸m.¤j¤p
+        TopPanel.setBounds(40, 0, 700, 80);
+        jscrollpane.setBounds(40, 80, 700, 100);
+        jscrollpane2.setBounds(40, 200, 700, 100);
+        BottomPanel.setBounds(40, 320, 700, 450);
 
-        // åŠ å…¥panel
+        // ¥[¤Jpanel
         contentPane.add(TopPanel);
         contentPane.add(jscrollpane);
         contentPane.add(jscrollpane2);

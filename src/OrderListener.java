@@ -85,6 +85,15 @@ class DetailListener implements ActionListener {
 	}
 }
 
+class CancelListener implements ActionListener {
+	public void actionPerformed(ActionEvent e) {
+		int result = JOptionPane.showConfirmDialog(null, "¬O§_­n¨ú®ø­q³æ¡H", "¨ú®ø­q³æ½T»{", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		if (result == JOptionPane.YES_OPTION){
+			System.exit(0);
+		}
+	}
+}
+
 class ViewMenuListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
         ShoppingCart.frame.dispose();
@@ -137,7 +146,7 @@ class VerificationListener implements ActionListener {
 				temp = new String[]{(ShoppingCart.Single_Menu.get(8).getName()),"1","Free"};
 				break;
 			case 4:
-				temp = new String[]{(ShoppingCart.Single_Menu.get(1).getName() + " ä»£ç¢¼å…Œæ›"),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(9).getName()),"1","Free"};
+				temp = new String[]{(ShoppingCart.Single_Menu.get(1).getName() + " ?N?X?I??"),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(9).getName()),"1","Free"};
 				break;
 			default:
 				temp = null;
@@ -145,5 +154,5 @@ class VerificationListener implements ActionListener {
 		}
 		return temp;
 	}
-	//TODO:æ”¹æˆç”¨è¿´åœˆä½†æˆ‘å¥½ç´¯
+	//TODO:?¥O??j?????n??
 }

@@ -31,38 +31,38 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         frame = new JFrame("Order");
 		Container contentPane = frame.getContentPane();
 
-        // ï¿½]ï¿½wï¿½Ï¥ï¿½
+        // ³]©w¹Ï¥Ü
      	frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
         frame.setSize(800, 500); 
-        //ï¿½]ï¿½wï¿½}ï¿½Òªï¿½ï¿½ï¿½mï¿½Mï¿½Yï¿½Óªï¿½ï¿½ï¿½Û¦Pï¿½Aï¿½aï¿½Jnullï¿½hï¿½|ï¿½bï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½ï¿½
+        //³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
         frame.setLocationRelativeTo(null);
 
-        // ï¿½Ø¥ß¤@ï¿½ï¿½JPanelï¿½ï¿½ï¿½Ò¶ï¿½
+        // «Ø¥ß¤@­ÓJPanelªº¨Ò¶µ
         JPanel panel = new JPanel(); 
  
-        //ï¿½]ï¿½wï¿½eï¿½ï¿½ï¿½ï¿½ï¿½Ï¥Î§Gï¿½ï¿½ï¿½Þ²zï¿½ï¿½
+        //³]©w®e¾¹¤£¨Ï¥Î§G§½ºÞ²z­û
         panel.setLayout(null); 
 
-        //ï¿½Ø¥ß¼ï¿½ï¿½ï¿½
+        //«Ø¥ß¼ÐÅÒ
         JLabel SideMealLab = new JLabel();
         SideMealQuantity = new JLabel(OrderData.Singlecount[singleCountIndex]+"");
 
-        //ï¿½ï¿½Æ¦rï¿½jï¿½p
+        //³]©w¦rªº¤j¤p
         SideMealQuantity.setFont(SideMealQuantity.getFont().deriveFont(32.0f));
 
-        //ï¿½Ø¥ß¹Ï¤ï¿½ï¿½ï¿½ï¿½ï¿½
+        //«Ø¥ß¹Ï¤ùª«¥ó
         ImageIcon reduceBtnIcon = new ImageIcon("image/reduceBtn.jpg");
 		ImageIcon addBtnIcon = new ImageIcon("image/addBtn.jpg");
 
         SideMealLab.setIcon(SideMealIcon);
 
-        //ï¿½Ø¥ß«ï¿½ï¿½s
+        //«Ø¥ß«ö¶s
         reduceBtn = new JButton(reduceBtnIcon);
         addBtn = new JButton(addBtnIcon);
         Cancel = new JButton("Cancel");
         Confirm = new JButton("Confirm");
         
-        //ï¿½]ï¿½wï¿½ï¿½mï¿½jï¿½p 
+        //³]©w¦ì¸m¤j¤p
         SideMealLab.setBounds(280,20,260,230);
         SideMealQuantity.setBounds(380,250,70,70);
         reduceBtn.setBounds(230,250,70,70);
@@ -71,7 +71,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         Confirm.setBounds(650, 360,100,60);
 
 
-        //ï¿½Nï¿½ï¿½ï¿½ï¿½Kï¿½[ï¿½ï¿½panel
+        //±Nª«¥ó²K¥[¨ìpanel
         panel.add(SideMealLab);
         panel.add(SideMealQuantity);
         panel.add(reduceBtn);
@@ -84,7 +84,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         Cancel.addActionListener(this);
         Confirm.addActionListener(this);
 
-		contentPane.add(panel); // ï¿½NJPanelï¿½Ò¶ï¿½ï¿½sï¿½Wï¿½ï¿½JFrame
+		contentPane.add(panel); // ±NJPanel¨Ò¶µ·s¼W¨ìJFrame
 		frame.setVisible(true); 
 
     }

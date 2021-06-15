@@ -1,4 +1,4 @@
-import javax.swing.*;  //引用Swing套件
+import javax.swing.*;  //�ޥ�Swing�M��
 import java.awt.*;
 
 public class MainMeal{
