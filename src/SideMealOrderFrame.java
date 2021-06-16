@@ -1,3 +1,4 @@
+//<蘇湘婷--
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -92,6 +93,8 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
 		frame.setVisible(true); 
 
     }
+//--蘇湘婷>
+
     public void actionPerformed(ActionEvent e) {
         int total = 0;
         if (e.getSource() == addBtn) { //透過e.getSource() 抓取按鈕

@@ -1,3 +1,4 @@
+//<蘇湘婷--
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
@@ -14,6 +15,8 @@ public class ShoppingCart extends JFrame {
     static JRadioButton CreditCard;
     static JRadioButton forHere;
     static JRadioButton toGo;
+//--蘇湘婷>
+
     //<Hsiang-Ming>
     static DefaultTableModel model1;
     static DefaultTableModel model2;
@@ -22,7 +25,8 @@ public class ShoppingCart extends JFrame {
     static ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
     static ArrayList<setType> Set_Menu = new ArrayList<setType>();
     //<Hsiang-Ming>
-    
+
+//<蘇湘婷--
     public static void ShoppingCartFrame() {
         new MenuData(Single_Menu, Set_Menu);//new兩個已經轉好資料型態的arraylist以供資料取用
         // 建立Frame
@@ -75,8 +79,6 @@ public class ShoppingCart extends JFrame {
         model1.addColumn("價錢");
         AssignSingleOrderData(model1);//把宣告好的model丟入自訂的assigndata內，產生表格
         JTable table = new JTable(model1);//將準備好的model帶入JTable產生表格，以下同理
-        
-
 
         JScrollPane jscrollpane = new JScrollPane(table);
 
@@ -93,6 +95,7 @@ public class ShoppingCart extends JFrame {
 
         JScrollPane jscrollpane2 = new JScrollPane(table2);
         //<Hsiang-Ming>
+        
         // 設定最下面的panel
         // 建立panel
         JPanel BottomPanel = new JPanel();
@@ -102,12 +105,16 @@ public class ShoppingCart extends JFrame {
         JLabel RemarksLab = new JLabel("備註");
         JLabel DiscountLab = new JLabel("優惠代碼");
         JLabel PayWayLab = new JLabel("付款方式");
+//--蘇湘婷>
+
         //<Hsiang-Ming>
         if(TotalContent.equals("")){ //第一次檢視購物車時預設顯示的總金額（尚未使用折扣碼）
             TotalContent = "總金額 "+OrderData.calculateTotal()+" 元";
         }
         total = new JLabel(TotalContent);
         //<Hsiang-Ming>
+
+//<蘇湘婷--
         // 建立輸入框
         Remarks = new JTextField();
         LineBorder tt = new LineBorder(Color.GRAY);
@@ -160,7 +167,6 @@ public class ShoppingCart extends JFrame {
         BottomPanel.add(PayWayLab);
         BottomPanel.add(Discount);
         BottomPanel.add(Remarks);
-        //BottomPanel.add(Discount);
         BottomPanel.add(Verification);
         BottomPanel.add(Cash);
         BottomPanel.add(CreditCard);
@@ -189,6 +195,8 @@ public class ShoppingCart extends JFrame {
         frame.setVisible(true);
         
     }
+//--蘇湘婷>
+
     public static void AssignSingleOrderData(DefaultTableModel model) {
         for (int i = 0; i < 10 ; i++) {//透過for迴圈依序讀取點單暫存區
             if (OrderData.Singlecount[i] > 0) {//判斷是否有點該餐點

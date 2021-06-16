@@ -1,3 +1,4 @@
+//<蘇湘婷--
 import javax.swing.*;  //引用Swing套件
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -130,4 +131,4 @@ public class Menu extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
-
+//--蘇湘婷>

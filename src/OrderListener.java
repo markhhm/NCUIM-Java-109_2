@@ -1,3 +1,4 @@
+//<蘇湘婷--
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -90,18 +91,20 @@ class DetailListener implements ActionListener {
 
 class CancelListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		int result = JOptionPane.showConfirmDialog(null, "??��?��?????�?�???��??", "???�?�???�確�?", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		int result = JOptionPane.showConfirmDialog(null, "確定要取消訂單嗎? 按下確認後系統將關閉程式。", "取消訂單確認", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if (result == JOptionPane.YES_OPTION){
 			System.exit(0);
 		}
 	}
 }
+//--蘇湘婷>
 
 class ViewMenuListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
         ShoppingCart.frame.dispose();
     }
 }
+
 
 class VerificationListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {

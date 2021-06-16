@@ -1,4 +1,5 @@
-import javax.swing.*;  //�ޥ�Swing�M��
+//<蘇湘婷--
+import javax.swing.*; 
 import java.awt.*;
 
 public class MainMeal{
@@ -22,3 +23,4 @@ public class MainMeal{
     }
 
 }
+//--蘇湘婷>

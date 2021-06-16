@@ -1,3 +1,4 @@
+//<蘇湘婷--
 import java.util.*;
 import java.time.*;
 import java.text.SimpleDateFormat;
@@ -19,3 +20,4 @@ public class CompareTime{
         return timeNow.isBefore(changeTime);
     }
 }
+//--蘇湘婷>

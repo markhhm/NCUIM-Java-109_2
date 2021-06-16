@@ -1,3 +1,4 @@
+//<蘇湘婷--
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
@@ -70,10 +71,12 @@ public class Detail extends JFrame {
         RemarksData = Objects.requireNonNullElse(OrderData.RemarksContent, "無備註");
         String CouponData;
         CouponData = Objects.requireNonNullElse(OrderData.CouponCode, "未使用優惠代碼");
+
         // 建立文字Label
         //<Hsiang-Ming>
         JLabel total = new JLabel(ShoppingCart.TotalContent); //共用shoppingcart的總價格內容
         //<Hsiang-Ming>
+
         JLabel RemarksLab = new JLabel("備註: " + RemarksData);
         JLabel DiscountLab = new JLabel("優惠代碼: " + CouponData);
         JLabel PayWayLab = new JLabel("付款方式: " + PayWay);
@@ -116,3 +119,4 @@ public class Detail extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
+//--蘇湘婷>

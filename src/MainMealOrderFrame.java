@@ -1,3 +1,4 @@
+//<蘇湘婷--
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -136,6 +137,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         panel.add(Cancel);
         panel.add(Confirm);
         
+//--蘇湘婷>
         //<Hsiang-Ming>
         singleReduceBtn.addActionListener(this);//呼叫下方的ActionPerformed
         setAReduceBtn.addActionListener(this);
@@ -148,11 +150,14 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setBBtn.addActionListener(this);
         setCBtn.addActionListener(this);
         //<Hsiang-Ming>
-        
+
+//<蘇湘婷--
         // 將JPanel例項新增到JFrame
         contentPane.add(panel);
         frame.setVisible(true);
     }
+//--蘇湘婷>
+
     //<Hsiang-Ming>
     public void Indextrans(int singleCountIndex) { //將原本在MainMeal.java帶入的引數轉換成套餐點餐暫存區的INDEX值
         if (singleCountIndex == 1) {
