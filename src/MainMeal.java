@@ -8,17 +8,17 @@ public class MainMeal{
 
     public static void McMuffinFrame(){
         MainMealOrderFrame McMuffinOrderFrame = new MainMealOrderFrame(McMuffinIcon);
-        McMuffinOrderFrame.OrderFrame(6);
+        McMuffinOrderFrame.OrderFrame(6);//引數是套餐主餐的索引
     }
 
     public static void McChickenFrame(){
         MainMealOrderFrame McChickenOrderFrame = new MainMealOrderFrame(McChickenIcon);
-        McChickenOrderFrame.OrderFrame(1);
+        McChickenOrderFrame.OrderFrame(1);//引數是套餐主餐的索引
     }
 
     public static void BigMacFrame(){
         MainMealOrderFrame BigMacOrderFrame = new MainMealOrderFrame(BigMacIcon);
-        BigMacOrderFrame.OrderFrame(8);
+        BigMacOrderFrame.OrderFrame(8);//引數是套餐主餐的索引
     }
 
 }

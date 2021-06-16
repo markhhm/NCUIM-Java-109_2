@@ -4,7 +4,8 @@ import java.awt.event.*;
 import java.util.ArrayList;
 
 public class MainMealOrderFrame extends JFrame implements ActionListener {
-
+    
+    //<Hsiang-Ming>
     int singleCountIndex;
     int setCountIndex;
     JButton singleReduceBtn;
@@ -25,6 +26,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
     String mealName;
     ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
     ImageIcon MainMealIcon;
+    //<Hsiang-Ming>
 
     public MainMealOrderFrame(ImageIcon image) {
         setImage(image);
@@ -63,13 +65,15 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
 
         // 建立標籤
         JLabel MainMealLab = new JLabel();
-
-        singleQuantity = new JLabel(OrderData.Singlecount[singleCountIndex] + "");
-        setAQuantity = new JLabel(OrderData.Setcount[setCountIndex] + "");
+        
+        //<Hsiang-Ming>
+        singleQuantity = new JLabel(OrderData.Singlecount[singleCountIndex] + "");//顯示單點數量
+        setAQuantity = new JLabel(OrderData.Setcount[setCountIndex] + "");//顯示A餐數量，以下同理
         setBQuantity = new JLabel(OrderData.Setcount[setCountIndex + 1] + "");
         setCQuantity = new JLabel(OrderData.Setcount[setCountIndex + 2] + "");
-
+        //<Hsiang-Ming>
         //改數字大小
+        
         singleQuantity.setFont(singleQuantity.getFont().deriveFont(24.0f));
         setAQuantity.setFont(setAQuantity.getFont().deriveFont(24.0f));
         setBQuantity.setFont(setBQuantity.getFont().deriveFont(24.0f));
@@ -87,10 +91,11 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         Cancel = new JButton("Cancel");
         Confirm = new JButton("Confirm");
 
-        singleBtn = new JButton("Only " + mealName);
-        setABtn = new JButton("With Set A");
-        setBBtn = new JButton("With Set B");
-        setCBtn = new JButton("With Set C");
+        singleBtn = new JButton("單點 " + mealName);
+        //setABtn = new JButton(ShoppingCart.Set_Menu.get(0).getName()); //TODO:待修理
+        setABtn = new JButton("普通套餐");
+        setBBtn = new JButton("薯餅套餐");
+        setCBtn = new JButton("吃很飽套餐");
 
         // 設定位置大小
         MainMealLab.setBounds(50, 50, 260, 230);
@@ -130,8 +135,9 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
 
         panel.add(Cancel);
         panel.add(Confirm);
-
-        singleReduceBtn.addActionListener(this);
+        
+        //<Hsiang-Ming>
+        singleReduceBtn.addActionListener(this);//呼叫下方的ActionPerformed
         setAReduceBtn.addActionListener(this);
         setBReduceBtn.addActionListener(this);
         setCReduceBtn.addActionListener(this);
@@ -141,13 +147,14 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setABtn.addActionListener(this);
         setBBtn.addActionListener(this);
         setCBtn.addActionListener(this);
-
+        //<Hsiang-Ming>
+        
         // 將JPanel例項新增到JFrame
         contentPane.add(panel);
         frame.setVisible(true);
     }
-
-    public void Indextrans(int singleCountIndex) {
+    //<Hsiang-Ming>
+    public void Indextrans(int singleCountIndex) { //將原本在MainMeal.java帶入的引數轉換成套餐點餐暫存區的INDEX值
         if (singleCountIndex == 1) {
             setCountIndex = 0;
         } else if (singleCountIndex == 6) {
@@ -159,20 +166,20 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Indextrans(singleCountIndex);
-        if (e.getSource() == singleBtn) {
-            OrderData.Singlecount[singleCountIndex]++;
+        Indextrans(singleCountIndex); //將原本在MainMeal.java帶入的引數轉換成套餐點餐暫存區的INDEX值
+        if (e.getSource() == singleBtn) { //e.getSource()會去抓取按鍵的名字來做相對應的動作
+            OrderData.Singlecount[singleCountIndex]++; //單點++
         } else if (e.getSource() == singleReduceBtn) {
-            if (OrderData.Singlecount[singleCountIndex] > 0) {
-                OrderData.Singlecount[singleCountIndex]--;
+            if (OrderData.Singlecount[singleCountIndex] > 0) { //檢查暫存區的計數器，避免變成負的
+                OrderData.Singlecount[singleCountIndex]--; //單點--
             }
-        } else if (e.getSource() == setABtn) {
-            OrderData.Setcount[setCountIndex]++;
+        } else if (e.getSource() == setABtn) { //e.getSource()會去抓取按鍵的名字來做相對應的動作
+            OrderData.Setcount[setCountIndex]++; //A餐++
         } else if (e.getSource() == setAReduceBtn) {
-            if (OrderData.Setcount[setCountIndex] > 0) {
-                OrderData.Setcount[setCountIndex]--;
+            if (OrderData.Setcount[setCountIndex] > 0) { //檢查暫存區的計數器，避免變成負的
+                OrderData.Setcount[setCountIndex]--; //A餐--
             }
-        } else if (e.getSource() == setBBtn) {
+        } else if (e.getSource() == setBBtn) { //與上方同理
             OrderData.Setcount[setCountIndex + 1]++;
         } else if (e.getSource() == setBReduceBtn) {
             if (OrderData.Setcount[setCountIndex + 1] > 0) {
@@ -188,11 +195,10 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
             frame.dispose();
         }
         
-        singleQuantity.setText(OrderData.Singlecount[singleCountIndex] + "");
+        singleQuantity.setText(OrderData.Singlecount[singleCountIndex] + ""); //更新頁面的JLabel內容（顯示餐點有幾份）
         setAQuantity.setText(OrderData.Setcount[setCountIndex] + "");
         setBQuantity.setText(OrderData.Setcount[setCountIndex + 1] + "");
         setCQuantity.setText(OrderData.Setcount[setCountIndex + 2] + "");
+        //<Hsiang-Ming>
     }
-
-    
 }

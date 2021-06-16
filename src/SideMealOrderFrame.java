@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SideMealOrderFrame extends JFrame implements ActionListener{
+    //<Hsiang-Ming>
+    //把按鍵宣告在上方的原因是，需存為class級別的下方的方法才能直接存取
     static int singleCountIndex;
     JButton addBtn;
     JButton reduceBtn;
@@ -11,7 +13,9 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
     JButton Confirm;
     JFrame frame;
     JLabel SideMealQuantity;
+    //<Hsiang-Ming>
     static ImageIcon SideMealIcon; 
+    
 
     public SideMealOrderFrame(ImageIcon image){
         setImage(image);
@@ -45,7 +49,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
 
         //建立標籤
         JLabel SideMealLab = new JLabel();
-        SideMealQuantity = new JLabel(OrderData.Singlecount[singleCountIndex]+"");
+        SideMealQuantity = new JLabel(OrderData.Singlecount[singleCountIndex]+"");//顯示當前數量
 
         //設定字的大小
         SideMealQuantity.setFont(SideMealQuantity.getFont().deriveFont(32.0f));
@@ -79,7 +83,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         panel.add(Cancel);
         panel.add(Confirm);
 
-        reduceBtn.addActionListener(this);
+        reduceBtn.addActionListener(this);//設定監聽，讓ActionPerformed運作
         addBtn.addActionListener(this);
         Cancel.addActionListener(this);
         Confirm.addActionListener(this);
@@ -90,15 +94,15 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
     }
     public void actionPerformed(ActionEvent e) {
         int total = 0;
-        if (e.getSource() == addBtn) {
-            OrderData.Singlecount[singleCountIndex] ++;
+        if (e.getSource() == addBtn) { //透過e.getSource() 抓取按鈕
+            OrderData.Singlecount[singleCountIndex] ++; //單點++
         } else if (e.getSource() == reduceBtn) {
-            if(OrderData.Singlecount[singleCountIndex] > 0) {
-                OrderData.Singlecount[singleCountIndex]--;
+            if(OrderData.Singlecount[singleCountIndex] > 0) { //檢查暫存區的計數器，避免變成負的
+                OrderData.Singlecount[singleCountIndex]--; //單點－－
             }
         } else if(e.getSource() == Confirm || e.getSource() == Cancel) {
             frame.dispose();
         }
-        SideMealQuantity.setText(OrderData.Singlecount[singleCountIndex]+"");
+        SideMealQuantity.setText(OrderData.Singlecount[singleCountIndex]+""); //更新label的計數器
     }
 }

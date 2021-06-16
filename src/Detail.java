@@ -71,7 +71,9 @@ public class Detail extends JFrame {
         String CouponData;
         CouponData = Objects.requireNonNullElse(OrderData.CouponCode, "未使用優惠代碼");
         // 建立文字Label
-        JLabel total = new JLabel(ShoppingCart.TotalContent);//TODO
+        //<Hsiang-Ming>
+        JLabel total = new JLabel(ShoppingCart.TotalContent); //共用shoppingcart的總價格內容
+        //<Hsiang-Ming>
         JLabel RemarksLab = new JLabel("備註: " + RemarksData);
         JLabel DiscountLab = new JLabel("優惠代碼: " + CouponData);
         JLabel PayWayLab = new JLabel("付款方式: " + PayWay);

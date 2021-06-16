@@ -1,12 +1,13 @@
 import java.util.ArrayList;
-
+//<Hsiang-Ming>
+//這個class用來存單點的資料型態
 public class singleType {
     private int id;
     private String name;
     private int price;
     private int property;
     private Boolean breakfast;
-    singleType(String id, String name, String price, String property, String breakfast){
+    singleType(String id, String name, String price, String property, String breakfast){ //建構子
         if (id != null) {
             setId(id);
             setName(name);
@@ -19,7 +20,7 @@ public class singleType {
             this.breakfast = false;
         }
     }
-    public int property_trans(String property){
+    public int property_trans(String property){ //把原本的副餐屬性從String轉為int方便取用
         int temp = 0;
         if(property == "主餐") {
             temp = 1;
@@ -41,3 +42,4 @@ public class singleType {
     public int getProperty() { return property; }
     public Boolean getBreakfast() { return breakfast; }
 }
+//<Hsiang-Ming>

@@ -11,7 +11,7 @@ public class SideMeal{
 
     public static void smallFriesFrame(){
         SideMealOrderFrame smallFriesOrderFrame = new SideMealOrderFrame(smallFriesIcon);
-        smallFriesOrderFrame.OrderFrame(0);
+        smallFriesOrderFrame.OrderFrame(0); //引數是餐點的索引
     }
 
     public static void mediumFriesFrame(){

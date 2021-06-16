@@ -5,9 +5,6 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
 public class ShoppingCart extends JFrame {
-    static ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
-    static ArrayList<setType> Set_Menu = new ArrayList<setType>();
-
     static JButton ViewMenu;
     static JFrame frame;
     static JTextField Discount;
@@ -17,13 +14,17 @@ public class ShoppingCart extends JFrame {
     static JRadioButton CreditCard;
     static JRadioButton forHere;
     static JRadioButton toGo;
+    //<Hsiang-Ming>
     static DefaultTableModel model1;
     static DefaultTableModel model2;
-    static String TotalContent = "";
+    static String TotalContent = "";//用來存顯示總金額的label
     static JLabel total;
-
+    static ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
+    static ArrayList<setType> Set_Menu = new ArrayList<setType>();
+    //<Hsiang-Ming>
+    
     public static void ShoppingCartFrame() {
-        new MenuData(Single_Menu, Set_Menu);
+        new MenuData(Single_Menu, Set_Menu);//new兩個已經轉好資料型態的arraylist以供資料取用
         // 建立Frame
         frame = new JFrame("購物車");
         Container contentPane = frame.getContentPane();
@@ -67,12 +68,14 @@ public class ShoppingCart extends JFrame {
         TopPanel.add(ViewMenu);
 
         // 設定可滾動表格
-        model1 = new MyTableModel();
-        model1.addColumn("餐點");
+        //<Hsiang-Ming>
+        model1 = new MyTableModel(); //繼承defaulttablemodel透過改寫讓tablemodel不可以輸入，詳見MyTableModel.java
+        model1.addColumn("餐點");//新增表頭
         model1.addColumn("數量");
         model1.addColumn("價錢");
-        AssignSingleOrderData(model1);
-        JTable table = new JTable(model1);
+        AssignSingleOrderData(model1);//把宣告好的model丟入自訂的assigndata內，產生表格
+        JTable table = new JTable(model1);//將準備好的model帶入JTable產生表格，以下同理
+        
 
 
         JScrollPane jscrollpane = new JScrollPane(table);
@@ -89,7 +92,7 @@ public class ShoppingCart extends JFrame {
         JTable table2 = new JTable(model2);
 
         JScrollPane jscrollpane2 = new JScrollPane(table2);
-
+        //<Hsiang-Ming>
         // 設定最下面的panel
         // 建立panel
         JPanel BottomPanel = new JPanel();
@@ -99,13 +102,14 @@ public class ShoppingCart extends JFrame {
         JLabel RemarksLab = new JLabel("備註");
         JLabel DiscountLab = new JLabel("優惠代碼");
         JLabel PayWayLab = new JLabel("付款方式");
-        if(TotalContent.equals("")){
+        //<Hsiang-Ming>
+        if(TotalContent.equals("")){ //第一次檢視購物車時預設顯示的總金額（尚未使用折扣碼）
             TotalContent = "總金額 "+OrderData.calculateTotal()+" 元";
         }
         total = new JLabel(TotalContent);
-
+        //<Hsiang-Ming>
         // 建立輸入框
-        Remarks = new JTextField();//TODO:Check
+        Remarks = new JTextField();
         LineBorder tt = new LineBorder(Color.GRAY);
         Remarks.setBorder(tt);
         Discount = new JTextField();
@@ -186,27 +190,27 @@ public class ShoppingCart extends JFrame {
         
     }
     public static void AssignSingleOrderData(DefaultTableModel model) {
-        for (int i = 0; i < 10 ; i++) {
-            if (OrderData.Singlecount[i] > 0) {
-                String[] temp1 = {(Single_Menu.get(i).getName()),(OrderData.Singlecount[i]+""),((Single_Menu.get(i).getPrice() * OrderData.Singlecount[i])+"")};
-                model.addRow(temp1);
+        for (int i = 0; i < 10 ; i++) {//透過for迴圈依序讀取點單暫存區
+            if (OrderData.Singlecount[i] > 0) {//判斷是否有點該餐點
+                String[] temp1 = {(Single_Menu.get(i).getName()),(OrderData.Singlecount[i]+""),((Single_Menu.get(i).getPrice() * OrderData.Singlecount[i])+"")};//將該餐點資料存入暫存的string陣列
+                model.addRow(temp1);//把暫存string陣列存入model
             }
         }
     }
-    public static void AssignSetOrderData(DefaultTableModel model) {
-        for (int i = 0; i < 3 ; i++) {
+    public static void AssignSetOrderData(DefaultTableModel model) {//與以上同理，差別在於將三套餐的主餐分類，分別存入model，會寫這麼醜是因為當初要debug不然本來很精簡，但我懶了qq
+        for (int i = 0; i < 3 ; i++) { //麥香雞
             String MainMealName = null;
             int price = 0;
             if (OrderData.Setcount[i] > 0){
-                MainMealName = Single_Menu.get(1).getName();
-                price = Single_Menu.get(1).getPrice();
+                MainMealName = Single_Menu.get(1).getName(); //把尚未存入的主餐名字存入
+                price = Single_Menu.get(1).getPrice(); // 主餐價格
             }
-            if(MainMealName != null) {
+            if(MainMealName != null) { //透過主餐名字是否存在來判定該餐點是否有被選取，我知道寫得很醜，當時在抓bug麻qq
                 String[] temp2 = {MainMealName+" "+ Set_Menu.get(i).getName(), (Set_Menu.get(i).getDish1().getName()), (Set_Menu.get(i).getDish2().getName()), (Set_Menu.get(i).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i).getPrice() + price) * OrderData.Setcount[i]) + ""};
-                model.addRow(temp2);
+                model.addRow(temp2);//與上方同理，有加 "" 的原因是要轉成string
             }
         }
-        for (int i = 3; i < 6; i++){
+        for (int i = 3; i < 6; i++){ //滿福堡
             String MainMealName = null;
             int price = 0;
             if (OrderData.Setcount[i] > 0){
@@ -218,7 +222,7 @@ public class ShoppingCart extends JFrame {
                 model.addRow(temp2);
             }
         }
-        for (int i = 6; i < 9; i++){
+        for (int i = 6; i < 9; i++){ //大麥克
             String MainMealName = null;
             int price = 0;
             if (OrderData.Setcount[i] > 0){
@@ -231,10 +235,10 @@ public class ShoppingCart extends JFrame {
             }
         }
     }
-    public static void CouponSingle(String[] CouponMeal){
-        model1.addRow(CouponMeal);
+    public static void CouponSingle(String[] CouponMeal){ //優惠碼兌換餐 單點
+        model1.addRow(CouponMeal); //把優惠餐加入tablemodel
     }
-    public static void CouponSet(String[] CouponMeal) {
-        model2.addRow(CouponMeal);
+    public static void CouponSet(String[] CouponMeal) { //套餐
+        model2.addRow(CouponMeal); //同理
     }
 }
