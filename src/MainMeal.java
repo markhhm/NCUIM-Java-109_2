@@ -1,4 +1,4 @@
-//<è˜‡æ¹˜å©·--
+//<Ä¬´ð´@--
 import javax.swing.*; 
 import java.awt.*;
 
@@ -9,18 +9,18 @@ public class MainMeal{
 
     public static void McMuffinFrame(){
         MainMealOrderFrame McMuffinOrderFrame = new MainMealOrderFrame(McMuffinIcon);
-        McMuffinOrderFrame.OrderFrame(6);//å¼•æ•¸æ˜¯å¥—é¤ä¸»é¤çš„ç´¢å¼•
+        McMuffinOrderFrame.OrderFrame(6);//¤Þ¼Æ¬O®MÀ\¥DÀ\ªº¯Á¤Þ
     }
 
     public static void McChickenFrame(){
         MainMealOrderFrame McChickenOrderFrame = new MainMealOrderFrame(McChickenIcon);
-        McChickenOrderFrame.OrderFrame(1);//å¼•æ•¸æ˜¯å¥—é¤ä¸»é¤çš„ç´¢å¼•
+        McChickenOrderFrame.OrderFrame(1);//¤Þ¼Æ¬O®MÀ\¥DÀ\ªº¯Á¤Þ
     }
 
     public static void BigMacFrame(){
         MainMealOrderFrame BigMacOrderFrame = new MainMealOrderFrame(BigMacIcon);
-        BigMacOrderFrame.OrderFrame(8);//å¼•æ•¸æ˜¯å¥—é¤ä¸»é¤çš„ç´¢å¼•
+        BigMacOrderFrame.OrderFrame(8);//¤Þ¼Æ¬O®MÀ\¥DÀ\ªº¯Á¤Þ
     }
 
 }
-//--è˜‡æ¹˜å©·>
+//--Ä¬´ð´@>

@@ -1,4 +1,4 @@
-//<è˜‡æ¹˜å©·--
+//<Ä¬´ğ´@--
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
@@ -9,138 +9,138 @@ public class ShoppingCart extends JFrame {
     static JButton ViewMenu;
     static JFrame frame;
     static JTextField Discount;
-    static JTextField Remarks;//JTextArea -> JTextField
-    // å»ºç«‹æŒ‰éˆ•çµ„
+    static JTextArea Remarks;
+    // «Ø¥ß«ö¶s²Õ
     static JRadioButton Cash;
     static JRadioButton CreditCard;
     static JRadioButton forHere;
     static JRadioButton toGo;
-//--è˜‡æ¹˜å©·>
+//--Ä¬´ğ´@>
 
     //<Hsiang-Ming>
     static DefaultTableModel model1;
     static DefaultTableModel model2;
-    static String TotalContent = "";//ç”¨ä¾†å­˜é¡¯ç¤ºç¸½é‡‘é¡çš„label
+    static String TotalContent = "";//¥Î¨Ó¦sÅã¥ÜÁ`ª÷ÃBªºlabel
     static JLabel total;
     static ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
     static ArrayList<setType> Set_Menu = new ArrayList<setType>();
     //<Hsiang-Ming>
 
-//<è˜‡æ¹˜å©·--
+//<Ä¬´ğ´@--
     public static void ShoppingCartFrame() {
-        new MenuData(Single_Menu, Set_Menu);//newå…©å€‹å·²ç¶“è½‰å¥½è³‡æ–™å‹æ…‹çš„arraylistä»¥ä¾›è³‡æ–™å–ç”¨
-        // å»ºç«‹Frame
-        frame = new JFrame("è³¼ç‰©è»Š");
+        new MenuData(Single_Menu, Set_Menu);//new¨â­Ó¤w¸gÂà¦n¸ê®Æ«¬ºAªºarraylist¥H¨Ñ¸ê®Æ¨ú¥Î
+        // «Ø¥ßFrame
+        frame = new JFrame("ÁÊª«¨®");
         Container contentPane = frame.getContentPane();
-        // è¨­å®šFrameçš„å¤§å°
+        // ³]©wFrameªº¤j¤p
         frame.setSize(1400, 900);
-        // è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
+        // ³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
         frame.setLocationRelativeTo(null);
-        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
+        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
         contentPane.setLayout(null);
 
-        // è¨­å®šæœ€ä¸Šé¢çš„panel
-        // å»ºç«‹panel
+        // ³]©w³Ì¤W­±ªºpanel
+        // «Ø¥ßpanel
         JPanel TopPanel = new JPanel();
 
-        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
+        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
         TopPanel.setLayout(null);
 
-        // å»ºç«‹æŒ‰éˆ•
-        ViewMenu = new JButton("è¿”å›èœå–®");
-        forHere = new JRadioButton("å…§ç”¨",false);
-        toGo = new JRadioButton("å¤–å¸¶",true);
+        // «Ø¥ß«ö¶s
+        ViewMenu = new JButton("ªğ¦^µæ³æ");
+        forHere = new JRadioButton("¤º¥Î",false);
+        toGo = new JRadioButton("¥~±a",true);
 
-        // å»ºç«‹ä¸€å€‹ButtonGroupç‰©ä»¶
+        // «Ø¥ß¤@­ÓButtonGroupª«¥ó
         ButtonGroup eating = new ButtonGroup();
         eating.add(forHere);
         eating.add(toGo);
 
-        // è¨­å®šä½ç½®å¤§å°
+        // ³]©w¦ì¸m¤j¤p
         forHere.setBounds(0, 10, 100, 50);
         toGo.setBounds(120, 10, 100, 50);
         ViewMenu.setBounds(1120, 0, 200, 50);
 
-        // æ”¹å­—çš„å¤§å°
+        // §ï¦rªº¤j¤p
         forHere.setFont(forHere.getFont().deriveFont(26.0f));
         toGo.setFont(toGo.getFont().deriveFont(26.0f));
         ViewMenu.setFont(ViewMenu.getFont().deriveFont(20.0f));
 
-        // æŠŠå…ƒä»¶åŠ åˆ°TopPanelè£¡
+        // §â¤¸¥ó¥[¨ìTopPanel¸Ì
         TopPanel.add(forHere);
         TopPanel.add(toGo);
         TopPanel.add(ViewMenu);
 
-        // è¨­å®šå¯æ»¾å‹•è¡¨æ ¼
+        // ³]©w¥iºu°Êªí®æ
         //<Hsiang-Ming>
-        model1 = new MyTableModel(); //ç¹¼æ‰¿defaulttablemodelé€éæ”¹å¯«è®“tablemodelä¸å¯ä»¥è¼¸å…¥ï¼Œè©³è¦‹MyTableModel.java
-        model1.addColumn("é¤é»");//æ–°å¢è¡¨é ­
-        model1.addColumn("æ•¸é‡");
-        model1.addColumn("åƒ¹éŒ¢");
-        AssignSingleOrderData(model1);//æŠŠå®£å‘Šå¥½çš„modelä¸Ÿå…¥è‡ªè¨‚çš„assigndataå…§ï¼Œç”¢ç”Ÿè¡¨æ ¼
-        JTable table = new JTable(model1);//å°‡æº–å‚™å¥½çš„modelå¸¶å…¥JTableç”¢ç”Ÿè¡¨æ ¼ï¼Œä»¥ä¸‹åŒç†
+        model1 = new MyTableModel(); //Ä~©Ódefaulttablemodel³z¹L§ï¼gÅıtablemodel¤£¥i¥H¿é¤J¡A¸Ô¨£MyTableModel.java
+        model1.addColumn("À\ÂI");//·s¼WªíÀY
+        model1.addColumn("¼Æ¶q");
+        model1.addColumn("»ù¿ú");
+        AssignSingleOrderData(model1);//§â«Å§i¦nªºmodel¥á¤J¦Û­qªºassigndata¤º¡A²£¥Íªí®æ
+        JTable table = new JTable(model1);//±N·Ç³Æ¦nªºmodel±a¤JJTable²£¥Íªí®æ¡A¥H¤U¦P²z
 
         JScrollPane jscrollpane = new JScrollPane(table);
 
-        // åŠ å…¥ç¬¬äºŒå€‹è¡¨æ ¼
+        // ¥[¤J²Ä¤G­Óªí®æ
         model2 = new MyTableModel();
-        model2.addColumn("ä¸»é¤");
-        model2.addColumn("å‰¯é¤1");
-        model2.addColumn("å‰¯é¤2");
-        model2.addColumn("é£²æ–™");
-        model2.addColumn("æ•¸é‡");
-        model2.addColumn("åƒ¹éŒ¢");
+        model2.addColumn("¥DÀ\");
+        model2.addColumn("°ÆÀ\1");
+        model2.addColumn("°ÆÀ\2");
+        model2.addColumn("¶¼®Æ");
+        model2.addColumn("¼Æ¶q");
+        model2.addColumn("»ù¿ú");
         AssignSetOrderData(model2);
         JTable table2 = new JTable(model2);
 
         JScrollPane jscrollpane2 = new JScrollPane(table2);
         //<Hsiang-Ming>
         
-        // è¨­å®šæœ€ä¸‹é¢çš„panel
-        // å»ºç«‹panel
+        // ³]©w³Ì¤U­±ªºpanel
+        // «Ø¥ßpanel
         JPanel BottomPanel = new JPanel();
-        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
+        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
         BottomPanel.setLayout(null);
-        // å»ºç«‹æ–‡å­—Label
-        JLabel RemarksLab = new JLabel("å‚™è¨»");
-        JLabel DiscountLab = new JLabel("å„ªæƒ ä»£ç¢¼");
-        JLabel PayWayLab = new JLabel("ä»˜æ¬¾æ–¹å¼");
-//--è˜‡æ¹˜å©·>
+        // «Ø¥ß¤å¦rLabel
+        JLabel RemarksLab = new JLabel("³Æµù");
+        JLabel DiscountLab = new JLabel("Àu´f¥N½X");
+        JLabel PayWayLab = new JLabel("¥I´Ú¤è¦¡");
+//--Ä¬´ğ´@>
 
         //<Hsiang-Ming>
-        if(TotalContent.equals("")){ //ç¬¬ä¸€æ¬¡æª¢è¦–è³¼ç‰©è»Šæ™‚é è¨­é¡¯ç¤ºçš„ç¸½é‡‘é¡ï¼ˆå°šæœªä½¿ç”¨æŠ˜æ‰£ç¢¼ï¼‰
-            TotalContent = "ç¸½é‡‘é¡ "+OrderData.calculateTotal()+" å…ƒ";
+        if(TotalContent.equals("")){ //²Ä¤@¦¸ÀËµøÁÊª«¨®®É¹w³]Åã¥ÜªºÁ`ª÷ÃB¡]©|¥¼¨Ï¥Î§é¦©½X¡^
+            TotalContent = "Á`ª÷ÃB "+OrderData.calculateTotal()+" ¤¸";
         }
         total = new JLabel(TotalContent);
         //<Hsiang-Ming>
 
-//<è˜‡æ¹˜å©·--
-        // å»ºç«‹è¼¸å…¥æ¡†
-        Remarks = new JTextField();
+//<Ä¬´ğ´@--
+        // «Ø¥ß¿é¤J®Ø
+        Remarks = new JTextArea();
         LineBorder tt = new LineBorder(Color.GRAY);
         Remarks.setBorder(tt);
         Discount = new JTextField();
         JTextField CreditCardNumber = new JTextField();
 
-        // å»ºç«‹æŒ‰éˆ•
-        JButton Verification = new JButton("é©—è­‰");
-        JButton CancelOrder = new JButton("å–æ¶ˆè¨‚å–®");
-        JButton Checkout = new JButton("ç¢ºèªçµå¸³");
+        // «Ø¥ß«ö¶s
+        JButton Verification = new JButton("ÅçÃÒ");
+        JButton CancelOrder = new JButton("¨ú®ø­q³æ");
+        JButton Checkout = new JButton("½T»{µ²±b");
 
-        Cash = new JRadioButton("ç¾é‡‘",true);
-        CreditCard = new JRadioButton("ä¿¡ç”¨å¡",false);
-        // å»ºç«‹ä¸€å€‹ButtonGroupç‰©ä»¶
+        Cash = new JRadioButton("²{ª÷",true);
+        CreditCard = new JRadioButton("«H¥Î¥d",false);
+        // «Ø¥ß¤@­ÓButtonGroupª«¥ó
         ButtonGroup bg = new ButtonGroup();
         bg.add(Cash);
         bg.add(CreditCard);
 
         
-        // è¨­å®šå…ƒä»¶ä½ç½®.å¤§å°
+        // ³]©w¤¸¥ó¦ì¸m.¤j¤p
         total.setBounds(1100, 20, 200, 70);
-        RemarksLab.setBounds(0, 200, 200, 100);//NOTE: y 100->200
+        RemarksLab.setBounds(0, 180, 200, 100);//NOTE: y 100->200
         DiscountLab.setBounds(0, 100, 200, 100);//NOTE: y 200-> 100
         PayWayLab.setBounds(0, 270, 200, 100);
-        Remarks.setBounds(120, 220, 1200, 50);//NOTE: y 100 -> 220
+        Remarks.setBounds(120, 190, 1200, 80);//NOTE: y 100 -> 220
         Discount.setBounds(120, 120, 1080, 50);//NOTE: y 220 -> 100
         Verification.setBounds(1220, 120, 100, 50);
         Cash.setBounds(120, 290, 100, 50);
@@ -149,7 +149,7 @@ public class ShoppingCart extends JFrame {
         CancelOrder.setBounds(1000, 370, 150, 80);
         Checkout.setBounds(1170, 370, 150, 80);
 
-        // æ”¹å­—çš„å¤§å°
+        // §ï¦rªº¤j¤p
         total.setFont(total.getFont().deriveFont(26.0f));
         RemarksLab.setFont(RemarksLab.getFont().deriveFont(16.0f));
         DiscountLab.setFont(DiscountLab.getFont().deriveFont(16.0f));
@@ -160,7 +160,7 @@ public class ShoppingCart extends JFrame {
         CancelOrder.setFont(CancelOrder.getFont().deriveFont(20.0f));
         Checkout.setFont(Checkout.getFont().deriveFont(20.0f));
 
-        // æŠŠå…ƒä»¶åŠ åˆ°BottomPanelè£¡
+        // §â¤¸¥ó¥[¨ìBottomPanel¸Ì
         BottomPanel.add(RemarksLab);
         BottomPanel.add(DiscountLab);
         BottomPanel.add(total);
@@ -174,19 +174,19 @@ public class ShoppingCart extends JFrame {
         BottomPanel.add(CancelOrder);
         BottomPanel.add(Checkout);
 
-        // åŠ å…¥è§¸ç™¼ç‰©ä»¶
+        // ¥[¤JÄ²µoª«¥ó
         CancelOrder.addActionListener(new CancelListener());
         Checkout.addActionListener(new DetailListener());
         ViewMenu.addActionListener(new ViewMenuListener());
         Verification.addActionListener(new VerificationListener());
 
-        // è¨­å®šä¸‰å€‹panelçš„ä½ç½®.å¤§å°
+        // ³]©w¤T­Ópanelªº¦ì¸m.¤j¤p
         TopPanel.setBounds(40, 20, 1320, 100);
         jscrollpane.setBounds(40, 120, 1320, 120);
         jscrollpane2.setBounds(40, 250, 1320, 120);
         BottomPanel.setBounds(40, 360, 1320, 550);
 
-        // åŠ å…¥panel
+        // ¥[¤Jpanel
         contentPane.add(TopPanel);
         contentPane.add(jscrollpane);
         contentPane.add(jscrollpane2);
@@ -195,30 +195,30 @@ public class ShoppingCart extends JFrame {
         frame.setVisible(true);
         
     }
-//--è˜‡æ¹˜å©·>
+//--Ä¬´ğ´@>
 
     public static void AssignSingleOrderData(DefaultTableModel model) {
-        for (int i = 0; i < 10 ; i++) {//é€éforè¿´åœˆä¾åºè®€å–é»å–®æš«å­˜å€
-            if (OrderData.Singlecount[i] > 0) {//åˆ¤æ–·æ˜¯å¦æœ‰é»è©²é¤é»
-                String[] temp1 = {(Single_Menu.get(i).getName()),(OrderData.Singlecount[i]+""),((Single_Menu.get(i).getPrice() * OrderData.Singlecount[i])+"")};//å°‡è©²é¤é»è³‡æ–™å­˜å…¥æš«å­˜çš„stringé™£åˆ—
-                model.addRow(temp1);//æŠŠæš«å­˜stringé™£åˆ—å­˜å…¥model
+        for (int i = 0; i < 10 ; i++) {//³z¹Lfor°j°é¨Ì§ÇÅª¨úÂI³æ¼È¦s°Ï
+            if (OrderData.Singlecount[i] > 0) {//§PÂ_¬O§_¦³ÂI¸ÓÀ\ÂI
+                String[] temp1 = {(Single_Menu.get(i).getName()),(OrderData.Singlecount[i]+""),((Single_Menu.get(i).getPrice() * OrderData.Singlecount[i])+"")};//±N¸ÓÀ\ÂI¸ê®Æ¦s¤J¼È¦sªºstring°}¦C
+                model.addRow(temp1);//§â¼È¦sstring°}¦C¦s¤Jmodel
             }
         }
     }
-    public static void AssignSetOrderData(DefaultTableModel model) {//èˆ‡ä»¥ä¸ŠåŒç†ï¼Œå·®åˆ¥åœ¨æ–¼å°‡ä¸‰å¥—é¤çš„ä¸»é¤åˆ†é¡ï¼Œåˆ†åˆ¥å­˜å…¥modelï¼Œæœƒå¯«é€™éº¼é†œæ˜¯å› ç‚ºç•¶åˆè¦debugä¸ç„¶æœ¬ä¾†å¾ˆç²¾ç°¡ï¼Œä½†æˆ‘æ‡¶äº†qq
-        for (int i = 0; i < 3 ; i++) { //éº¥é¦™é›
+    public static void AssignSetOrderData(DefaultTableModel model) {//»P¥H¤W¦P²z¡A®t§O¦b©ó±N¤T®MÀ\ªº¥DÀ\¤ÀÃş¡A¤À§O¦s¤Jmodel¡A·|¼g³o»òÁà¬O¦]¬°·íªì­ndebug¤£µM¥»¨Ó«ÜºëÂ²¡A¦ı§ÚÃi¤Fqq
+        for (int i = 0; i < 3 ; i++) { //³Á­»Âû
             String MainMealName = null;
             int price = 0;
             if (OrderData.Setcount[i] > 0){
-                MainMealName = Single_Menu.get(1).getName(); //æŠŠå°šæœªå­˜å…¥çš„ä¸»é¤åå­—å­˜å…¥
-                price = Single_Menu.get(1).getPrice(); // ä¸»é¤åƒ¹æ ¼
+                MainMealName = Single_Menu.get(1).getName(); //§â©|¥¼¦s¤Jªº¥DÀ\¦W¦r¦s¤J
+                price = Single_Menu.get(1).getPrice(); // ¥DÀ\»ù®æ
             }
-            if(MainMealName != null) { //é€éä¸»é¤åå­—æ˜¯å¦å­˜åœ¨ä¾†åˆ¤å®šè©²é¤é»æ˜¯å¦æœ‰è¢«é¸å–ï¼Œæˆ‘çŸ¥é“å¯«å¾—å¾ˆé†œï¼Œç•¶æ™‚åœ¨æŠ“bugéº»qq
+            if(MainMealName != null) { //³z¹L¥DÀ\¦W¦r¬O§_¦s¦b¨Ó§P©w¸ÓÀ\ÂI¬O§_¦³³Q¿ï¨ú¡A§Úª¾¹D¼g±o«ÜÁà¡A·í®É¦b§ìbug³Âqq
                 String[] temp2 = {MainMealName+" "+ Set_Menu.get(i).getName(), (Set_Menu.get(i).getDish1().getName()), (Set_Menu.get(i).getDish2().getName()), (Set_Menu.get(i).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i).getPrice() + price) * OrderData.Setcount[i]) + ""};
-                model.addRow(temp2);//èˆ‡ä¸Šæ–¹åŒç†ï¼Œæœ‰åŠ  "" çš„åŸå› æ˜¯è¦è½‰æˆstring
+                model.addRow(temp2);//»P¤W¤è¦P²z¡A¦³¥[ "" ªº­ì¦]¬O­nÂà¦¨string
             }
         }
-        for (int i = 3; i < 6; i++){ //æ»¿ç¦å ¡
+        for (int i = 3; i < 6; i++){ //º¡ºÖ³ù
             String MainMealName = null;
             int price = 0;
             if (OrderData.Setcount[i] > 0){
@@ -230,7 +230,7 @@ public class ShoppingCart extends JFrame {
                 model.addRow(temp2);
             }
         }
-        for (int i = 6; i < 9; i++){ //å¤§éº¥å…‹
+        for (int i = 6; i < 9; i++){ //¤j³Á§J
             String MainMealName = null;
             int price = 0;
             if (OrderData.Setcount[i] > 0){
@@ -243,10 +243,10 @@ public class ShoppingCart extends JFrame {
             }
         }
     }
-    public static void CouponSingle(String[] CouponMeal){ //å„ªæƒ ç¢¼å…Œæ›é¤ å–®é»
-        model1.addRow(CouponMeal); //æŠŠå„ªæƒ é¤åŠ å…¥tablemodel
+    public static void CouponSingle(String[] CouponMeal){ //Àu´f½X§I´«À\ ³æÂI
+        model1.addRow(CouponMeal); //§âÀu´fÀ\¥[¤Jtablemodel
     }
-    public static void CouponSet(String[] CouponMeal) { //å¥—é¤
-        model2.addRow(CouponMeal); //åŒç†
+    public static void CouponSet(String[] CouponMeal) { //®MÀ\
+        model2.addRow(CouponMeal); //¦P²z
     }
 }

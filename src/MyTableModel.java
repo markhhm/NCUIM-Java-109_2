@@ -1,4 +1,4 @@
-//<蘇湘婷--
+//<Ĭ��@--
 import javax.swing.*; 
 import java.awt.*;
 import java.util.*;
@@ -10,4 +10,4 @@ class MyTableModel extends DefaultTableModel{
         return false;
     }
 }
-//--蘇湘婷>
+//--Ĭ��@>

@@ -3,23 +3,23 @@ import java.util.ArrayList;
 
 public class ReadCSV {
     //<Hsiang-Ming>
-    //é€™å€‹classä½œç‚ºCSVçš„è®€å–å™¨
-    String filename;//è¦è®€çš„æª”æ¡ˆåç¨±
-    ArrayList<String> csvArrayList = new ArrayList<String>();//å®£å‘Šä¸€å€‹ArrayListä½œç‚ºè®€å…¥æª”æ¡ˆçš„æš«å­˜å€
+    //³o­Óclass§@¬°CSVªºÅª¨ú¾¹
+    String filename;//­nÅªªºÀÉ®×¦WºÙ
+    ArrayList<String> csvArrayList = new ArrayList<String>();//«Å§i¤@­ÓArrayList§@¬°Åª¤JÀÉ®×ªº¼È¦s°Ï
 
     public ReadCSV(String filename) {
         this.filename = filename;
 
-        File csvFile = new File(filename);//newä¸€å€‹æª”æ¡ˆobject
+        File csvFile = new File(filename);//new¤@­ÓÀÉ®×object
 
-        try { //åšerror handling
-            BufferedReader reader = new BufferedReader(new FileReader(csvFile));//é€éFileReaderå‚³å…¥BufferedReaderé€è¡Œè®€å‡º
-            String csvString; //å®£å‘Šä¸€å€‹stringé€£çºŒæ”¶å…¥BufferedReaderè®€å‡ºçš„string
-            String[] arrayFinish;//å®£å‘Šä¸€å€‹Stringé™£åˆ—è¦æ”¾æ‹†åˆ†éçš„String
+        try { //°µerror handling
+            BufferedReader reader = new BufferedReader(new FileReader(csvFile));//³z¹LFileReader¶Ç¤JBufferedReader³v¦æÅª¥X
+            String csvString; //«Å§i¤@­Óstring³sÄò¦¬¤JBufferedReaderÅª¥Xªºstring
+            String[] arrayFinish;//«Å§i¤@­ÓString°}¦C­n©ñ©î¤À¹LªºString
             while((csvString = reader.readLine()) != null) {
-                arrayFinish = csvString.split(",");//æŠŠé€£çºŒStringä¾ç…§é€—é»åˆ†é–‹ï¼Œå­˜å…¥Stringé™£åˆ—
+                arrayFinish = csvString.split(",");//§â³sÄòString¨Ì·Ó³rÂI¤À¶}¡A¦s¤JString°}¦C
                 for (String arrayFinishData : arrayFinish) {
-                    csvArrayList.add(arrayFinishData);//æŠŠStringé™£åˆ—å…§çš„å…ƒç´ ä¾åºå­˜å…¥å‰›é–‹å§‹å®£å‘Šå¥½çš„ArrayList
+                    csvArrayList.add(arrayFinishData);//§âString°}¦C¤ºªº¤¸¯À¨Ì§Ç¦s¤J­è¶}©l«Å§i¦nªºArrayList
                 }
             }
             reader.close();

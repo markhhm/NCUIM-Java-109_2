@@ -1,4 +1,4 @@
-//<è˜‡æ¹˜å©·--
+//<Ä¬´ð´@--
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class SideMealOrderFrame extends JFrame implements ActionListener{
     //<Hsiang-Ming>
-    //æŠŠæŒ‰éµå®£å‘Šåœ¨ä¸Šæ–¹çš„åŽŸå› æ˜¯ï¼Œéœ€å­˜ç‚ºclassç´šåˆ¥çš„ä¸‹æ–¹çš„æ–¹æ³•æ‰èƒ½ç›´æŽ¥å­˜å–
+    //§â«öÁä«Å§i¦b¤W¤èªº­ì¦]¬O¡A»Ý¦s¬°class¯Å§Oªº¤U¤èªº¤èªk¤~¯àª½±µ¦s¨ú
     static int singleCountIndex;
     JButton addBtn;
     JButton reduceBtn;
@@ -36,38 +36,38 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         frame = new JFrame("Order");
 		Container contentPane = frame.getContentPane();
 
-        // è¨­å®šåœ–ç¤º
+        // ³]©w¹Ï¥Ü
      	frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
         frame.setSize(800, 500); 
-        //è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
+        //³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
         frame.setLocationRelativeTo(null);
 
-        // å»ºç«‹ä¸€å€‹JPanelçš„ä¾‹é …
+        // «Ø¥ß¤@­ÓJPanelªº¨Ò¶µ
         JPanel panel = new JPanel(); 
  
-        //è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
+        //³]©w®e¾¹¤£¨Ï¥Î§G§½ºÞ²z­û
         panel.setLayout(null); 
 
-        //å»ºç«‹æ¨™ç±¤
+        //«Ø¥ß¼ÐÅÒ
         JLabel SideMealLab = new JLabel();
-        SideMealQuantity = new JLabel(OrderData.Singlecount[singleCountIndex]+"");//é¡¯ç¤ºç•¶å‰æ•¸é‡
+        SideMealQuantity = new JLabel(OrderData.Singlecount[singleCountIndex]+"");//Åã¥Ü·í«e¼Æ¶q
 
-        //è¨­å®šå­—çš„å¤§å°
+        //³]©w¦rªº¤j¤p
         SideMealQuantity.setFont(SideMealQuantity.getFont().deriveFont(32.0f));
 
-        //å»ºç«‹åœ–ç‰‡ç‰©ä»¶
+        //«Ø¥ß¹Ï¤ùª«¥ó
         ImageIcon reduceBtnIcon = new ImageIcon("image/reduceBtn.jpg");
 		ImageIcon addBtnIcon = new ImageIcon("image/addBtn.jpg");
 
         SideMealLab.setIcon(SideMealIcon);
 
-        //å»ºç«‹æŒ‰éˆ•
+        //«Ø¥ß«ö¶s
         reduceBtn = new JButton(reduceBtnIcon);
         addBtn = new JButton(addBtnIcon);
         Cancel = new JButton("Cancel");
         Confirm = new JButton("Confirm");
         
-        //è¨­å®šä½ç½®å¤§å°
+        //³]©w¦ì¸m¤j¤p
         SideMealLab.setBounds(280,20,260,230);
         SideMealQuantity.setBounds(380,250,70,70);
         reduceBtn.setBounds(230,250,70,70);
@@ -76,7 +76,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         Confirm.setBounds(650, 360,100,60);
 
 
-        //å°‡ç‰©ä»¶æ·»åŠ åˆ°panel
+        //±Nª«¥ó²K¥[¨ìpanel
         panel.add(SideMealLab);
         panel.add(SideMealQuantity);
         panel.add(reduceBtn);
@@ -84,28 +84,28 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         panel.add(Cancel);
         panel.add(Confirm);
 
-        reduceBtn.addActionListener(this);//è¨­å®šç›£è½ï¼Œè®“ActionPerformedé‹ä½œ
+        reduceBtn.addActionListener(this);//³]©wºÊÅ¥¡AÅýActionPerformed¹B§@
         addBtn.addActionListener(this);
         Cancel.addActionListener(this);
         Confirm.addActionListener(this);
 
-		contentPane.add(panel); // å°‡JPanelä¾‹é …æ–°å¢žåˆ°JFrame
+		contentPane.add(panel); // ±NJPanel¨Ò¶µ·s¼W¨ìJFrame
 		frame.setVisible(true); 
 
     }
-//--è˜‡æ¹˜å©·>
+//--Ä¬´ð´@>
 
     public void actionPerformed(ActionEvent e) {
         int total = 0;
-        if (e.getSource() == addBtn) { //é€éŽe.getSource() æŠ“å–æŒ‰éˆ•
-            OrderData.Singlecount[singleCountIndex] ++; //å–®é»ž++
+        if (e.getSource() == addBtn) { //³z¹Le.getSource() §ì¨ú«ö¶s
+            OrderData.Singlecount[singleCountIndex] ++; //³æÂI++
         } else if (e.getSource() == reduceBtn) {
-            if(OrderData.Singlecount[singleCountIndex] > 0) { //æª¢æŸ¥æš«å­˜å€çš„è¨ˆæ•¸å™¨ï¼Œé¿å…è®Šæˆè² çš„
-                OrderData.Singlecount[singleCountIndex]--; //å–®é»žï¼ï¼
+            if(OrderData.Singlecount[singleCountIndex] > 0) { //ÀË¬d¼È¦s°Ïªº­p¼Æ¾¹¡AÁ×§KÅÜ¦¨­tªº
+                OrderData.Singlecount[singleCountIndex]--; //³æÂI¡Ð¡Ð
             }
         } else if(e.getSource() == Confirm || e.getSource() == Cancel) {
             frame.dispose();
         }
-        SideMealQuantity.setText(OrderData.Singlecount[singleCountIndex]+""); //æ›´æ–°labelçš„è¨ˆæ•¸å™¨
+        SideMealQuantity.setText(OrderData.Singlecount[singleCountIndex]+""); //§ó·slabelªº­p¼Æ¾¹
     }
 }

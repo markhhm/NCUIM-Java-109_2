@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 //<Hsiang-Ming>
-//é€™å€‹classç”¨ä¾†å­˜å–®é»çš„è³‡æ–™å‹æ…‹
+//³o­Óclass¥Î¨Ó¦s³æÂIªº¸ê®Æ«¬ºA
 public class singleType {
     private int id;
     private String name;
     private int price;
     private int property;
     private Boolean breakfast;
-    singleType(String id, String name, String price, String property, String breakfast){ //å»ºæ§‹å­
+    singleType(String id, String name, String price, String property, String breakfast){ //«Øºc¤l
         if (id != null) {
             setId(id);
             setName(name);
@@ -20,13 +20,13 @@ public class singleType {
             this.breakfast = false;
         }
     }
-    public int property_trans(String property){ //æŠŠåŸæœ¬çš„å‰¯é¤å±¬æ€§å¾Stringè½‰ç‚ºintæ–¹ä¾¿å–ç”¨
+    public int property_trans(String property){ //§â­ì¥»ªº°ÆÀ\Äİ©Ê±qStringÂà¬°int¤è«K¨ú¥Î
         int temp = 0;
-        if(property == "ä¸»é¤") {
+        if(property == "¥DÀ\") {
             temp = 1;
-        } else if(property == "å‰¯é¤") {
+        } else if(property == "°ÆÀ\") {
             temp = 2;
-        } else if(property == "é£²æ–™") {
+        } else if(property == "¶¼®Æ") {
             temp = 3;
         }
         return temp;

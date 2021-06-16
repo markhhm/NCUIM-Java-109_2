@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 //<Hsiang-Ming>
-//å¥—é¤çš„è³‡æ–™å‹æ…‹
+//®MÀ\ªº¸ê®Æ«¬ºA
 public class setType {
     private char id;
     private String name;
@@ -9,7 +9,7 @@ public class setType {
     private singleType drink;
     private int price;
 
-    setType(String id, String name, String dish1, String dish2, String drink, String price) { //å»ºæ§‹å­
+    setType(String id, String name, String dish1, String dish2, String drink, String price) { //«Øºc¤l
         setId(id);
         setName(name);
         setDish1(dish1);
@@ -17,19 +17,19 @@ public class setType {
         setDrink(drink);
         setPrice(price);
     }
-    public singleType dish_trans(int dish){ //å°‡åŸæœ¬å¥—é¤å…§çš„å‰¯é¤è½‰æˆä¸€ç­†å–®é»çš„ï¼Œæ–¹ä¾¿æ—¥å¾Œå­˜å–ï¼Œæˆ–æ˜¯åšå®¢è£½åŒ–å¥—é¤
-        if (dish != -1) { //å‰¯é¤ç·¨è™Ÿé è¨­ç‚º0(-1)ï¼Œè‹¥ç‚º0(-1)ä»£è¡¨æ²’æœ‰è©²å‰¯é¤
+    public singleType dish_trans(int dish){ //±N­ì¥»®MÀ\¤ºªº°ÆÀ\Âà¦¨¤@µ§³æÂIªº¡A¤è«K¤é«á¦s¨ú¡A©Î¬O°µ«È»s¤Æ®MÀ\
+        if (dish != -1) { //°ÆÀ\½s¸¹¹w³]¬°0(-1)¡A­Y¬°0(-1)¥Nªí¨S¦³¸Ó°ÆÀ\
             ArrayList<singleType> Single_Menu_Ref = new ArrayList<singleType>();
-            new MenuData(Single_Menu_Ref);//newä¸€å€‹å–®é»èœå–®å‡ºä¾†åšç‚ºåƒè€ƒè³‡æ–™èª¿ç”¨
+            new MenuData(Single_Menu_Ref);//new¤@­Ó³æÂIµæ³æ¥X¨Ó°µ¬°°Ñ¦Ò¸ê®Æ½Õ¥Î
             return Single_Menu_Ref.get(dish);
         } else {
             return new singleType(null, null, null, null, null);
         }
     }
 
-    public void setId(String id) { this.id = id.charAt(0); }//æŠŠåŸæœ¬çš„string id è½‰ç‚º char
+    public void setId(String id) { this.id = id.charAt(0); }//§â­ì¥»ªºstring id Âà¬° char
     public void setName(String name) { this.name = name ; }
-    public void setDish1(String dish1) { this.dish1 = dish_trans(Integer.parseInt(dish1) - 1); }//æŠŠå¥—é¤å…§çš„å‰¯é¤stringè½‰ç‚ºå–®é»å±¬æ€§ï¼Œæ¸›ä¸€æ˜¯å› ç‚ºä¸å­˜å…¥è¡¨é ­çš„æƒ…æ³ä¸‹ï¼Œæ¯å€‹é¤é»çš„indexå€¼æœƒæ¯”å¯¦éš›å¤§ã„§ï¼Œæ•…éœ€æ¸›å›ï¼Œä»¥ä¸‹åŒç†
+    public void setDish1(String dish1) { this.dish1 = dish_trans(Integer.parseInt(dish1) - 1); }//§â®MÀ\¤ºªº°ÆÀ\stringÂà¬°³æÂIÄİ©Ê¡A´î¤@¬O¦]¬°¤£¦s¤JªíÀYªº±¡ªp¤U¡A¨C­ÓÀ\ÂIªºindex­È·|¤ñ¹ê»Ú¤j£¸¡A¬G»İ´î¦^¡A¥H¤U¦P²z
     public void setDish2(String dish2) { this.dish2 = dish_trans(Integer.parseInt(dish2) - 1); }
     public void setDrink(String drink) { this.drink = dish_trans(Integer.parseInt(drink) - 1); }
     public void setPrice(String price) { this.price = Integer.parseInt(price); }
