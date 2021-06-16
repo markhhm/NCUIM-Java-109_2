@@ -10,7 +10,6 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
     static int singleCountIndex;
     JButton addBtn;
     JButton reduceBtn;
-    JButton Cancel;
     JButton Confirm;
     JFrame frame;
     JLabel SideMealQuantity;
@@ -64,7 +63,6 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         //建立按鈕
         reduceBtn = new JButton(reduceBtnIcon);
         addBtn = new JButton(addBtnIcon);
-        Cancel = new JButton("Cancel");
         Confirm = new JButton("Confirm");
         
         //設定位置大小
@@ -72,7 +70,6 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         SideMealQuantity.setBounds(380,250,70,70);
         reduceBtn.setBounds(230,250,70,70);
         addBtn.setBounds(500,250,70,70);
-        Cancel.setBounds(500, 360,100,60);
         Confirm.setBounds(650, 360,100,60);
 
 
@@ -81,12 +78,10 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         panel.add(SideMealQuantity);
         panel.add(reduceBtn);
         panel.add(addBtn);
-        panel.add(Cancel);
         panel.add(Confirm);
 //<洪祥銘--
         reduceBtn.addActionListener(this);//設定監聽，讓ActionPerformed運作
         addBtn.addActionListener(this);
-        Cancel.addActionListener(this);
         Confirm.addActionListener(this);
 //--洪祥銘>
 		contentPane.add(panel); // 將JPanel例項新增到JFrame
@@ -103,7 +98,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
             if(OrderData.Singlecount[singleCountIndex] > 0) { //檢查暫存區的計數器，避免變成負的
                 OrderData.Singlecount[singleCountIndex]--; //單點－－
             }
-        } else if(e.getSource() == Confirm || e.getSource() == Cancel) {
+        } else if(e.getSource() == Confirm) {
             frame.dispose();
         }
         SideMealQuantity.setText(OrderData.Singlecount[singleCountIndex]+""); //更新label的計數器

@@ -13,7 +13,6 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
     JButton setAReduceBtn;
     JButton setBReduceBtn;
     JButton setCReduceBtn;
-    JButton Cancel;
     JButton Confirm;
     JButton singleBtn;
     JButton setABtn;
@@ -89,7 +88,6 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setAReduceBtn = new JButton(smallReduceBtnIcon);
         setBReduceBtn = new JButton(smallReduceBtnIcon);
         setCReduceBtn = new JButton(smallReduceBtnIcon);
-        Cancel = new JButton("Cancel");
         Confirm = new JButton("Confirm");
 
         singleBtn = new JButton("單點 " + mealName);
@@ -115,7 +113,6 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setBQuantity.setBounds(650, 180, 60, 60);
         setCQuantity.setBounds(650, 260, 60, 60);
 
-        Cancel.setBounds(500, 360, 100, 60);
         Confirm.setBounds(650, 360, 100, 60);
 
         // 將物件添加到panel
@@ -134,7 +131,6 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         panel.add(setBQuantity);
         panel.add(setCQuantity);
 
-        panel.add(Cancel);
         panel.add(Confirm);
         
 //--蘇湘婷>
@@ -143,7 +139,6 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setAReduceBtn.addActionListener(this);
         setBReduceBtn.addActionListener(this);
         setCReduceBtn.addActionListener(this);
-        Cancel.addActionListener(this);
         Confirm.addActionListener(this);
         singleBtn.addActionListener(this);
         setABtn.addActionListener(this);
@@ -196,7 +191,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
             if (OrderData.Setcount[setCountIndex + 2] > 0) {
                 OrderData.Setcount[setCountIndex + 2]--;
             }
-        } else if (e.getSource() == Confirm || e.getSource() == Cancel) {
+        } else if (e.getSource() == Confirm) {
             frame.dispose();
         }
         
