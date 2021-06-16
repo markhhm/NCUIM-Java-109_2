@@ -1,4 +1,4 @@
-import javax.swing.*;  //¤Þ¥ÎSwing®M¥ó
+import javax.swing.*;
 
 public class SideMeal{
     static ImageIcon smallFriesIcon = new ImageIcon("image/smallFries.jpg");

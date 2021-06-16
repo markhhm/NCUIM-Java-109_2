@@ -74,20 +74,21 @@ class SpriteOrderListener implements ActionListener {
 
 class ShoppingCartListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-
-		ShoppingCart.ShoppingCartFrame();
+		ShoppingCart s = new ShoppingCart();
+		s.ShoppingCartFrame();
 	}
 }
 
 class DetailListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
+		OrderData.RemarksContent = ShoppingCart.Remarks.getText();
 		Detail.Detail();
 	}
 }
 
 class CancelListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		int result = JOptionPane.showConfirmDialog(null, "¬O§_­n¨ú®ø­q³æ¡H", "¨ú®ø­q³æ½T»{", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		int result = JOptionPane.showConfirmDialog(null, "ï¿½ï¿½è‡¬ï¿½è¥¿ï¿½ï¿½ï¿½ï¿½ï¿½ç˜¨ï¿½é–®ï¿½ï¿½ï¿½æ®·ï¿½ï¿½", "ï¿½ï¿½ï¿½ç˜¨ï¿½é–®ï¿½ï¿½ï¿½æ¡ƒâ…¡éš¤ï¿½", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if (result == JOptionPane.YES_OPTION){
 			System.exit(0);
 		}
@@ -104,14 +105,10 @@ class VerificationListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		int check = CouponCheck();
 		if(check != 0 && check <= 3){
-			OrderData.CouponCode = ShoppingCart.Discount.getText();
-			ShoppingCart.frame.dispose();
-			ShoppingCart.ShoppingCartFrame();
+			OrderData.CouponCode += ShoppingCart.Discount.getText() + " ";//TODO: use add
 			ShoppingCart.CouponSingle(CouponList(check));
 		} else if (check > 3) {
-			OrderData.CouponCode = ShoppingCart.Discount.getText();
-			ShoppingCart.frame.dispose();
-			ShoppingCart.ShoppingCartFrame();
+			OrderData.CouponCode += ShoppingCart.Discount.getText() + " ";//TODO: use add
 			ShoppingCart.CouponSet(CouponList(check));
 		} else {
 			JOptionPane.showMessageDialog(null,"Invalid Coupon","Fail",JOptionPane.INFORMATION_MESSAGE, new ImageIcon("image/joptionpaneICON.png"));
@@ -128,6 +125,10 @@ class VerificationListener implements ActionListener {
 			value = 3;
 		} else if(ShoppingCart.Discount.getText().equals("SuperCoupon")){
 			value = 4;
+		} else if(ShoppingCart.Discount.getText().equals("å–®é»ä¸€æŠ˜")){
+			value = 5;
+		} else if(ShoppingCart.Discount.getText().equals("æ‰“æŠ˜æ‰“åˆ°éª¨æŠ˜")) {
+			value = 6;
 		} else {
 			value = 0;
 		}
@@ -146,7 +147,17 @@ class VerificationListener implements ActionListener {
 				temp = new String[]{(ShoppingCart.Single_Menu.get(8).getName()),"1","Free"};
 				break;
 			case 4:
-				temp = new String[]{(ShoppingCart.Single_Menu.get(1).getName() + " ?N?X?I??"),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(9).getName()),"1","Free"};
+				temp = new String[]{(ShoppingCart.Single_Menu.get(1).getName() + " å„ªæƒ å¥—é¤"),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(9).getName()),"1","Free"};
+				break;
+			case 5:
+				ShoppingCart.TotalContent = "ç¸½é‡‘é¡ "+((OrderData.calculateSingle()/10)+(OrderData.calculateSet()))+" å…ƒ";
+				ShoppingCart.total.setText(ShoppingCart.TotalContent);
+				temp = null;
+				break;
+			case 6:
+				ShoppingCart.TotalContent = "ç¸½é‡‘é¡ "+(OrderData.calculateTotal()/20)+" å…ƒ";
+				ShoppingCart.total.setText(ShoppingCart.TotalContent);
+				temp = null;
 				break;
 			default:
 				temp = null;
@@ -154,5 +165,4 @@ class VerificationListener implements ActionListener {
 		}
 		return temp;
 	}
-	//TODO:?¥O??j?????n??
 }

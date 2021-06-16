@@ -11,7 +11,7 @@ public class ShoppingCart extends JFrame {
     static JButton ViewMenu;
     static JFrame frame;
     static JTextField Discount;
-    static JTextArea Remarks;
+    static JTextField Remarks;//JTextArea -> JTextField
     // 建立按鈕組
     static JRadioButton Cash;
     static JRadioButton CreditCard;
@@ -19,6 +19,8 @@ public class ShoppingCart extends JFrame {
     static JRadioButton toGo;
     static DefaultTableModel model1;
     static DefaultTableModel model2;
+    static String TotalContent = "";
+    static JLabel total;
 
     public static void ShoppingCartFrame() {
         new MenuData(Single_Menu, Set_Menu);
@@ -93,15 +95,17 @@ public class ShoppingCart extends JFrame {
         JPanel BottomPanel = new JPanel();
         // 設定容器不使用佈局管理員
         BottomPanel.setLayout(null);
-
         // 建立文字Label
         JLabel RemarksLab = new JLabel("備註");
         JLabel DiscountLab = new JLabel("優惠代碼");
         JLabel PayWayLab = new JLabel("付款方式");
-        JLabel total = new JLabel("總金額"+"String");
+        if(TotalContent.equals("")){
+            TotalContent = "總金額 "+OrderData.calculateTotal()+" 元";
+        }
+        total = new JLabel(TotalContent);
 
         // 建立輸入框
-        Remarks = new JTextArea();
+        Remarks = new JTextField();//TODO:Check
         LineBorder tt = new LineBorder(Color.GRAY);
         Remarks.setBorder(tt);
         Discount = new JTextField();
@@ -114,7 +118,6 @@ public class ShoppingCart extends JFrame {
 
         Cash = new JRadioButton("現金",true);
         CreditCard = new JRadioButton("信用卡",false);
-    
         // 建立一個ButtonGroup物件
         ButtonGroup bg = new ButtonGroup();
         bg.add(Cash);
@@ -123,12 +126,12 @@ public class ShoppingCart extends JFrame {
         
         // 設定元件位置.大小
         total.setBounds(1100, 20, 200, 70);
-        RemarksLab.setBounds(0, 100, 200, 100);
-        DiscountLab.setBounds(0, 200, 200, 100);
+        RemarksLab.setBounds(0, 200, 200, 100);//NOTE: y 100->200
+        DiscountLab.setBounds(0, 100, 200, 100);//NOTE: y 200-> 100
         PayWayLab.setBounds(0, 270, 200, 100);
-        Remarks.setBounds(120, 100, 1200, 100);
-        Discount.setBounds(120, 220, 1080, 50);
-        Verification.setBounds(1220, 220, 100, 50);
+        Remarks.setBounds(120, 220, 1200, 50);//NOTE: y 100 -> 220
+        Discount.setBounds(120, 120, 1080, 50);//NOTE: y 220 -> 100
+        Verification.setBounds(1220, 120, 100, 50);
         Cash.setBounds(120, 290, 100, 50);
         CreditCard.setBounds(340, 290, 100, 50);
         CreditCardNumber.setBounds(450, 290, 800, 50);
@@ -151,8 +154,9 @@ public class ShoppingCart extends JFrame {
         BottomPanel.add(DiscountLab);
         BottomPanel.add(total);
         BottomPanel.add(PayWayLab);
-        BottomPanel.add(Remarks);
         BottomPanel.add(Discount);
+        BottomPanel.add(Remarks);
+        //BottomPanel.add(Discount);
         BottomPanel.add(Verification);
         BottomPanel.add(Cash);
         BottomPanel.add(CreditCard);
@@ -184,43 +188,50 @@ public class ShoppingCart extends JFrame {
     public static void AssignSingleOrderData(DefaultTableModel model) {
         for (int i = 0; i < 10 ; i++) {
             if (OrderData.Singlecount[i] > 0) {
-                String[] temp = {(Single_Menu.get(i).getName()),(OrderData.Singlecount[i]+""),((Single_Menu.get(i).getPrice() * OrderData.Singlecount[i])+"")};
-                model.addRow(temp);
+                String[] temp1 = {(Single_Menu.get(i).getName()),(OrderData.Singlecount[i]+""),((Single_Menu.get(i).getPrice() * OrderData.Singlecount[i])+"")};
+                model.addRow(temp1);
             }
         }
     }
     public static void AssignSetOrderData(DefaultTableModel model) {
-        String MainMealName = null;
-        int price = 0;
-        for (int i = 0; i < 9; i++) {
-            if (OrderData.Setcount[i] > 0) {
-                switch (i) {
-                    case 0:
-                    case 1:
-                    case 2:
-                        MainMealName = Single_Menu.get(1).getName();
-                        price = Single_Menu.get(1).getPrice();
-                        break;
-                    case 3:
-                    case 4:
-                    case 5:
-                        MainMealName = Single_Menu.get(6).getName();
-                        price = Single_Menu.get(6).getPrice();
-                        break;
-                    case 6:
-                    case 7:
-                    case 8:
-                        MainMealName = Single_Menu.get(8).getName();
-                        price = Single_Menu.get(8).getPrice();
-                        break;
-                }
-                String[] temp = {MainMealName+" "+ Set_Menu.get(i).getName(), (Set_Menu.get(i).getDish1().getName()), (Set_Menu.get(i).getDish2().getName()), (Set_Menu.get(i).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i).getPrice() + price) * OrderData.Setcount[i]) + ""};
-                model.addRow(temp);
+        for (int i = 0; i < 3 ; i++) {
+            String MainMealName = null;
+            int price = 0;
+            if (OrderData.Setcount[i] > 0){
+                MainMealName = Single_Menu.get(1).getName();
+                price = Single_Menu.get(1).getPrice();
+            }
+            if(MainMealName != null) {
+                String[] temp2 = {MainMealName+" "+ Set_Menu.get(i).getName(), (Set_Menu.get(i).getDish1().getName()), (Set_Menu.get(i).getDish2().getName()), (Set_Menu.get(i).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i).getPrice() + price) * OrderData.Setcount[i]) + ""};
+                model.addRow(temp2);
+            }
+        }
+        for (int i = 3; i < 6; i++){
+            String MainMealName = null;
+            int price = 0;
+            if (OrderData.Setcount[i] > 0){
+                MainMealName = Single_Menu.get(6).getName();
+                price = Single_Menu.get(6).getPrice();
+            }
+            if(MainMealName != null) {
+                String[] temp2 = {MainMealName+" "+ Set_Menu.get(i).getName(), (Set_Menu.get(i).getDish1().getName()), (Set_Menu.get(i).getDish2().getName()), (Set_Menu.get(i).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i).getPrice() + price) * OrderData.Setcount[i]) + ""};
+                model.addRow(temp2);
+            }
+        }
+        for (int i = 6; i < 9; i++){
+            String MainMealName = null;
+            int price = 0;
+            if (OrderData.Setcount[i] > 0){
+                MainMealName = Single_Menu.get(8).getName();
+                price = Single_Menu.get(8).getPrice();
+            }
+            if(MainMealName != null) {
+                String[] temp2 = {MainMealName+" "+ Set_Menu.get(i).getName(), (Set_Menu.get(i).getDish1().getName()), (Set_Menu.get(i).getDish2().getName()), (Set_Menu.get(i).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i).getPrice() + price) * OrderData.Setcount[i]) + ""};
+                model.addRow(temp2);
             }
         }
     }
     public static void CouponSingle(String[] CouponMeal){
-        //String[] CouponMeal = {(ShoppingCart.Single_Menu.get(7).getName()),"1","Free"};
         model1.addRow(CouponMeal);
     }
     public static void CouponSet(String[] CouponMeal) {

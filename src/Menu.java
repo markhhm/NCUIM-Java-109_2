@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Menu extends JFrame {
-	public static void Menu() { 
+	public void Menu() {
 		JFrame frame = new JFrame("McDonald's Order System"); 
 		Container contentPane = frame.getContentPane();
 

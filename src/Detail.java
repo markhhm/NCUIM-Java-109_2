@@ -27,13 +27,12 @@ public class Detail extends JFrame {
         //判斷用餐方式
         String eating;
         if(ShoppingCart.forHere.isSelected()){
-            eating = "內用";
-        }
-        else{
-            eating = "外帶";
+            eating = "For-Here " + OrderData.forhereCount;
+        }else{
+            eating = "To-Go " + OrderData.togoCount;
         }
         // 建立文字Label
-        JLabel OrderNumberLab = new JLabel("訂單編號: " + "訂單編號數字轉成字串"+ "(" + eating + ")");
+        JLabel OrderNumberLab = new JLabel("訂單編號: " +  eating);
 
         // 設定位置大小
         OrderNumberLab.setBounds(0, 0, 1080, 50);
@@ -67,11 +66,14 @@ public class Detail extends JFrame {
         else{
             PayWay = "現金";
         }
-
+        String RemarksData;
+        RemarksData = Objects.requireNonNullElse(OrderData.RemarksContent, "無備註");
+        String CouponData;
+        CouponData = Objects.requireNonNullElse(OrderData.CouponCode, "未使用優惠代碼");
         // 建立文字Label
-        JLabel total = new JLabel("總金額"+"String");
-        JLabel RemarksLab = new JLabel("備註: " + ShoppingCart.Remarks.getText());
-        JLabel DiscountLab = new JLabel("優惠代碼: " + OrderData.CouponCode);
+        JLabel total = new JLabel(ShoppingCart.TotalContent);//TODO
+        JLabel RemarksLab = new JLabel("備註: " + RemarksData);
+        JLabel DiscountLab = new JLabel("優惠代碼: " + CouponData);
         JLabel PayWayLab = new JLabel("付款方式: " + PayWay);
         JLabel Thanks = new JLabel("謝謝光臨，祝您用餐愉快！");
 

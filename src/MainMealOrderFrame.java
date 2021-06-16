@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class MainMealOrderFrame extends JFrame implements ActionListener {
 
-    static int singleCountIndex;
-    static int setCountIndex;
+    int singleCountIndex;
+    int setCountIndex;
     JButton singleReduceBtn;
     JButton setAReduceBtn;
     JButton setBReduceBtn;
@@ -24,7 +24,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
     JLabel setCQuantity;
     String mealName;
     ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
-    static ImageIcon MainMealIcon;
+    ImageIcon MainMealIcon;
 
     public MainMealOrderFrame(ImageIcon image) {
         setImage(image);
@@ -159,7 +159,6 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int total = 0;
         Indextrans(singleCountIndex);
         if (e.getSource() == singleBtn) {
             OrderData.Singlecount[singleCountIndex]++;
