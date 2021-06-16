@@ -117,7 +117,8 @@ public class Detail extends JFrame {
         contentPane.add(BottomPanel);
 
         frame.setVisible(true);
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //關掉程式
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //關掉視窗
+        OrderData.Reset();
     }
 }
 //--蘇湘婷>

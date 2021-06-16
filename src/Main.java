@@ -2,7 +2,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String [] args){
         Menu m = new Menu();
-        OrderData.ResetCount();//­«¸mÂIÀ\¼È¦s°Ï
+        OrderData.Reset();//ï¿½ï¿½ï¿½mï¿½Iï¿½\ï¿½È¦sï¿½ï¿½
         m.Menu();
     }
 }

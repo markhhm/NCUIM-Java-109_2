@@ -8,7 +8,7 @@ public class OrderData {
     static int forhereCount = 1;//單點的訂單編號
     static int togoCount = 1;//外帶的訂單編號
     
-    public static void ResetCount(){ //重置點單暫存區
+    public static void Reset(){ //重置點單暫存區
         for(int i=0; i < 10 ; i++) {
             Singlecount[i] = 0;
         }
