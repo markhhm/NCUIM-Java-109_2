@@ -17,14 +17,14 @@ public class ShoppingCart extends JFrame {
     static JRadioButton toGo;
 //--蘇湘婷>
 
-    //<Hsiang-Ming>
+//<洪祥銘--
     static DefaultTableModel model1;
     static DefaultTableModel model2;
     static String TotalContent = "";//用來存顯示總金額的label
     static JLabel total;
     static ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
     static ArrayList<setType> Set_Menu = new ArrayList<setType>();
-    //<Hsiang-Ming>
+//--洪祥銘>
 
 //<蘇湘婷--
     public static void ShoppingCartFrame() {
@@ -72,7 +72,7 @@ public class ShoppingCart extends JFrame {
         TopPanel.add(ViewMenu);
 
         // 設定可滾動表格
-        //<Hsiang-Ming>
+//<洪祥銘--
         model1 = new MyTableModel(); //繼承defaulttablemodel透過改寫讓tablemodel不可以輸入，詳見MyTableModel.java
         model1.addColumn("餐點");//新增表頭
         model1.addColumn("數量");
@@ -94,7 +94,7 @@ public class ShoppingCart extends JFrame {
         JTable table2 = new JTable(model2);
 
         JScrollPane jscrollpane2 = new JScrollPane(table2);
-        //<Hsiang-Ming>
+//--洪祥銘>
         
         // 設定最下面的panel
         // 建立panel
@@ -107,12 +107,12 @@ public class ShoppingCart extends JFrame {
         JLabel PayWayLab = new JLabel("付款方式");
 //--蘇湘婷>
 
-        //<Hsiang-Ming>
+//<洪祥銘--
         if(TotalContent.equals("")){ //第一次檢視購物車時預設顯示的總金額（尚未使用折扣碼）
             TotalContent = "總金額 "+OrderData.calculateTotal()+" 元";
         }
         total = new JLabel(TotalContent);
-        //<Hsiang-Ming>
+//--洪祥銘>
 
 //<蘇湘婷--
         // 建立輸入框
@@ -196,7 +196,7 @@ public class ShoppingCart extends JFrame {
         
     }
 //--蘇湘婷>
-
+//<洪祥銘--
     public static void AssignSingleOrderData(DefaultTableModel model) {
         for (int i = 0; i < 10 ; i++) {//透過for迴圈依序讀取點單暫存區
             if (OrderData.Singlecount[i] > 0) {//判斷是否有點該餐點
@@ -249,4 +249,5 @@ public class ShoppingCart extends JFrame {
     public static void CouponSet(String[] CouponMeal) { //套餐
         model2.addRow(CouponMeal); //同理
     }
+//--洪祥銘>
 }

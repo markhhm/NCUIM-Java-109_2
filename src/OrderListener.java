@@ -105,7 +105,7 @@ class ViewMenuListener implements ActionListener {
     }
 }
 
-
+//<¬x²»»Ê--
 class VerificationListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		int check = CouponCheck();
@@ -170,4 +170,5 @@ class VerificationListener implements ActionListener {
 		}
 		return temp;
 	}
+//<¬x²»»Ê
 }

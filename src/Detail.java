@@ -68,15 +68,15 @@ public class Detail extends JFrame {
             PayWay = "現金";
         }
         
+//<洪祥銘--
         String RemarksData;
         RemarksData = Objects.requireNonNull(OrderData.RemarksContent, "無備註");
         String CouponData;
         CouponData = Objects.requireNonNull(OrderData.CouponCode, "未使用優惠代碼");
 
         // 建立文字Label
-        //<Hsiang-Ming>
         JLabel total = new JLabel(ShoppingCart.TotalContent); //共用shoppingcart的總價格內容
-        //<Hsiang-Ming>
+//--洪祥銘>
 
         JLabel RemarksLab = new JLabel("備註: " + RemarksData);
         JLabel DiscountLab = new JLabel("優惠代碼: " + CouponData);

@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-//<Hsiang-Ming>
+//<洪祥銘--
 //這支程式的目的是把讀進來的CSV從原本都是String轉成我們想要的資料型別
 public class MenuData{
     public ArrayList<String> Single_Meal = new ArrayList<String>();//宣告兩個空的ArrayList用來存放即將存進來的CSV檔案
@@ -28,4 +28,4 @@ public class MenuData{
         this(single_menu_ref, null);
     }
 }
-//<Hsiang-Ming>
+//--洪祥銘>

@@ -5,8 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SideMealOrderFrame extends JFrame implements ActionListener{
-    //<Hsiang-Ming>
-    //把按鍵宣告在上方的原因是，需存為class級別的下方的方法才能直接存取
+//<洪祥銘--
+//把按鍵宣告在上方的原因是，需存為class級別的下方的方法才能直接存取
     static int singleCountIndex;
     JButton addBtn;
     JButton reduceBtn;
@@ -14,7 +14,7 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
     JButton Confirm;
     JFrame frame;
     JLabel SideMealQuantity;
-    //<Hsiang-Ming>
+//--洪祥銘>
     static ImageIcon SideMealIcon; 
     
 
@@ -83,18 +83,18 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         panel.add(addBtn);
         panel.add(Cancel);
         panel.add(Confirm);
-
+//<洪祥銘--
         reduceBtn.addActionListener(this);//設定監聽，讓ActionPerformed運作
         addBtn.addActionListener(this);
         Cancel.addActionListener(this);
         Confirm.addActionListener(this);
-
+//--洪祥銘>
 		contentPane.add(panel); // 將JPanel例項新增到JFrame
 		frame.setVisible(true); 
 
     }
 //--蘇湘婷>
-
+//<洪祥銘--
     public void actionPerformed(ActionEvent e) {
         int total = 0;
         if (e.getSource() == addBtn) { //透過e.getSource() 抓取按鈕
@@ -108,4 +108,5 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         }
         SideMealQuantity.setText(OrderData.Singlecount[singleCountIndex]+""); //更新label的計數器
     }
+//--洪祥銘>
 }

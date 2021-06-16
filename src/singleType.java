@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-//<Hsiang-Ming>
+//<洪祥銘--
 //這個class用來存單點的資料型態
 public class singleType {
     private int id;
@@ -42,4 +42,4 @@ public class singleType {
     public int getProperty() { return property; }
     public Boolean getBreakfast() { return breakfast; }
 }
-//<Hsiang-Ming>
+//--洪祥銘>

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class MainMealOrderFrame extends JFrame implements ActionListener {
     
-    //<Hsiang-Ming>
+//<¬x²»»Ê
     int singleCountIndex;
     int setCountIndex;
     JButton singleReduceBtn;
@@ -27,7 +27,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
     String mealName;
     ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
     ImageIcon MainMealIcon;
-    //<Hsiang-Ming>
+//<¬x²»»Ê
 
     public MainMealOrderFrame(ImageIcon image) {
         setImage(image);
@@ -138,7 +138,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         panel.add(Confirm);
         
 //--Ä¬´ð´@>
-        //<Hsiang-Ming>
+//<¬x²»»Ê
         singleReduceBtn.addActionListener(this);//©I¥s¤U¤èªºActionPerformed
         setAReduceBtn.addActionListener(this);
         setBReduceBtn.addActionListener(this);
@@ -149,7 +149,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setABtn.addActionListener(this);
         setBBtn.addActionListener(this);
         setCBtn.addActionListener(this);
-        //<Hsiang-Ming>
+//<¬x²»»Ê
 
 //<Ä¬´ð´@--
         // ±NJPanel¨Ò¶µ·s¼W¨ìJFrame

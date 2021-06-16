@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-//<Hsiang-Ming>
+//<¬x²»»Ê--
 //®MÀ\ªº¸ê®Æ«¬ºA
 public class setType {
     private char id;
@@ -39,5 +39,5 @@ public class setType {
     public singleType getDish2() { return dish2; }
     public singleType getDrink() { return drink; }
     public int getPrice() { return price; }
-    //<Hsiang-Ming>
+//--¬x²»»Ê>
 }
