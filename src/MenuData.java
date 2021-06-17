@@ -1,18 +1,18 @@
 import java.util.ArrayList;
-//<¬x²»»Ê--
-//³o¤äµ{¦¡ªº¥Øªº¬O§âÅª¶i¨ÓªºCSV±q­ì¥»³£¬OStringÂà¦¨§Ú­Ì·Q­nªº¸ê®Æ«¬§O
+//<æ´ªç¥¥éŠ˜--
+//é€™æ”¯ç¨‹å¼çš„ç›®çš„æ˜¯æŠŠè®€é€²ä¾†çš„CSVå¾åŸæœ¬éƒ½æ˜¯Stringè½‰æˆæˆ‘å€‘æƒ³è¦çš„è³‡æ–™å‹åˆ¥
 public class MenuData{
-    public ArrayList<String> Single_Meal = new ArrayList<String>();//«Å§i¨â­ÓªÅªºArrayList¥Î¨Ó¦s©ñ§Y±N¦s¶i¨ÓªºCSVÀÉ®×
+    public ArrayList<String> Single_Meal = new ArrayList<String>();//å®£å‘Šå…©å€‹ç©ºçš„ArrayListç”¨ä¾†å­˜æ”¾å³å°‡å­˜é€²ä¾†çš„CSVæª”æ¡ˆ
     public ArrayList<String> Set_Meal = new ArrayList<String>();
     public MenuData(ArrayList<singleType> menu1, ArrayList<setType> menu2) {
-        Single_Meal.addAll(new ReadCSV("Single_meal.csv").csvArrayList);//±N³æÂIªº¸ê®Æ¾ãµ§¥[¤JSingle_Meal³o­ÓArrayList
-        Set_Meal.addAll(new ReadCSV("Set_meal.csv").csvArrayList);//±N®MÀ\¸ê®Æ¾ãµ§¥[¤JSet_Meal³o­ÓArrayList
+        Single_Meal.addAll(new ReadCSV("Single_meal.csv").csvArrayList);//å°‡å–®é»çš„è³‡æ–™æ•´ç­†åŠ å…¥Single_Mealé€™å€‹ArrayList
+        Set_Meal.addAll(new ReadCSV("Set_meal.csv").csvArrayList);//å°‡å¥—é¤è³‡æ–™æ•´ç­†åŠ å…¥Set_Mealé€™å€‹ArrayList
 
         if (menu1 != null) {
-            for (int i = 1; i < (Single_Meal.size() / 5); i++) {//³æÂIªº¸ê®Æ¬O¤­­Ó¬°¤@µ§¡A©Ò¥H¥ÎFor°j°é±±¨î§Y±NÅª¶i¥h¦s©ñ¥Ø¼Ğ«¬§OªºArrayList
-                int k = i * 5; //Single_MealªºIndex­È¡A±q¤­¶}©lªº­ì¦]¬O¬°¤F¤£¦s¤J²Ä¤@¦CªºªíÀY
-                singleType temp1 = new singleType(Single_Meal.get(k), Single_Meal.get(k + 1), Single_Meal.get(k + 2), Single_Meal.get(k + 3), Single_Meal.get(k + 4));//§â¸ê®Æ©ñ¨ì¼È¦sªºArrayList¡A¸ê®Æ«¬§O¬O§Ú­Ì¦Û«Øªº
-                menu1.add(temp1);//§â¸ê®Æ±q¼È¦sªºArrayList¥á¶i¥h§Ú­Ì·Q©ñªºArrayList¡A¦Ó¥Ø¼ĞArrayList³z¹L«Øºc¤lªº¤Ş¼Æ¨Ó±a¤J¡A¤U¤è¦P²z
+            for (int i = 1; i < (Single_Meal.size() / 5); i++) {//å–®é»çš„è³‡æ–™æ˜¯äº”å€‹ç‚ºä¸€ç­†ï¼Œæ‰€ä»¥ç”¨Forè¿´åœˆæ§åˆ¶å³å°‡è®€é€²å»å­˜æ”¾ç›®æ¨™å‹åˆ¥çš„ArrayList
+                int k = i * 5; //Single_Mealçš„Indexå€¼ï¼Œå¾äº”é–‹å§‹çš„åŸå› æ˜¯ç‚ºäº†ä¸å­˜å…¥ç¬¬ä¸€åˆ—çš„è¡¨é ­
+                singleType temp1 = new singleType(Single_Meal.get(k), Single_Meal.get(k + 1), Single_Meal.get(k + 2), Single_Meal.get(k + 3), Single_Meal.get(k + 4));//æŠŠè³‡æ–™æ”¾åˆ°æš«å­˜çš„ArrayListï¼Œè³‡æ–™å‹åˆ¥æ˜¯æˆ‘å€‘è‡ªå»ºçš„
+                menu1.add(temp1);//æŠŠè³‡æ–™å¾æš«å­˜çš„ArrayListä¸Ÿé€²å»æˆ‘å€‘æƒ³æ”¾çš„ArrayListï¼Œè€Œç›®æ¨™ArrayListé€éå»ºæ§‹å­çš„å¼•æ•¸ä¾†å¸¶å…¥ï¼Œä¸‹æ–¹åŒç†
             }
         }
         if (menu2 != null) {
@@ -24,8 +24,8 @@ public class MenuData{
         }
     }
 
-    public MenuData(ArrayList<singleType> single_menu_ref) { //OverLoading¡A¦³¨Ç±¡ªp¥u­n³æÂIªº¸ê®Æ¡A©Ò¥H¼g¤F¤@­Ó¦h¸ü¨Ó¨Ï¥Î¦s¤J¤èªk
+    public MenuData(ArrayList<singleType> single_menu_ref) { //OverLoadingï¼Œæœ‰äº›æƒ…æ³åªè¦å–®é»çš„è³‡æ–™ï¼Œæ‰€ä»¥å¯«äº†ä¸€å€‹å¤šè¼‰ä¾†ä½¿ç”¨å­˜å…¥æ–¹æ³•
         this(single_menu_ref, null);
     }
 }
-//--¬x²»»Ê>
+//--æ´ªç¥¥éŠ˜>

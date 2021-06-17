@@ -1,4 +1,4 @@
-//<Ä¬´ð´@--
+//<è˜‡æ¹˜å©·--
 import java.util.*;
 import java.time.*;
 import java.text.SimpleDateFormat;
@@ -6,18 +6,18 @@ import java.util.Date;
 
 public class CompareTime{
     public static boolean CompareTime(){
-        //®É¶¡®æ¦¡¤Æ¿é¥X¡AHH¬°24¤p®É¨î
+        //æ™‚é–“æ ¼å¼åŒ–è¼¸å‡ºï¼ŒHHç‚º24å°æ™‚åˆ¶
         SimpleDateFormat time = new SimpleDateFormat("HH:mm:ss");
 
-        //LocalTime ªí¥Ü¤£§t¤é´Áªº®É¶¡¡A Date()ª«¥ó:¨Ï¥Î¤º¥óªº¤é´Áª«¥ó»P¤èªk¨ú±o¾Þ§@®Éªº¤é´Á®É¶¡
-        //LocalTime.parse() ->  parse ¦r¦ê¦¨ LocalTime
+        //LocalTime è¡¨ç¤ºä¸å«æ—¥æœŸçš„æ™‚é–“ï¼Œ Date()ç‰©ä»¶:ä½¿ç”¨å…§ä»¶çš„æ—¥æœŸç‰©ä»¶èˆ‡æ–¹æ³•å–å¾—æ“ä½œæ™‚çš„æ—¥æœŸæ™‚é–“
+        //LocalTime.parse() ->  parse å­—ä¸²æˆ LocalTime
         LocalTime timeNow = LocalTime.parse(time.format(new Date()));
   
-        //´«À\ÂIªº®É¶¡10:30
+        //æ›é¤é»žçš„æ™‚é–“10:30
         LocalTime changeTime = LocalTime.parse("10:30:00");
   
-        //¥ÎisBefore()§PÂ_²{¦b®É¶¡¬O¤£¬O¦b´«À\ÂIªº®É¶¡«e¡A¦^¶Çboolean­È
+        //ç”¨isBefore()åˆ¤æ–·ç¾åœ¨æ™‚é–“æ˜¯ä¸æ˜¯åœ¨æ›é¤é»žçš„æ™‚é–“å‰ï¼Œå›žå‚³booleanå€¼
         return timeNow.isBefore(changeTime);
     }
 }   
-//--Ä¬´ð´@>
+//--è˜‡æ¹˜å©·>

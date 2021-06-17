@@ -2,24 +2,24 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class ReadCSV {
-//<¬x²»»Ê--
-    //³o­Óclass¥Î¨Ó§@csvªºÅª¨ú¾¹
-    String filename;//«Å§i­nÅªªºÀÉ®×¦W
-    ArrayList<String> csvArrayList = new ArrayList<String>();//¥Î¨Ó¼È¦sÅª¤JªºcsvªºArrayList
+//<æ´ªç¥¥éŠ˜--
+    //é€™å€‹classç”¨ä¾†ä½œcsvçš„è®€å–å™¨
+    String filename;//å®£å‘Šè¦è®€çš„æª”æ¡ˆå
+    ArrayList<String> csvArrayList = new ArrayList<String>();//ç”¨ä¾†æš«å­˜è®€å…¥çš„csvçš„ArrayList
 
     public ReadCSV(String filename) {
         this.filename = filename;
 
-        File csvFile = new File(filename);//new¤@­Ófile§âÀÉ®×Åª¶icsvFile
+        File csvFile = new File(filename);//newä¸€å€‹fileæŠŠæª”æ¡ˆè®€é€²csvFile
 
         try { //error handling
-            BufferedReader reader = new BufferedReader(new FileReader(csvFile));//new¤@­ÓFileReader³z¹LBufferedReaderÅª¤Jreader
-            String csvString; //«Å§istring¼È¦sBufferedReader²£¥Íªº³sÄòstring
-            String[] arrayFinish;//¥Î¨Ó¦s¤À³Î«áªºString
+            BufferedReader reader = new BufferedReader(new FileReader(csvFile));//newä¸€å€‹FileReaderé€éŽBufferedReaderè®€å…¥reader
+            String csvString; //å®£å‘Šstringæš«å­˜BufferedReaderç”¢ç”Ÿçš„é€£çºŒstring
+            String[] arrayFinish;//ç”¨ä¾†å­˜åˆ†å‰²å¾Œçš„String
             while((csvString = reader.readLine()) != null) {
-                arrayFinish = csvString.split(",");//±NÅª¤Jªº³sÄòstring³z¹L³rÂI¤À³Î
+                arrayFinish = csvString.split(",");//å°‡è®€å…¥çš„é€£çºŒstringé€éŽé€—é»žåˆ†å‰²
                 for (String arrayFinishData : arrayFinish) {
-                    csvArrayList.add(arrayFinishData);//³z¹Lfor°j°é±±¨î±N¤À³Î«áªºString¨Ì§Ç¥[¤J¼È¦sªºArrayList
+                    csvArrayList.add(arrayFinishData);//é€éŽforè¿´åœˆæŽ§åˆ¶å°‡åˆ†å‰²å¾Œçš„Stringä¾åºåŠ å…¥æš«å­˜çš„ArrayList
                 }
             }
             reader.close();
@@ -27,5 +27,5 @@ public class ReadCSV {
             e.printStackTrace();//Error handling
         }
     };
-//--¬x²»»Ê>
+//--æ´ªç¥¥éŠ˜>
 }

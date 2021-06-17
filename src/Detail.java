@@ -1,4 +1,4 @@
-//<Ä¬´ð´@--
+//<è˜‡æ¹˜å©·--
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
@@ -8,120 +8,120 @@ public class Detail extends JFrame {
     static JFrame frame;
 
     public static void Detail() {
-        // «Ø¥ßFrame
-        frame = new JFrame("­q³æ©ú²Ó");
+        // å»ºç«‹Frame
+        frame = new JFrame("è¨‚å–®æ˜Žç´°");
         Container contentPane = frame.getContentPane();
-        // ³]©wFrameªº¤j¤p
+        // è¨­å®šFrameçš„å¤§å°
         frame.setSize(800, 700);
-        // ³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
+        // è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
         frame.setLocationRelativeTo(null);
-        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºÞ²z­û
+        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         contentPane.setLayout(null);
 
-        // ³]©w³Ì¤W­±ªºpanel
-        // «Ø¥ßpanel
+        // è¨­å®šæœ€ä¸Šé¢çš„panel
+        // å»ºç«‹panel
         JPanel TopPanel = new JPanel();
 
-        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºÞ²z­û
+        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         TopPanel.setLayout(null);
 
-        //§PÂ_¥ÎÀ\¤è¦¡
+        //åˆ¤æ–·ç”¨é¤æ–¹å¼
         String eating;
         if(ShoppingCart.forHere.isSelected()){
             eating = "For-Here " + OrderData.forhereCount;
         }else{
             eating = "To-Go " + OrderData.togoCount;
         }
-        // «Ø¥ß¤å¦rLabel
-        JLabel OrderNumberLab = new JLabel("­q³æ½s¸¹: " +  eating);
+        // å»ºç«‹æ–‡å­—Label
+        JLabel OrderNumberLab = new JLabel("è¨‚å–®ç·¨è™Ÿ: " +  eating);
 
-        // ³]©w¦ì¸m¤j¤p
+        // è¨­å®šä½ç½®å¤§å°
         OrderNumberLab.setBounds(0, 0, 1080, 50);
 
-        // §ï¦rªº¤j¤p
+        // æ”¹å­—çš„å¤§å°
         OrderNumberLab.setFont(OrderNumberLab.getFont().deriveFont(26.0f));
 
-        // §â¤¸¥ó¥[¨ìTopPanel¸Ì
+        // æŠŠå…ƒä»¶åŠ åˆ°TopPanelè£¡
         TopPanel.add(OrderNumberLab);
 
-        // ³]©w¥iºu°Êªí®æ
+        // è¨­å®šå¯æ»¾å‹•è¡¨æ ¼
         JTable table = new JTable(ShoppingCart.model1);
         JScrollPane jscrollpane = new JScrollPane(table);
 
-        // ¥[¤J²Ä¤G­Óªí®æ
+        // åŠ å…¥ç¬¬äºŒå€‹è¡¨æ ¼
         JTable table2 = new JTable(ShoppingCart.model2);
         JScrollPane jscrollpane2 = new JScrollPane(table2);
 
-        // ³]©w³Ì¤U­±ªºpanel
-        // «Ø¥ßpanel
+        // è¨­å®šæœ€ä¸‹é¢çš„panel
+        // å»ºç«‹panel
         JPanel BottomPanel = new JPanel();
 
-        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºÞ²z­û
+        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         BottomPanel.setLayout(null);
 
-        //§PÂ_¥I´Ú¤è¦¡
+        //åˆ¤æ–·ä»˜æ¬¾æ–¹å¼
         String PayWay;
         if(ShoppingCart.CreditCard.isSelected()){
-            PayWay = "«H¥Î¥d";
+            PayWay = "ä¿¡ç”¨å¡";
         }
         else{
-            PayWay = "²{ª÷";
+            PayWay = "ç¾é‡‘";
         }
-//--Ä¬´ð´@>
+//--è˜‡æ¹˜å©·>
 
-//<¬x²»»Ê--
+//<æ´ªç¥¥éŠ˜--
         String RemarksData;
-        RemarksData = Objects.requireNonNull(OrderData.RemarksContent, "µL³Æµù");
+        RemarksData = Objects.requireNonNull(OrderData.RemarksContent, "ç„¡å‚™è¨»");
         String CouponData;
-        CouponData = Objects.requireNonNull(OrderData.CouponCode, "¥¼¨Ï¥ÎÀu´f¥N½X");
+        CouponData = Objects.requireNonNull(OrderData.CouponCode, "æœªä½¿ç”¨å„ªæƒ ä»£ç¢¼");
 
-        // «Ø¥ß¤å¦rLabel
-        JLabel total = new JLabel(ShoppingCart.TotalContent); //¦@¥ÎshoppingcartªºÁ`»ù®æ¤º®e
-//--¬x²»»Ê>
+        // å»ºç«‹æ–‡å­—Label
+        JLabel total = new JLabel(ShoppingCart.TotalContent); //å…±ç”¨shoppingcartçš„ç¸½åƒ¹æ ¼å…§å®¹
+//--æ´ªç¥¥éŠ˜>
 
-//<Ä¬´ð´@--
+//<è˜‡æ¹˜å©·--
 
-        JLabel RemarksLab = new JLabel("³Æµù: " + RemarksData);
-        JLabel DiscountLab = new JLabel("Àu´f¥N½X: " + CouponData);
-        JLabel PayWayLab = new JLabel("¥I´Ú¤è¦¡: " + PayWay);
-        JLabel Thanks = new JLabel("ÁÂÁÂ¥úÁ{¡A¯¬±z¥ÎÀ\´r§Ö¡I");
+        JLabel RemarksLab = new JLabel("å‚™è¨»: " + RemarksData);
+        JLabel DiscountLab = new JLabel("å„ªæƒ ä»£ç¢¼: " + CouponData);
+        JLabel PayWayLab = new JLabel("ä»˜æ¬¾æ–¹å¼: " + PayWay);
+        JLabel Thanks = new JLabel("è¬è¬å…‰è‡¨ï¼Œç¥æ‚¨ç”¨é¤æ„‰å¿«ï¼");
 
-        // ³]©w¤¸¥ó¦ì¸m.¤j¤p
+        // è¨­å®šå…ƒä»¶ä½ç½®.å¤§å°
         total.setBounds(0, 0, 200, 50);
         RemarksLab.setBounds(0, 50, 900, 50);
         DiscountLab.setBounds(0, 100, 900, 50);
         PayWayLab.setBounds(0, 150, 900, 50);
         Thanks.setBounds(0, 200, 950, 100);
 
-        // §ï¦rªº¤j¤p
+        // æ”¹å­—çš„å¤§å°
         total.setFont(total.getFont().deriveFont(20.0f));
         RemarksLab.setFont(RemarksLab.getFont().deriveFont(20.0f));
         DiscountLab.setFont(DiscountLab.getFont().deriveFont(20.0f));
         PayWayLab.setFont(PayWayLab.getFont().deriveFont(20.0f));
         Thanks.setFont(Thanks.getFont().deriveFont(40.0f));
 
-        // §â¤¸¥ó¥[¨ìBottomPanel¸Ì
+        // æŠŠå…ƒä»¶åŠ åˆ°BottomPanelè£¡
         BottomPanel.add(total);
         BottomPanel.add(RemarksLab);
         BottomPanel.add(DiscountLab);
         BottomPanel.add(PayWayLab);
         BottomPanel.add(Thanks);
 
-        // ³]©w¤T­Ópanelªº¦ì¸m.¤j¤p
+        // è¨­å®šä¸‰å€‹panelçš„ä½ç½®.å¤§å°
         TopPanel.setBounds(40, 0, 700, 80);
         jscrollpane.setBounds(40, 80, 700, 100);
         jscrollpane2.setBounds(40, 200, 700, 100);
         BottomPanel.setBounds(40, 320, 700, 450);
 
-        // ¥[¤Jpanel
+        // åŠ å…¥panel
         contentPane.add(TopPanel);
         contentPane.add(jscrollpane);
         contentPane.add(jscrollpane2);
         contentPane.add(BottomPanel);
 
         frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //Ãö±¼µøµ¡
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //é—œæŽ‰è¦–çª—
         OrderData.Reset();
     }
 }
-//--Ä¬´ð´@>
+//--è˜‡æ¹˜å©·>

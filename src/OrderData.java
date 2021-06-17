@@ -1,15 +1,15 @@
 public class OrderData {
-//<¬x²»»Ê--
-//<©P®m¸R
-    //³o­Óclassªº¥Øªº¬O¦s§Ú­Ì­q³æªº¦UºØ¸ê®Æ
-    static int[] Singlecount = new int[10];// ³æÂI¦UÀ\ÂI¼Æ¶q­p¼Æ¾¹¡A³æÂI¦³¤QºØ
-    static int[] Setcount = new int[9];// ®MÀ\¦UÀ\ÂI¼Æ¶q­p¼Æ¾¹¡A®MÀ\¤TºØ x ¤TºØ¥DÀ\
-    static String CouponCode = "";//¦s«È¤H¨Ï¥Î¹LªºÀu´f½X
-    static String RemarksContent;//¦s«È¤Hªº³Æµù
-    static int forhereCount = 1;//³æÂIªº­q³æ½s¸¹
-    static int togoCount = 1;//¥~±aªº­q³æ½s¸¹
+//<æ´ªç¥¥éŠ˜--
+//<å‘¨å³»ç¥º
+    //é€™å€‹classçš„ç›®çš„æ˜¯å­˜æˆ‘å€‘è¨‚å–®çš„å„ç¨®è³‡æ–™
+    static int[] Singlecount = new int[10];// å–®é»å„é¤é»æ•¸é‡è¨ˆæ•¸å™¨ï¼Œå–®é»æœ‰åç¨®
+    static int[] Setcount = new int[9];// å¥—é¤å„é¤é»æ•¸é‡è¨ˆæ•¸å™¨ï¼Œå¥—é¤ä¸‰ç¨® x ä¸‰ç¨®ä¸»é¤
+    static String CouponCode = "";//å­˜å®¢äººä½¿ç”¨éçš„å„ªæƒ ç¢¼
+    static String RemarksContent;//å­˜å®¢äººçš„å‚™è¨»
+    static int forhereCount = 1;//å–®é»çš„è¨‚å–®ç·¨è™Ÿ
+    static int togoCount = 1;//å¤–å¸¶çš„è¨‚å–®ç·¨è™Ÿ
     
-    public static void Reset(){ //­«¸mÂI³æ¼È¦s°Ï
+    public static void Reset(){ //é‡ç½®é»å–®æš«å­˜å€
         for(int i=0; i < 10 ; i++) {
             Singlecount[i] = 0;
         }
@@ -20,36 +20,36 @@ public class OrderData {
         RemarksContent = "";
         ShoppingCart.TotalContent = "";
     }
-    public static int calculateTotal(){ //¹w³]Á`»ù¡×³æÂI¥[¤W®MÀ\
+    public static int calculateTotal(){ //é è¨­ç¸½åƒ¹ï¼å–®é»åŠ ä¸Šå¥—é¤
         return calculateSingle() + calculateSet();
     }
-    public static int calculateSingle(){ //³æÂI»ù®æ¥[Á`
+    public static int calculateSingle(){ //å–®é»åƒ¹æ ¼åŠ ç¸½
         int SingleTotal = 0;
-        for(int i=0; i < 10 ; i++) { //¤QºØ³æÂI¡A¥HFor°j°é°µ¥[Á`
-            if(Singlecount[i] > 0){ //ÀË¬d¸Ó¶µ¬O§_¦³À\ÂI
-                SingleTotal += ShoppingCart.Single_Menu.get(i).getPrice() * Singlecount[i];//³æÂIªº»ù®æ x ¼Æ¶q
+        for(int i=0; i < 10 ; i++) { //åç¨®å–®é»ï¼Œä»¥Forè¿´åœˆåšåŠ ç¸½
+            if(Singlecount[i] > 0){ //æª¢æŸ¥è©²é …æ˜¯å¦æœ‰é¤é»
+                SingleTotal += ShoppingCart.Single_Menu.get(i).getPrice() * Singlecount[i];//å–®é»çš„åƒ¹æ ¼ x æ•¸é‡
             }
         }
-        return SingleTotal; //¦^¶Ç³æÂIÁ`»ù
+        return SingleTotal; //å›å‚³å–®é»ç¸½åƒ¹
     }
-    public static int calculateSet(){ //®MÀ\»ù®æ¥[Á`
+    public static int calculateSet(){ //å¥—é¤åƒ¹æ ¼åŠ ç¸½
         int SetTotal = 0;
-        int onlyPrice = 0; //®MÀ\Á`»ù¥²¶·±a¦³³æÂI¥DÀ\ªºª÷ÃB¡A¦]¬°CSV¸ê®Æ¤ºªº®MÀ\¬O¥u¦³°ÆÀ\»ù®æ
-        for(int i = 0; i < 9 ; i++) { // ¤T¥DÀ\ x ¤T®MÀ\
-            if(Setcount[i] > 0) { // ÀË¬d¸Ó¶µ¬O§_¦³À\ÂI
-                if(i <= 2){ // 0,1,2 ¬° ³Á­»Âû ABCÀ\¡A¥H¤UÃş±À
+        int onlyPrice = 0; //å¥—é¤ç¸½åƒ¹å¿…é ˆå¸¶æœ‰å–®é»ä¸»é¤çš„é‡‘é¡ï¼Œå› ç‚ºCSVè³‡æ–™å…§çš„å¥—é¤æ˜¯åªæœ‰å‰¯é¤åƒ¹æ ¼
+        for(int i = 0; i < 9 ; i++) { // ä¸‰ä¸»é¤ x ä¸‰å¥—é¤
+            if(Setcount[i] > 0) { // æª¢æŸ¥è©²é …æ˜¯å¦æœ‰é¤é»
+                if(i <= 2){ // 0,1,2 ç‚º éº¥é¦™é› ABCé¤ï¼Œä»¥ä¸‹é¡æ¨
                     onlyPrice = ShoppingCart.Single_Menu.get(1).getPrice();
                 } else if (i <= 5) {
                     onlyPrice = ShoppingCart.Single_Menu.get(6).getPrice();
                 } else {
                     onlyPrice = ShoppingCart.Single_Menu.get(8).getPrice();
                 }
-                SetTotal += (onlyPrice + ShoppingCart.Set_Menu.get(i%3).getPrice()) * Setcount[i];//»ù®æ¥[Á`¬O³æÂI®MÀ\¥DÀ\¥[¤W®MÀ\°ÆÀ\
+                SetTotal += (onlyPrice + ShoppingCart.Set_Menu.get(i%3).getPrice()) * Setcount[i];//åƒ¹æ ¼åŠ ç¸½æ˜¯å–®é»å¥—é¤ä¸»é¤åŠ ä¸Šå¥—é¤å‰¯é¤
             }
         }
-        return SetTotal;//¦^¶Ç®MÀ\Á`»ù
+        return SetTotal;//å›å‚³å¥—é¤ç¸½åƒ¹
     }
-//<©P®m¸R
-//<¬x²»»Ê
+//<å‘¨å³»ç¥º
+//<æ´ªç¥¥éŠ˜
 }
 

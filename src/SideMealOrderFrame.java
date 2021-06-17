@@ -1,28 +1,28 @@
-//<Ä¬´ð´@--
+//<è˜‡æ¹˜å©·--
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SideMealOrderFrame extends JFrame implements ActionListener{
-//<¬x²»»Ê--
-//§â«öÁä«Å§i¦b¤W¤èªº­ì¦]¬O¡A»Ý¦s¬°class¯Å§Oªº¤U¤èªº¤èªk¤~¯àª½±µ¦s¨ú
+//<æ´ªç¥¥éŠ˜--
+//æŠŠæŒ‰éµå®£å‘Šåœ¨ä¸Šæ–¹çš„åŽŸå› æ˜¯ï¼Œéœ€å­˜ç‚ºclassç´šåˆ¥çš„ä¸‹æ–¹çš„æ–¹æ³•æ‰èƒ½ç›´æŽ¥å­˜å–
     static int singleCountIndex;
     JButton addBtn;
     JButton reduceBtn;
     JButton Confirm;
     JFrame frame;
     JLabel SideMealQuantity;
-//--¬x²»»Ê>
+//--æ´ªç¥¥éŠ˜>
     static ImageIcon SideMealIcon; 
     
 
-    //«Øºc¤l¡A¦YªþÀ\.¶¼®Æªº¹Ï¤ù
+    //å»ºæ§‹å­ï¼Œåƒé™„é¤.é£²æ–™çš„åœ–ç‰‡
     public SideMealOrderFrame(ImageIcon image){
         setImage(image);
     }
 
-    //ªA°È¤èªk
+    //æœå‹™æ–¹æ³•
     public void setImage(ImageIcon image){
         SideMealIcon = image;
     }
@@ -35,41 +35,41 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
 
         singleCountIndex = i;
         
-        // «Ø¥ßFrame
+        // å»ºç«‹Frame
         frame = new JFrame("Order");
 		Container contentPane = frame.getContentPane();
 
-        // ³]©w¹Ï¥Ü
+        // è¨­å®šåœ–ç¤º
      	frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
         frame.setSize(800, 500); 
-        //³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
+        //è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
         frame.setLocationRelativeTo(null);
 
-        // «Ø¥ß¤@­ÓJPanelªº¨Ò¶µ
+        // å»ºç«‹ä¸€å€‹JPanelçš„ä¾‹é …
         JPanel panel = new JPanel(); 
  
-        //³]©w®e¾¹¤£¨Ï¥Î§G§½ºÞ²z­û
+        //è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         panel.setLayout(null); 
 
-        //«Ø¥ß¼ÐÅÒ
+        //å»ºç«‹æ¨™ç±¤
         JLabel SideMealLab = new JLabel();
-        SideMealQuantity = new JLabel(OrderData.Singlecount[singleCountIndex]+"");//Åã¥Ü·í«e¼Æ¶q
+        SideMealQuantity = new JLabel(OrderData.Singlecount[singleCountIndex]+"");//é¡¯ç¤ºç•¶å‰æ•¸é‡
 
-        //³]©w¦rªº¤j¤p
+        //è¨­å®šå­—çš„å¤§å°
         SideMealQuantity.setFont(SideMealQuantity.getFont().deriveFont(32.0f));
 
-        //«Ø¥ß¹Ï¤ùª«¥ó
+        //å»ºç«‹åœ–ç‰‡ç‰©ä»¶
         ImageIcon reduceBtnIcon = new ImageIcon("image/reduceBtn.jpg");
 		ImageIcon addBtnIcon = new ImageIcon("image/addBtn.jpg");
 
         SideMealLab.setIcon(SideMealIcon);
 
-        //«Ø¥ß«ö¶s
+        //å»ºç«‹æŒ‰éˆ•
         reduceBtn = new JButton(reduceBtnIcon);
         addBtn = new JButton(addBtnIcon);
         Confirm = new JButton("Confirm");
         
-        //³]©w¦ì¸m¤j¤p
+        //è¨­å®šä½ç½®å¤§å°
         SideMealLab.setBounds(280,20,260,230);
         SideMealQuantity.setBounds(380,250,70,70);
         reduceBtn.setBounds(230,250,70,70);
@@ -77,36 +77,36 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         Confirm.setBounds(650, 360,100,60);
 
 
-        //±Nª«¥ó²K¥[¨ìpanel
+        //å°‡ç‰©ä»¶æ·»åŠ åˆ°panel
         panel.add(SideMealLab);
         panel.add(SideMealQuantity);
         panel.add(reduceBtn);
         panel.add(addBtn);
         panel.add(Confirm);
-//--Ä¬´ð´@>
+//--è˜‡æ¹˜å©·>
 
-//<¬x²»»Ê--
-        reduceBtn.addActionListener(this);//³]©wºÊÅ¥¡AÅýActionPerformed¹B§@
+//<æ´ªç¥¥éŠ˜--
+        reduceBtn.addActionListener(this);//è¨­å®šç›£è½ï¼Œè®“ActionPerformedé‹ä½œ
         addBtn.addActionListener(this);
         Confirm.addActionListener(this);
-//--¬x²»»Ê>
-		contentPane.add(panel); // ±NJPanel¨Ò¶µ·s¼W¨ìJFrame
+//--æ´ªç¥¥éŠ˜>
+		contentPane.add(panel); // å°‡JPanelä¾‹é …æ–°å¢žåˆ°JFrame
 		frame.setVisible(true); 
 
     }
-//<¬x²»»Ê--
+//<æ´ªç¥¥éŠ˜--
     public void actionPerformed(ActionEvent e) {
         int total = 0;
-        if (e.getSource() == addBtn) { //³z¹Le.getSource() §ì¨ú«ö¶s
-            OrderData.Singlecount[singleCountIndex] ++; //³æÂI++
+        if (e.getSource() == addBtn) { //é€éŽe.getSource() æŠ“å–æŒ‰éˆ•
+            OrderData.Singlecount[singleCountIndex] ++; //å–®é»ž++
         } else if (e.getSource() == reduceBtn) {
-            if(OrderData.Singlecount[singleCountIndex] > 0) { //ÀË¬d¼È¦s°Ïªº­p¼Æ¾¹¡AÁ×§KÅÜ¦¨­tªº
-                OrderData.Singlecount[singleCountIndex]--; //³æÂI¡Ð¡Ð
+            if(OrderData.Singlecount[singleCountIndex] > 0) { //æª¢æŸ¥æš«å­˜å€çš„è¨ˆæ•¸å™¨ï¼Œé¿å…è®Šæˆè² çš„
+                OrderData.Singlecount[singleCountIndex]--; //å–®é»žï¼ï¼
             }
         } else if(e.getSource() == Confirm) {
             frame.dispose();
         }
-        SideMealQuantity.setText(OrderData.Singlecount[singleCountIndex]+""); //§ó·slabelªº­p¼Æ¾¹
+        SideMealQuantity.setText(OrderData.Singlecount[singleCountIndex]+""); //æ›´æ–°labelçš„è¨ˆæ•¸å™¨
     }
-//--¬x²»»Ê>
+//--æ´ªç¥¥éŠ˜>
 }

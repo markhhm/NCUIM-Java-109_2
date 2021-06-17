@@ -1,4 +1,4 @@
-//<Ä¬´ğ´@--
+//<è˜‡æ¹˜å©·--
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class MainMealOrderFrame extends JFrame implements ActionListener {
     
-//<¬x²»»Ê
+//<æ´ªç¥¥éŠ˜
     int singleCountIndex;
     int setCountIndex;
     JButton singleReduceBtn;
@@ -26,9 +26,9 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
     String mealName;
     ArrayList<singleType> Single_Menu = new ArrayList<singleType>();
     ImageIcon MainMealIcon;
-//<¬x²»»Ê
+//<æ´ªç¥¥éŠ˜
 
-    //«Øºc¤l¡A¦Yº~³ùªº¹Ï¤ù
+    //å»ºæ§‹å­ï¼Œåƒæ¼¢å ¡çš„åœ–ç‰‡
     public MainMealOrderFrame(ImageIcon image) {
         setImage(image);
     }
@@ -52,53 +52,53 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         frame = new JFrame("Order");
         Container contentPane = frame.getContentPane();
 
-        // ³]©w¹Ï¥Ü
+        // è¨­å®šåœ–ç¤º
         frame.setIconImage(frame.getToolkit().getImage("image/logo.jpg"));
         frame.setSize(800, 500);
 
-        // ³]©w¶}±Òªº¦ì¸m©M¬Y­Óª«¥ó¬Û¦P¡A±a¤Jnull«h·|¦bµe­±¤¤¶¡¶}±Ò
+        // è¨­å®šé–‹å•Ÿçš„ä½ç½®å’ŒæŸå€‹ç‰©ä»¶ç›¸åŒï¼Œå¸¶å…¥nullå‰‡æœƒåœ¨ç•«é¢ä¸­é–“é–‹å•Ÿ
         frame.setLocationRelativeTo(null);
 
-        // «Ø¥ß¤@­ÓJPanelªº¨Ò¶µ
+        // å»ºç«‹ä¸€å€‹JPanelçš„ä¾‹é …
         JPanel panel = new JPanel();
 
-        // ³]©w®e¾¹¤£¨Ï¥Î§G§½ºŞ²z­û
+        // è¨­å®šå®¹å™¨ä¸ä½¿ç”¨ä½ˆå±€ç®¡ç†å“¡
         panel.setLayout(null);
 
-        // «Ø¥ß¼ĞÅÒ
+        // å»ºç«‹æ¨™ç±¤
         JLabel MainMealLab = new JLabel();
         
         //<Hsiang-Ming>
-        singleQuantity = new JLabel(OrderData.Singlecount[singleCountIndex] + "");//Åã¥Ü³æÂI¼Æ¶q
-        setAQuantity = new JLabel(OrderData.Setcount[setCountIndex] + "");//Åã¥ÜAÀ\¼Æ¶q¡A¥H¤U¦P²z
+        singleQuantity = new JLabel(OrderData.Singlecount[singleCountIndex] + "");//é¡¯ç¤ºå–®é»æ•¸é‡
+        setAQuantity = new JLabel(OrderData.Setcount[setCountIndex] + "");//é¡¯ç¤ºAé¤æ•¸é‡ï¼Œä»¥ä¸‹åŒç†
         setBQuantity = new JLabel(OrderData.Setcount[setCountIndex + 1] + "");
         setCQuantity = new JLabel(OrderData.Setcount[setCountIndex + 2] + "");
         //<Hsiang-Ming>
-        //§ï¼Æ¦r¤j¤p
+        //æ”¹æ•¸å­—å¤§å°
         
         singleQuantity.setFont(singleQuantity.getFont().deriveFont(24.0f));
         setAQuantity.setFont(setAQuantity.getFont().deriveFont(24.0f));
         setBQuantity.setFont(setBQuantity.getFont().deriveFont(24.0f));
         setCQuantity.setFont(setCQuantity.getFont().deriveFont(24.0f));
 
-        // «Ø¥ß¹Ï¤ùª«¥ó
+        // å»ºç«‹åœ–ç‰‡ç‰©ä»¶
         MainMealLab.setIcon(MainMealIcon);
         ImageIcon smallReduceBtnIcon = new ImageIcon("image/smallReduceBtn.jpg");
 
-        // «Ø¥ß«ö¶s
+        // å»ºç«‹æŒ‰éˆ•
         singleReduceBtn = new JButton(smallReduceBtnIcon);
         setAReduceBtn = new JButton(smallReduceBtnIcon);
         setBReduceBtn = new JButton(smallReduceBtnIcon);
         setCReduceBtn = new JButton(smallReduceBtnIcon);
         Confirm = new JButton("Confirm");
 
-        singleBtn = new JButton("³æÂI " + mealName);
-        //setABtn = new JButton(ShoppingCart.Set_Menu.get(0).getName()); //TODO:«İ­×²z
-        setABtn = new JButton("´¶³q®MÀ\");
-        setBBtn = new JButton("Á¦»æ®MÀ\");
-        setCBtn = new JButton("¦Y«Ü¹¡®MÀ\");
+        singleBtn = new JButton("å–®é» " + mealName);
+        //setABtn = new JButton(ShoppingCart.Set_Menu.get(0).getName()); //TODO:å¾…ä¿®ç†
+        setABtn = new JButton("æ™®é€šå¥—é¤");
+        setBBtn = new JButton("è–¯é¤…å¥—é¤");
+        setCBtn = new JButton("åƒå¾ˆé£½å¥—é¤");
 
-        // ³]©w¦ì¸m¤j¤p
+        // è¨­å®šä½ç½®å¤§å°
         MainMealLab.setBounds(50, 50, 260, 230);
         singleBtn.setBounds(350, 20, 260, 60);
         setABtn.setBounds(350, 100, 260, 60);
@@ -117,7 +117,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
 
         Confirm.setBounds(650, 360, 100, 60);
 
-        // ±Nª«¥ó²K¥[¨ìpanel
+        // å°‡ç‰©ä»¶æ·»åŠ åˆ°panel
         panel.add(singleReduceBtn);
         panel.add(setAReduceBtn);
         panel.add(setBReduceBtn);
@@ -135,10 +135,10 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
 
         panel.add(Confirm);
         
-//--Ä¬´ğ´@>
+//--è˜‡æ¹˜å©·>
 
-//<¬x²»»Ê
-        singleReduceBtn.addActionListener(this);//©I¥s¤U¤èªºActionPerformed
+//<æ´ªç¥¥éŠ˜
+        singleReduceBtn.addActionListener(this);//å‘¼å«ä¸‹æ–¹çš„ActionPerformed
         setAReduceBtn.addActionListener(this);
         setBReduceBtn.addActionListener(this);
         setCReduceBtn.addActionListener(this);
@@ -147,17 +147,17 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         setABtn.addActionListener(this);
         setBBtn.addActionListener(this);
         setCBtn.addActionListener(this);
-//<¬x²»»Ê
+//<æ´ªç¥¥éŠ˜
 
-//<Ä¬´ğ´@--
-        // ±NJPanel¨Ò¶µ·s¼W¨ìJFrame
+//<è˜‡æ¹˜å©·--
+        // å°‡JPanelä¾‹é …æ–°å¢åˆ°JFrame
         contentPane.add(panel);
         frame.setVisible(true);
     }
-//--Ä¬´ğ´@>
+//--è˜‡æ¹˜å©·>
 
-//<¬x²»»Ê
-    public void Indextrans(int singleCountIndex) { //±N­ì¥»¦bMainMeal.java±a¤Jªº¤Ş¼ÆÂà´«¦¨®MÀ\ÂIÀ\¼È¦s°ÏªºINDEX­È
+//<æ´ªç¥¥éŠ˜
+    public void Indextrans(int singleCountIndex) { //å°‡åŸæœ¬åœ¨MainMeal.javaå¸¶å…¥çš„å¼•æ•¸è½‰æ›æˆå¥—é¤é»é¤æš«å­˜å€çš„INDEXå€¼
         if (singleCountIndex == 1) {
             setCountIndex = 0;
         } else if (singleCountIndex == 6) {
@@ -169,20 +169,20 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Indextrans(singleCountIndex); //±N­ì¥»¦bMainMeal.java±a¤Jªº¤Ş¼ÆÂà´«¦¨®MÀ\ÂIÀ\¼È¦s°ÏªºINDEX­È
-        if (e.getSource() == singleBtn) { //e.getSource()·|¥h§ì¨ú«öÁäªº¦W¦r¨Ó°µ¬Û¹ïÀ³ªº°Ê§@
-            OrderData.Singlecount[singleCountIndex]++; //³æÂI++
+        Indextrans(singleCountIndex); //å°‡åŸæœ¬åœ¨MainMeal.javaå¸¶å…¥çš„å¼•æ•¸è½‰æ›æˆå¥—é¤é»é¤æš«å­˜å€çš„INDEXå€¼
+        if (e.getSource() == singleBtn) { //e.getSource()æœƒå»æŠ“å–æŒ‰éµçš„åå­—ä¾†åšç›¸å°æ‡‰çš„å‹•ä½œ
+            OrderData.Singlecount[singleCountIndex]++; //å–®é»++
         } else if (e.getSource() == singleReduceBtn) {
-            if (OrderData.Singlecount[singleCountIndex] > 0) { //ÀË¬d¼È¦s°Ïªº­p¼Æ¾¹¡AÁ×§KÅÜ¦¨­tªº
-                OrderData.Singlecount[singleCountIndex]--; //³æÂI--
+            if (OrderData.Singlecount[singleCountIndex] > 0) { //æª¢æŸ¥æš«å­˜å€çš„è¨ˆæ•¸å™¨ï¼Œé¿å…è®Šæˆè² çš„
+                OrderData.Singlecount[singleCountIndex]--; //å–®é»--
             }
-        } else if (e.getSource() == setABtn) { //e.getSource()·|¥h§ì¨ú«öÁäªº¦W¦r¨Ó°µ¬Û¹ïÀ³ªº°Ê§@
-            OrderData.Setcount[setCountIndex]++; //AÀ\++
+        } else if (e.getSource() == setABtn) { //e.getSource()æœƒå»æŠ“å–æŒ‰éµçš„åå­—ä¾†åšç›¸å°æ‡‰çš„å‹•ä½œ
+            OrderData.Setcount[setCountIndex]++; //Aé¤++
         } else if (e.getSource() == setAReduceBtn) {
-            if (OrderData.Setcount[setCountIndex] > 0) { //ÀË¬d¼È¦s°Ïªº­p¼Æ¾¹¡AÁ×§KÅÜ¦¨­tªº
-                OrderData.Setcount[setCountIndex]--; //AÀ\--
+            if (OrderData.Setcount[setCountIndex] > 0) { //æª¢æŸ¥æš«å­˜å€çš„è¨ˆæ•¸å™¨ï¼Œé¿å…è®Šæˆè² çš„
+                OrderData.Setcount[setCountIndex]--; //Aé¤--
             }
-        } else if (e.getSource() == setBBtn) { //»P¤W¤è¦P²z
+        } else if (e.getSource() == setBBtn) { //èˆ‡ä¸Šæ–¹åŒç†
             OrderData.Setcount[setCountIndex + 1]++;
         } else if (e.getSource() == setBReduceBtn) {
             if (OrderData.Setcount[setCountIndex + 1] > 0) {
@@ -198,10 +198,10 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
             frame.dispose();
         }
         
-        singleQuantity.setText(OrderData.Singlecount[singleCountIndex] + ""); //§ó·s­¶­±ªºJLabel¤º®e¡]Åã¥ÜÀ\ÂI¦³´X¥÷¡^
+        singleQuantity.setText(OrderData.Singlecount[singleCountIndex] + ""); //æ›´æ–°é é¢çš„JLabelå…§å®¹ï¼ˆé¡¯ç¤ºé¤é»æœ‰å¹¾ä»½ï¼‰
         setAQuantity.setText(OrderData.Setcount[setCountIndex] + "");
         setBQuantity.setText(OrderData.Setcount[setCountIndex + 1] + "");
         setCQuantity.setText(OrderData.Setcount[setCountIndex + 2] + "");
-//¬x²»»Ê>
+//æ´ªç¥¥éŠ˜>
     }
 }
