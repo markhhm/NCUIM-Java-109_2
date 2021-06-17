@@ -15,6 +15,9 @@ public class OrderData {
         for(int i=0; i < 9 ; i++) {
             Setcount[i] = 0;
         }
+        CouponCode = "";
+        RemarksContent = "";
+        ShoppingCart.TotalContent = "";
     }
     public static int calculateTotal(){ //預設總價＝單點加上套餐
         return calculateSingle() + calculateSet();

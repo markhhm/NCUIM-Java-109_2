@@ -1,4 +1,3 @@
-//<Ä¬´ð´@--
 import java.util.*;
 import java.time.*;
 import java.text.SimpleDateFormat;
@@ -19,5 +18,4 @@ public class CompareTime{
         // using isBefore()
         return timeNow.isBefore(changeTime);
     }
-}
-//--Ä¬´ð´@>
+}   

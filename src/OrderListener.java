@@ -85,6 +85,7 @@ class DetailListener implements ActionListener {
 		OrderData.RemarksContent = ShoppingCart.Remarks.getText();
 		Detail.Detail();
 		ShoppingCart.frame.dispose();
+		ShoppingCart.TotalContent = "";
 		//OrderData.forhereCount ++; //產生一個明細象徵訂單產生一筆，故下一位客人要使用的編號要加一
 		//OrderData.togoCount ++;
 	}
