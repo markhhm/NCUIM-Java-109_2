@@ -1,13 +1,13 @@
 import java.util.ArrayList;
-//<¬x²»»Ê--
-//³o­Óclass¥Î¨Ó¦s³æÂIªº¸ê®Æ«¬ºA
+//<æ´ªç¥¥éŠ˜--
+//é€™å€‹classç”¨ä¾†å­˜å–®é»žçš„è³‡æ–™åž‹æ…‹
 public class singleType {
     private int id;
     private String name;
     private int price;
     private int property;
     private Boolean breakfast;
-    singleType(String id, String name, String price, String property, String breakfast){ //«Øºc¤l
+    singleType(String id, String name, String price, String property, String breakfast){ //å»ºæ§‹å­
         if (id != null) {
             setId(id);
             setName(name);
@@ -20,13 +20,13 @@ public class singleType {
             this.breakfast = false;
         }
     }
-    public int property_trans(String property){ //§â­ì¥»ªº°ÆÀ\ÄÝ©Ê±qStringÂà¬°int¤è«K¨ú¥Î
+    public int property_trans(String property){ //æŠŠåŽŸæœ¬çš„å‰¯é¤å±¬æ€§å¾žStringè½‰ç‚ºintæ–¹ä¾¿å–ç”¨
         int temp = 0;
-        if(property == "¥DÀ\") {
+        if(property == "ä¸»é¤") {
             temp = 1;
-        } else if(property == "°ÆÀ\") {
+        } else if(property == "å‰¯é¤") {
             temp = 2;
-        } else if(property == "¶¼®Æ") {
+        } else if(property == "é£²æ–™") {
             temp = 3;
         }
         return temp;
@@ -42,4 +42,4 @@ public class singleType {
     public int getProperty() { return property; }
     public Boolean getBreakfast() { return breakfast; }
 }
-//--¬x²»»Ê>
+//--æ´ªç¥¥éŠ˜>
