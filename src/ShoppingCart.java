@@ -226,7 +226,7 @@ public class ShoppingCart extends JFrame {
                 price = Single_Menu.get(6).getPrice();
             }
             if(MainMealName != null) {
-                String[] temp2 = {MainMealName+" "+ Set_Menu.get(i).getName(), (Set_Menu.get(i).getDish1().getName()), (Set_Menu.get(i).getDish2().getName()), (Set_Menu.get(i).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i).getPrice() + price) * OrderData.Setcount[i]) + ""};
+                String[] temp2 = {MainMealName+" "+ Set_Menu.get(i-3).getName(), (Set_Menu.get(i-3).getDish1().getName()), (Set_Menu.get(i-3).getDish2().getName()), (Set_Menu.get(i-3).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i-3).getPrice() + price) * OrderData.Setcount[i]) + ""};
                 model.addRow(temp2);
             }
         }
@@ -238,7 +238,7 @@ public class ShoppingCart extends JFrame {
                 price = Single_Menu.get(8).getPrice();
             }
             if(MainMealName != null) {
-                String[] temp2 = {MainMealName+" "+ Set_Menu.get(i).getName(), (Set_Menu.get(i).getDish1().getName()), (Set_Menu.get(i).getDish2().getName()), (Set_Menu.get(i).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i).getPrice() + price) * OrderData.Setcount[i]) + ""};
+                String[] temp2 = {MainMealName+" "+ Set_Menu.get(i-6).getName(), (Set_Menu.get(i-6).getDish1().getName()), (Set_Menu.get(i-6).getDish2().getName()), (Set_Menu.get(i-6).getDrink().getName()), (OrderData.Setcount[i]+""), ((Set_Menu.get(i-6).getPrice() + price) * OrderData.Setcount[i]) + ""};
                 model.addRow(temp2);
             }
         }
