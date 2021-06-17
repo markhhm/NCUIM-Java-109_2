@@ -5,8 +5,8 @@ public class MenuData{
     public ArrayList<String> Single_Meal = new ArrayList<String>();//宣告兩個空的ArrayList用來存放即將存進來的CSV檔案
     public ArrayList<String> Set_Meal = new ArrayList<String>();
     public MenuData(ArrayList<singleType> menu1, ArrayList<setType> menu2) {
-        Single_Meal.addAll(new ReadCSV("Single_meal.csv").csvArrayList);//將單點的資料整筆加入Single_Meal這個ArrayList
-        Set_Meal.addAll(new ReadCSV("Set_meal.csv").csvArrayList);//將套餐資料整筆加入Set_Meal這個ArrayList
+        Single_Meal.addAll(new ReadCSV("data/Single_meal.csv").csvArrayList);//將單點的資料整筆加入Single_Meal這個ArrayList
+        Set_Meal.addAll(new ReadCSV("data/Set_meal.csv").csvArrayList);//將套餐資料整筆加入Set_Meal這個ArrayList
 
         if (menu1 != null) {
             for (int i = 1; i < (Single_Meal.size() / 5); i++) {//單點的資料是五個為一筆，所以用For迴圈控制即將讀進去存放目標型別的ArrayList
