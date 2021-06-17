@@ -136,6 +136,7 @@ public class MainMealOrderFrame extends JFrame implements ActionListener {
         panel.add(Confirm);
         
 //--Ä¬´ð´@>
+
 //<¬x²»»Ê
         singleReduceBtn.addActionListener(this);//©I¥s¤U¤èªºActionPerformed
         setAReduceBtn.addActionListener(this);

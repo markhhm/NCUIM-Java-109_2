@@ -83,6 +83,8 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
         panel.add(reduceBtn);
         panel.add(addBtn);
         panel.add(Confirm);
+//--Ä¬´ð´@>
+
 //<¬x²»»Ê--
         reduceBtn.addActionListener(this);//³]©wºÊÅ¥¡AÅýActionPerformed¹B§@
         addBtn.addActionListener(this);
@@ -92,7 +94,6 @@ public class SideMealOrderFrame extends JFrame implements ActionListener{
 		frame.setVisible(true); 
 
     }
-//--Ä¬´ð´@>
 //<¬x²»»Ê--
     public void actionPerformed(ActionEvent e) {
         int total = 0;

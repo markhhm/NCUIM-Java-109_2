@@ -25,9 +25,11 @@ public class ShoppingCart extends JFrame {
     static ArrayList<setType> Set_Menu = new ArrayList<setType>();
 //--洪祥銘>
 
-//<蘇湘婷--
+
     public static void ShoppingCartFrame() {
         new MenuData(Single_Menu, Set_Menu);//new兩個已經轉好資料型態的arraylist以供資料取用
+
+//<蘇湘婷--
         // 建立Frame
         frame = new JFrame("購物車");
         Container contentPane = frame.getContentPane();
@@ -94,7 +96,6 @@ public class ShoppingCart extends JFrame {
 
         JScrollPane jscrollpane2 = new JScrollPane(table2);
 //--洪祥銘>
-        
         // 設定最下面的panel
         // 建立panel
         JPanel BottomPanel = new JPanel();
