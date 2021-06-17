@@ -85,7 +85,11 @@ class DetailListener implements ActionListener {
 		OrderData.RemarksContent = ShoppingCart.Remarks.getText();
 		Detail.Detail();
 		ShoppingCart.frame.dispose();
-		ShoppingCart.TotalContent = "";
+		if(ShoppingCart.forHere.isSelected()){
+            OrderData.forhereCount ++;
+        }else{
+            OrderData.togoCount ++;
+        }
 		//OrderData.forhereCount ++; //產生一個明細象徵訂單產生一筆，故下一位客人要使用的編號要加一
 		//OrderData.togoCount ++;
 	}
@@ -93,12 +97,9 @@ class DetailListener implements ActionListener {
 
 class CancelListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		int result = JOptionPane.showConfirmDialog(null, "確定要取消訂單嗎? \n按下確認將清除所有餐點。", "取消訂單確認", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		int result = JOptionPane.showConfirmDialog(null, "確定要取消訂單嗎? \n按下確認後系統將關閉程式。", "取消訂單確認", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if (result == JOptionPane.YES_OPTION){
-			if (result == JOptionPane.YES_OPTION){
-				ShoppingCart.frame.dispose();
-				OrderData.Reset();
-			}
+			System.exit(0);
 		}
 	}
 }

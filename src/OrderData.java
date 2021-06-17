@@ -1,5 +1,6 @@
 public class OrderData {
 //<洪祥銘--
+//<周峻祺
     //這個class的目的是存我們訂單的各種資料
     static int[] Singlecount = new int[10];// 單點各餐點數量計數器，單點有十種
     static int[] Setcount = new int[9];// 套餐各餐點數量計數器，套餐三種 x 三種主餐
@@ -48,6 +49,7 @@ public class OrderData {
         }
         return SetTotal;//回傳套餐總價
     }
+//<周峻祺
 //<洪祥銘
 }
 
