@@ -1,4 +1,4 @@
-//<è˜‡æ¹˜å©·--
+//<Ä¬´ð´@--
 import javax.swing.*; 
 import java.awt.*;
 import java.util.*;
@@ -7,7 +7,8 @@ import javax.swing.table.DefaultTableModel;
 class MyTableModel extends DefaultTableModel{
     @Override
     public boolean isCellEditable(int row, int column) {
+        //isCellEditable¦^¶Çfalse¡AÅýªí®æ¤£¥i½s¿è
         return false;
     }
 }
-//--è˜‡æ¹˜å©·>
+//--Ä¬´ð´@>

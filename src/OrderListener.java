@@ -1,8 +1,9 @@
-//<è˜‡æ¹˜å©·--
+//<Ä¬´ğ´@--
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+//º¡ºÖ³ùListener
 class McMuffinOrderListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		MainMeal mm = new MainMeal();
@@ -10,6 +11,7 @@ class McMuffinOrderListener implements ActionListener {
 	}
 }
 
+//³Á­»ÂûListener
 class McChickenOrderListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		MainMeal mm = new MainMeal();
@@ -17,6 +19,7 @@ class McChickenOrderListener implements ActionListener {
 	}
 }
 
+//¤j³Á§JListener
 class BigMacOrderListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		MainMeal mm = new MainMeal();
@@ -24,6 +27,7 @@ class BigMacOrderListener implements ActionListener {
 	}
 }
 
+//¤pÁ¦Listener
 class smallFriesOrderListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		SideMeal s = new SideMeal();
@@ -31,6 +35,7 @@ class smallFriesOrderListener implements ActionListener {
 	}
 }
 
+//¤¤Á¦Listener
 class mediumFriesOrderListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		SideMeal s = new SideMeal();
@@ -38,6 +43,7 @@ class mediumFriesOrderListener implements ActionListener {
 	}
 }
 
+//¤jÁ¦Listener
 class largeFriesOrderListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		SideMeal s = new SideMeal();
@@ -45,6 +51,7 @@ class largeFriesOrderListener implements ActionListener {
 	}
 }
 
+//Á¦»æListener
 class hashBrownOrderListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		SideMeal s = new SideMeal();
@@ -52,6 +59,7 @@ class hashBrownOrderListener implements ActionListener {
 	}
 }
 
+//¥É¦Ì¿@´öListener
 class cornSoupOrderListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		SideMeal s = new SideMeal();
@@ -59,6 +67,7 @@ class cornSoupOrderListener implements ActionListener {
 	}
 }
 
+//¥i¼ÖListener
 class CokeOrderListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		SideMeal s = new SideMeal();
@@ -66,6 +75,7 @@ class CokeOrderListener implements ActionListener {
 	}
 }
 
+//³·ºÑListener
 class SpriteOrderListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		SideMeal s = new SideMeal();
@@ -73,6 +83,7 @@ class SpriteOrderListener implements ActionListener {
 	}
 }
 
+//ÀËµøÁÊª«¨®Listener
 class ShoppingCartListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		ShoppingCart s = new ShoppingCart();
@@ -80,6 +91,7 @@ class ShoppingCartListener implements ActionListener {
 	}
 }
 
+//½T»{µ²±bListener
 class DetailListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		OrderData.RemarksContent = ShoppingCart.Remarks.getText();
@@ -87,16 +99,17 @@ class DetailListener implements ActionListener {
 		ShoppingCart.frame.dispose();
 		ShoppingCart.TotalContent = "";
 		if(ShoppingCart.forHere.isSelected()){
-            OrderData.forhereCount ++; //ç”¢ç”Ÿä¸€å€‹æ˜ç´°è±¡å¾µè¨‚å–®ç”¢ç”Ÿä¸€ç­†ï¼Œæ•…ä¸‹ä¸€ä½å®¢äººè¦ä½¿ç”¨çš„ç·¨è™Ÿè¦åŠ ä¸€
+            OrderData.forhereCount ++; //²£¥Í¤@­Ó©ú²Ó¶H¼x­q³æ²£¥Í¤@µ§¡A¬G¤U¤@¦ì«È¤H­n¨Ï¥Îªº½s¸¹­n¥[¤@
         }else{
             OrderData.togoCount ++;
         }
 	}
 }
 
+//¨ú®ø­q³æListener
 class CancelListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		int result = JOptionPane.showConfirmDialog(null, "ç¢ºå®šè¦å–æ¶ˆè¨‚å–®å—? \næŒ‰ä¸‹ç¢ºèªå°‡æ¸…é™¤æ‰€æœ‰é¤é»ã€‚", "å–æ¶ˆè¨‚å–®ç¢ºèª", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		int result = JOptionPane.showConfirmDialog(null, "½T©w­n¨ú®ø­q³æ¶Ü? \n«ö¤U½T»{±N²M°£©Ò¦³À\ÂI¡C", "¨ú®ø­q³æ½T»{", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if (result == JOptionPane.YES_OPTION){
 			if (result == JOptionPane.YES_OPTION){
 				ShoppingCart.frame.dispose();
@@ -105,7 +118,7 @@ class CancelListener implements ActionListener {
 		}
 	}
 }
-//--è˜‡æ¹˜å©·>
+//--Ä¬´ğ´@>
 
 class ViewMenuListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
@@ -113,22 +126,22 @@ class ViewMenuListener implements ActionListener {
     }
 }
 
-//<æ´ªç¥¥éŠ˜--
+//<¬x²»»Ê--
 class VerificationListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		int check = CouponCheck();
 		if(check != 0 && check <= 3){
-			OrderData.CouponCode += ShoppingCart.Discount.getText() + " "; //æŠŠä½¿ç”¨è€…ç”¨éçš„couponå­˜åˆ°ä¸€å€‹stringæ–¹ä¾¿é¡¯ç¤º
-			ShoppingCart.CouponSingle(CouponList(check));// å–®é»çš„couponï¼Œå¸¶å…¥å–®é»çš„tablemodel
+			OrderData.CouponCode += ShoppingCart.Discount.getText() + " "; //§â¨Ï¥ÎªÌ¥Î¹Lªºcoupon¦s¨ì¤@­Óstring¤è«KÅã¥Ü
+			ShoppingCart.CouponSingle(CouponList(check));// ³æÂIªºcoupon¡A±a¤J³æÂIªºtablemodel
 		} else if (check > 3) {
 			OrderData.CouponCode += ShoppingCart.Discount.getText() + " ";
-			ShoppingCart.CouponSet(CouponList(check));// å¥—é¤çš„couponï¼Œå¸¶å…¥å¥—é¤çš„tablemodel
+			ShoppingCart.CouponSet(CouponList(check));// ®MÀ\ªºcoupon¡A±a¤J®MÀ\ªºtablemodel
 		} else {
-			JOptionPane.showMessageDialog(null,"Invalid Coupon","Fail",JOptionPane.INFORMATION_MESSAGE, new ImageIcon("image/joptionpaneICON.png"));//å¦‚æœcouponé©—è­‰å¤±æ•—çš„è©±æœƒè·³å‡ºè¨Šæ¯å‘Šè¨´ä½¿ç”¨è€…
+			JOptionPane.showMessageDialog(null,"Invalid Coupon","Fail",JOptionPane.INFORMATION_MESSAGE, new ImageIcon("image/joptionpaneICON.png"));//¦pªGcouponÅçÃÒ¥¢±Ñªº¸Ü·|¸õ¥X°T®§§i¶D¨Ï¥ÎªÌ
 		}
 
 	}
-	public static int CouponCheck(){ //è¾¨è­˜ä½¿ç”¨è€…è¼¸å…¥çš„å„ªæƒ ä»£ç¢¼
+	public static int CouponCheck(){ //¿ëÃÑ¨Ï¥ÎªÌ¿é¤JªºÀu´f¥N½X
 		int value;
 		if(ShoppingCart.Discount.getText().equals("Fries")) {
 			value = 1;
@@ -138,9 +151,9 @@ class VerificationListener implements ActionListener {
 			value = 3;
 		} else if(ShoppingCart.Discount.getText().equals("SuperCoupon")){
 			value = 4;
-		} else if(ShoppingCart.Discount.getText().equals("å–®é»ä¸€æŠ˜")){
+		} else if(ShoppingCart.Discount.getText().equals("³æÂI¤@§é")){
 			value = 5;
-		} else if(ShoppingCart.Discount.getText().equals("æ‰“æŠ˜æ‰“åˆ°éª¨æŠ˜")) {
+		} else if(ShoppingCart.Discount.getText().equals("¥´§é¥´¨ì°©§é")) {
 			value = 6;
 		} else {
 			value = 0;
@@ -151,7 +164,7 @@ class VerificationListener implements ActionListener {
 		String[] temp ;
 		switch(check){
 			case 1:
-				temp = new String[]{(ShoppingCart.Single_Menu.get(7).getName()),"1","Free"};//æŠŠè¦å­˜åˆ°tablemodelçš„stringé™£åˆ—ä¸Ÿåˆ°tempä»¥å›å‚³ï¼Œä»¥ä¸‹åŒç†
+				temp = new String[]{(ShoppingCart.Single_Menu.get(7).getName()),"1","Free"};//§â­n¦s¨ìtablemodelªºstring°}¦C¥á¨ìtemp¥H¦^¶Ç¡A¥H¤U¦P²z
 				break;
 			case 2:
 				temp = new String[]{(ShoppingCart.Single_Menu.get(2).getName()),"1","Free"};
@@ -160,15 +173,15 @@ class VerificationListener implements ActionListener {
 				temp = new String[]{(ShoppingCart.Single_Menu.get(8).getName()),"1","Free"};
 				break;
 			case 4:
-				temp = new String[]{(ShoppingCart.Single_Menu.get(1).getName() + "è¶…æ»¿è¶³å„ªæƒ "),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(9).getName()),"1","Free"};
+				temp = new String[]{(ShoppingCart.Single_Menu.get(1).getName() + "¶Wº¡¨¬Àu´f"),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(7).getName()),(ShoppingCart.Single_Menu.get(9).getName()),"1","Free"};
 				break;
 			case 5:
-				ShoppingCart.TotalContent = "ç¸½åƒ¹æ ¼ "+((OrderData.calculateSingle()/10)+(OrderData.calculateSet()))+" å…ƒ";//é€™å…©å€‹å„ªæƒ æ˜¯åƒ¹æ ¼å„ªæƒ ä¸éœ€å¸¶å…¥modelï¼Œç›´æ¥èª¿æ•´è³¼ç‰©è»Šèˆ‡æ˜ç´°çš„è¼¸å‡ºå…§å®¹ï¼Œä»¥ä¸‹åŒç†
+				ShoppingCart.TotalContent = "Á`»ù®æ "+((OrderData.calculateSingle()/10)+(OrderData.calculateSet()))+" ¤¸";//³o¨â­ÓÀu´f¬O»ù®æÀu´f¤£»İ±a¤Jmodel¡Aª½±µ½Õ¾ãÁÊª«¨®»P©ú²Óªº¿é¥X¤º®e¡A¥H¤U¦P²z
 				ShoppingCart.total.setText(ShoppingCart.TotalContent);
 				temp = null;
 				break;
 			case 6:
-				ShoppingCart.TotalContent = "ç¸½åƒ¹æ ¼ "+(OrderData.calculateTotal()/20)+" å…ƒ";
+				ShoppingCart.TotalContent = "Á`»ù®æ "+(OrderData.calculateTotal()/20)+" ¤¸";
 				ShoppingCart.total.setText(ShoppingCart.TotalContent);
 				temp = null;
 				break;
@@ -178,5 +191,5 @@ class VerificationListener implements ActionListener {
 		}
 		return temp;
 	}
-//<æ´ªç¥¥éŠ˜
+//<¬x²»»Ê
 }

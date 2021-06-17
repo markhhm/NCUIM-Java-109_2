@@ -1,4 +1,4 @@
-//<è˜‡æ¹˜å©·--
+//<Ä¬´ð´@--
 import javax.swing.*;
 
 public class SideMeal{
@@ -12,7 +12,7 @@ public class SideMeal{
 
     public static void smallFriesFrame(){
         SideMealOrderFrame smallFriesOrderFrame = new SideMealOrderFrame(smallFriesIcon);
-        smallFriesOrderFrame.OrderFrame(0); //å¼•æ•¸æ˜¯é¤é»žçš„ç´¢å¼•
+        smallFriesOrderFrame.OrderFrame(0); //¤Þ¼Æ¬OÀ\ÂIªº¯Á¤Þ
     }
 
     public static void mediumFriesFrame(){
@@ -45,4 +45,4 @@ public class SideMeal{
         SpriteOrderFrame.OrderFrame(3);
     }
 }
-//--è˜‡æ¹˜å©·>
+//--Ä¬´ð´@>
