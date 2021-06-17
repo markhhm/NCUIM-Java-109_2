@@ -18,7 +18,7 @@
 ## Build
 
 ```sh
-javac *.java
+javac -encoding UTF-8 *.java
 ```
 
 ## Usage
