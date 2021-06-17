@@ -93,9 +93,12 @@ class DetailListener implements ActionListener {
 
 class CancelListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
-		int result = JOptionPane.showConfirmDialog(null, "確定要取消訂單嗎? \n按下確認後系統將關閉程式。", "取消訂單確認", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		int result = JOptionPane.showConfirmDialog(null, "確定要取消訂單嗎? \n按下確認將清除所有餐點。", "取消訂單確認", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if (result == JOptionPane.YES_OPTION){
-			System.exit(0);
+			if (result == JOptionPane.YES_OPTION){
+				ShoppingCart.frame.dispose();
+				OrderData.Reset();
+			}
 		}
 	}
 }
